@@ -1,0 +1,19 @@
+[
+  {
+    "id": "7cd85ac4-9446-4aa2-a36e-cd430ea87bc9",
+    "title": "Video Games and Vision",
+    "subtitle": "An analogy",
+    "slug": "video-games-and-vision",
+    "excerpt": "As a game designer (/leader), if you want your players (/staff) to feel afraid, unsettled or uncertain… limit their vision! However, If you want to empower them, imbue them with a sense of adventure and instill in them a desire to go places, then let them see far into the distance. Just make sure you don't waste too much processing (/brain) power rendering the distant future in too much detail.",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHBUYWS_9GxdA/feedshare-shrink_800/feedshare-shrink_800/0/1709798134511?e=1778112000&v=beta&t=ksiCQmg1mV0TF5-S9RnAzwk9Ted6jXiS61yeI0NOYfk",
+    "thumbnailUrl": "https://media.licdn.com/dms/image/v2/D5622AQHBUYWS_9GxdA/feedshare-shrink_800/feedshare-shrink_800/0/1709798134511?e=1778112000&v=beta&t=ksiCQmg1mV0TF5-S9RnAzwk9Ted6jXiS61yeI0NOYfk",
+    "category": "My approach",
+    "tags": [
+      "vision"
+    ],
+    "status": "PUBLISHED",
+    "contentHtml": "<p>An analogy I like to use about vision, strategy and objectives in product development teams:</p><p><br></p><p>In AAA video games with open-world environments, it takes a lot of processing power to render the detailed graphics. If your computer were expected to display an entire game world in full detail, it would overload even the best of GPUs. To combat this problem, the game engine renders the environment nearest to the player to a high level of detail, and with progressively less detail the further away it is from the player's point of view.</p><p><br></p><p>The middle and far distance is still crucial, however. It's how the player orients themselves in the game world and visualizes their objectives. If the player encounters an unexpected obstacle, understanding it in the context of their larger environment helps them to make decisions about how to overcome it. If their plan changes, that's fine, because we haven't wasted too much processing power on rendering the previous path… it's only as the player moves closer to the objective that it starts to become more fully realized.</p><p><br></p><p>To me, this is a perfect representation of how a team should manage its vision, strategy and objectives (note, the amount of time spent on short, middle and long-term planning should vary from person to person based on role and seniority within a portfolio, but for simplicity I'll refer to the collective brainpower of a portfolio as analogous to a GPU). While much of a portfolio's brain-power should be spent understanding and overcoming the immediate obstacles, the mid-to-long term vision provides the context that empowers teams to address these obstacles autonomously.</p><p><br></p><p>Now here's the really cool bit (but I'm a nerd, so my idea of \"cool\" may be skewed)…</p><p><br></p><p>There are some games in which the environment is specifically designed to limit the player's vision or ability to orient themselves in the world, i.e. the player is placed in cramped hallways or rooms, or perhaps there is a prevailing mist preventing the player seeing very far.</p><p><br></p><p>These are HORROR games.</p><p><br></p><p>As a game designer (/leader), if you want your players (/staff) to feel afraid, unsettled or uncertain… limit their vision! However, If you want to empower them, imbue them with a sense of adventure and instill in them a desire to go places, then let them see far into the distance. Just make sure you don't waste too much processing (/brain) power rendering the distant future in too much detail.</p>",
+    "createdAt": "2026-04-16T10:12:24.315Z",
+    "updatedAt": "2026-04-16T10:17:15.455Z"
+  }
+]
