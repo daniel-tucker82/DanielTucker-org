@@ -2,7 +2,11 @@ import { promises as fs } from "fs";
 import path from "path";
 import { BlogPost, BlogPostInput } from "@/types/blog";
 
-const dataDir = path.join(process.cwd(), "data");
+// Vercel serverless filesystem is read-only except /tmp.
+const dataDir =
+  process.env.VERCEL === "1"
+    ? path.join("/tmp", "danieltucker-data")
+    : path.join(process.cwd(), "data");
 const blogFile = path.join(dataDir, "blog-posts.json");
 
 async function ensureBlogFile() {

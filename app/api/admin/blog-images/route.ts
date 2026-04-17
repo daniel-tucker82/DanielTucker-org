@@ -71,13 +71,21 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("blog-images upload failed", err);
-    const message =
-      err instanceof Error ? err.message : "Unknown error";
+    const message = err instanceof Error ? err.message : "Unknown error";
+    const lower = message.toLowerCase();
+    const detail =
+      lower.includes("token")
+        ? "Blob token rejected or invalid for this store."
+        : lower.includes("store")
+          ? "Blob store not found or not accessible."
+          : lower.includes("sharp")
+            ? "Image processing failed in Sharp."
+            : message;
     return NextResponse.json(
       {
         error:
           "Could not process or upload the image. Try a JPEG or PNG under a few MB. If this persists, check Vercel function logs.",
-        detail: process.env.NODE_ENV === "development" ? message : undefined,
+        detail,
       },
       { status: 500 },
     );

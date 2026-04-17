@@ -52,8 +52,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const post = await createBlogPost(normalizeBlogInput(body));
-  return NextResponse.json({ post });
+  try {
+    const post = await createBlogPost(normalizeBlogInput(body));
+    return NextResponse.json({ post });
+  } catch (err) {
+    console.error("blog post create failed", err);
+    return NextResponse.json(
+      {
+        error:
+          "Unable to save post on this deployment. If this is Vercel, persistent blog storage still needs to be moved off local files.",
+      },
+      { status: 500 },
+    );
+  }
 }
 
 export async function PUT(req: NextRequest) {
@@ -68,11 +79,22 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const post = await updateBlogPost(postId, normalizeBlogInput(body));
-  if (!post) {
-    return NextResponse.json({ error: "Post not found" }, { status: 404 });
+  try {
+    const post = await updateBlogPost(postId, normalizeBlogInput(body));
+    if (!post) {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
+    return NextResponse.json({ post });
+  } catch (err) {
+    console.error("blog post update failed", err);
+    return NextResponse.json(
+      {
+        error:
+          "Unable to update post on this deployment. If this is Vercel, persistent blog storage still needs to be moved off local files.",
+      },
+      { status: 500 },
+    );
   }
-  return NextResponse.json({ post });
 }
 
 export async function DELETE(req: NextRequest) {
@@ -87,10 +109,20 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: "Missing id" }, { status: 400 });
   }
 
-  const deleted = await deleteBlogPost(id);
-  if (!deleted) {
-    return NextResponse.json({ error: "Post not found" }, { status: 404 });
+  try {
+    const deleted = await deleteBlogPost(id);
+    if (!deleted) {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("blog post delete failed", err);
+    return NextResponse.json(
+      {
+        error:
+          "Unable to delete post on this deployment. If this is Vercel, persistent blog storage still needs to be moved off local files.",
+      },
+      { status: 500 },
+    );
   }
-
-  return NextResponse.json({ ok: true });
 }
