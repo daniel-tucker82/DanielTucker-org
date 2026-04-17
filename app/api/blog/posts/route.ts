@@ -8,14 +8,31 @@ import {
 import { isCurrentUserApprovedAdmin } from "@/lib/admin-auth";
 import { BlogPostInput } from "@/types/blog";
 
+/** Coerce optional image fields so storage always gets strings. */
+function normalizeBlogInput(payload: Partial<BlogPostInput>): BlogPostInput {
+  const imageUrl = (payload.imageUrl ?? "").trim();
+  const thumbnailRaw = (payload.thumbnailUrl ?? "").trim();
+  return {
+    title: payload.title!.trim(),
+    subtitle: (payload.subtitle ?? "").trim(),
+    slug: payload.slug!.trim(),
+    excerpt: (payload.excerpt ?? "").trim(),
+    imageUrl,
+    thumbnailUrl: thumbnailRaw || imageUrl,
+    category: payload.category!.trim(),
+    tags: payload.tags ?? [],
+    status: payload.status!,
+    contentHtml: payload.contentHtml!.trim(),
+  };
+}
+
 function validatePayload(payload: Partial<BlogPostInput>): payload is BlogPostInput {
   return Boolean(
     payload.category &&
     payload.title &&
-      payload.slug &&
-      payload.imageUrl &&
-      payload.status &&
-      payload.contentHtml,
+    payload.slug &&
+    payload.status &&
+    payload.contentHtml,
   );
 }
 
@@ -35,7 +52,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const post = await createBlogPost(body);
+  const post = await createBlogPost(normalizeBlogInput(body));
   return NextResponse.json({ post });
 }
 
@@ -51,7 +68,7 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const post = await updateBlogPost(postId, body);
+  const post = await updateBlogPost(postId, normalizeBlogInput(body));
   if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }

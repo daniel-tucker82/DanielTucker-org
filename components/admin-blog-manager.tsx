@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { QuillEditor } from "@/components/quill-editor";
 import { BlogPost } from "@/types/blog";
 
@@ -43,6 +43,7 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
   const [error, setError] = useState<string | null>(null);
   const [uploadingImage, setUploadingImage] = useState(false);
   const [imagePreviewUrl, setImagePreviewUrl] = useState<string>("");
+  const featuredFileInputRef = useRef<HTMLInputElement>(null);
 
   async function loadPosts() {
     const response = await fetch("/api/blog/posts", { cache: "no-store" });
@@ -64,10 +65,36 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
 
+  /** Prefer in-memory blob preview, else saved URL from form. */
+  const featuredDisplaySrc = (imagePreviewUrl || form.imageUrl).trim();
+
+  const revokePreviewIfBlob = (url: string) => {
+    if (url.startsWith("blob:")) {
+      URL.revokeObjectURL(url);
+    }
+  };
+
+  const clearFeaturedImage = () => {
+    setImagePreviewUrl((prev) => {
+      revokePreviewIfBlob(prev);
+      return "";
+    });
+    setForm((prev) => ({ ...prev, imageUrl: "", thumbnailUrl: "" }));
+    if (featuredFileInputRef.current) {
+      featuredFileInputRef.current.value = "";
+    }
+  };
+
   const reset = () => {
+    setImagePreviewUrl((prev) => {
+      revokePreviewIfBlob(prev);
+      return "";
+    });
     setForm(initialForm);
     setSlugTouched(false);
-    setImagePreviewUrl("");
+    if (featuredFileInputRef.current) {
+      featuredFileInputRef.current.value = "";
+    }
   };
 
   const onSubmit = async (event: React.FormEvent) => {
@@ -83,12 +110,6 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
     ) {
       setLoading(false);
       setError("Category, title, slug, and content are required.");
-      return;
-    }
-
-    if (!form.imageUrl.trim()) {
-      setLoading(false);
-      setError("Please upload a featured image before saving.");
       return;
     }
 
@@ -127,6 +148,10 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
   };
 
   const onEdit = (post: BlogPost) => {
+    setImagePreviewUrl((prev) => {
+      revokePreviewIfBlob(prev);
+      return post.imageUrl || "";
+    });
     setForm({
       id: post.id,
       category: categories.includes(post.category) ? post.category : "__new__",
@@ -141,7 +166,6 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
       thumbnailUrl: post.thumbnailUrl,
       contentHtml: post.contentHtml,
     });
-    setImagePreviewUrl(post.imageUrl);
     setSlugTouched(true);
   };
 
@@ -162,7 +186,10 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
   const onImageSelected = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
-    setImagePreviewUrl(URL.createObjectURL(file));
+    setImagePreviewUrl((prev) => {
+      revokePreviewIfBlob(prev);
+      return URL.createObjectURL(file);
+    });
     setUploadingImage(true);
     setError(null);
     const formData = new FormData();
@@ -171,21 +198,40 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
       method: "POST",
       body: formData,
     });
+    const payloadUnknown = await response.json().catch(() => ({}));
+    const payload = payloadUnknown as {
+      imageUrl?: string;
+      thumbnailUrl?: string;
+      error?: string;
+      detail?: string;
+    };
     if (!response.ok) {
-      setError("Image upload failed. Check Vercel Blob configuration.");
-      setForm((prev) => ({ ...prev, imageUrl: "", thumbnailUrl: "" }));
+      const hint =
+        payload.error ||
+        (response.status === 503
+          ? "Image upload failed: Vercel Blob is not configured for this environment. Add BLOB_READ_WRITE_TOKEN to .env.local (e.g. vercel env pull) and restart dev, then try again."
+          : "Image upload failed.");
+      setError(
+        payload.detail && process.env.NODE_ENV === "development"
+          ? `${hint} (${payload.detail})`
+          : hint,
+      );
+      // Keep blob preview + file input so a failed upload (e.g. missing token in dev) does not look like "remove" was clicked.
       setUploadingImage(false);
       return;
     }
-    const payload = (await response.json()) as {
-      imageUrl: string;
-      thumbnailUrl: string;
-    };
     setForm((prev) => ({
       ...prev,
-      imageUrl: payload.imageUrl,
-      thumbnailUrl: payload.thumbnailUrl,
+      imageUrl: payload.imageUrl ?? "",
+      thumbnailUrl: payload.thumbnailUrl ?? "",
     }));
+    setImagePreviewUrl((prev) => {
+      revokePreviewIfBlob(prev);
+      return payload.imageUrl ?? "";
+    });
+    if (featuredFileInputRef.current) {
+      featuredFileInputRef.current.value = "";
+    }
     setUploadingImage(false);
   };
 
@@ -312,29 +358,35 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
               Featured Image
             </span>
             <input
+              ref={featuredFileInputRef}
               type="file"
               accept="image/*"
               onChange={(event) => void onImageSelected(event)}
               className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2 text-sm text-[#C5C6C7] file:mr-3 file:border-0 file:bg-[#66FCF1] file:px-3 file:py-1 file:font-mono file:text-[11px] file:uppercase file:tracking-[0.12em] file:text-[#0B0C10]"
             />
-            {imagePreviewUrl ? (
-              <div className="mt-2 border border-[#66FCF1]/25 p-2 bg-[#0B0C10]/50">
-                <Image
-                  src={imagePreviewUrl}
-                  alt="Selected featured image"
-                  width={1200}
-                  height={400}
-                  unoptimized
-                  className="h-28 w-full object-cover grayscale"
-                />
+            {featuredDisplaySrc ? (
+              <div className="mt-2 space-y-2 border border-[#66FCF1]/25 p-2 bg-[#0B0C10]/50">
+                <div className="flex max-h-64 w-full items-center justify-center overflow-hidden bg-[#0B0C10]">
+                  <Image
+                    src={featuredDisplaySrc}
+                    alt="Selected featured image"
+                    width={1200}
+                    height={800}
+                    unoptimized
+                    className="h-auto max-h-64 w-full object-contain"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={clearFeaturedImage}
+                  className="rounded-none border border-[#66FCF1]/45 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[#C5C6C7] hover:border-red-400/60 hover:text-red-200"
+                >
+                  Remove featured image
+                </button>
               </div>
             ) : null}
             {uploadingImage ? (
               <p className="text-xs text-[#66FCF1]">Uploading and generating variants...</p>
-            ) : form.imageUrl ? (
-              <p className="text-xs text-[#66FCF1]">
-                Featured image uploaded. Thumbnail generated automatically.
-              </p>
             ) : null}
           </label>
         </div>

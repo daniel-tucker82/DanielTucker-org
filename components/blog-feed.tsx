@@ -55,17 +55,19 @@ export function BlogFeed({ posts }: { posts: BlogPost[] }) {
               key={post.id}
               className="border border-[#66FCF1]/25 bg-[#1F2833]/35 rounded-none overflow-hidden transition-colors hover:bg-[#1d2630]"
             >
-              <div className="w-full border-b border-[#66FCF1]/25 bg-[#0B0C10]">
-                <Image
-                  src={post.imageUrl}
-                  alt={post.title}
-                  width={0}
-                  height={0}
-                  unoptimized
-                  className="h-auto w-full contrast-125 opacity-95"
-                  sizes="(max-width: 768px) 100vw, 1024px"
-                />
-              </div>
+              {post.imageUrl.trim() ? (
+                <div className="w-full border-b border-[#66FCF1]/25 bg-[#0B0C10]">
+                  <Image
+                    src={post.imageUrl}
+                    alt={post.title}
+                    width={0}
+                    height={0}
+                    unoptimized
+                    className="h-auto w-full contrast-125 opacity-95"
+                    sizes="(max-width: 768px) 100vw, 1024px"
+                  />
+                </div>
+              ) : null}
               <div className="space-y-4 p-6">
                 <div className="flex items-center justify-between gap-3">
                   <div>

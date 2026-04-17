@@ -3,6 +3,9 @@ import sharp from "sharp";
 import { NextRequest, NextResponse } from "next/server";
 import { isCurrentUserApprovedAdmin } from "@/lib/admin-auth";
 
+/** Sharp requires Node; avoid any accidental Edge bundle. */
+export const runtime = "nodejs";
+
 function slugifyFileName(name: string) {
   return name
     .toLowerCase()
@@ -18,41 +21,65 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
   }
 
+  const blobToken = process.env.BLOB_READ_WRITE_TOKEN?.trim();
+  if (!blobToken) {
+    return NextResponse.json(
+      {
+        error:
+          "BLOB_READ_WRITE_TOKEN is missing. In Vercel → Project → Settings → Environment Variables, ensure it is set for Production (and redeploy).",
+      },
+      { status: 503 },
+    );
+  }
+
   const data = await req.formData();
   const file = data.get("file");
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "File is required." }, { status: 400 });
   }
 
-  const arrayBuffer = await file.arrayBuffer();
-  const originalBuffer = Buffer.from(arrayBuffer);
-  const baseName = slugifyFileName(file.name) || "blog-image";
-  const stamp = Date.now();
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const originalBuffer = Buffer.from(arrayBuffer);
+    const baseName = slugifyFileName(file.name) || "blog-image";
+    const stamp = Date.now();
 
-  const largeBuffer = await sharp(originalBuffer)
-    .resize({ width: 1600, height: 1000, fit: "inside", withoutEnlargement: true })
-    .webp({ quality: 86 })
-    .toBuffer();
+    const largeBuffer = await sharp(originalBuffer)
+      .resize({ width: 1600, height: 1000, fit: "inside", withoutEnlargement: true })
+      .webp({ quality: 86 })
+      .toBuffer();
 
-  const thumbBuffer = await sharp(originalBuffer)
-    .resize({ width: 480, height: 320, fit: "cover" })
-    .webp({ quality: 82 })
-    .toBuffer();
+    const thumbBuffer = await sharp(originalBuffer)
+      .resize({ width: 480, height: 320, fit: "cover" })
+      .webp({ quality: 82 })
+      .toBuffer();
 
-  const largeBlob = await put(`blog/${stamp}-${baseName}-large.webp`, largeBuffer, {
-    access: "public",
-    contentType: "image/webp",
-    addRandomSuffix: false,
-  });
+    const putOpts = {
+      access: "public" as const,
+      contentType: "image/webp",
+      addRandomSuffix: false,
+      token: blobToken,
+    };
 
-  const thumbBlob = await put(`blog/${stamp}-${baseName}-thumb.webp`, thumbBuffer, {
-    access: "public",
-    contentType: "image/webp",
-    addRandomSuffix: false,
-  });
+    const largeBlob = await put(`blog/${stamp}-${baseName}-large.webp`, largeBuffer, putOpts);
 
-  return NextResponse.json({
-    imageUrl: largeBlob.url,
-    thumbnailUrl: thumbBlob.url,
-  });
+    const thumbBlob = await put(`blog/${stamp}-${baseName}-thumb.webp`, thumbBuffer, putOpts);
+
+    return NextResponse.json({
+      imageUrl: largeBlob.url,
+      thumbnailUrl: thumbBlob.url,
+    });
+  } catch (err) {
+    console.error("blog-images upload failed", err);
+    const message =
+      err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json(
+      {
+        error:
+          "Could not process or upload the image. Try a JPEG or PNG under a few MB. If this persists, check Vercel function logs.",
+        detail: process.env.NODE_ENV === "development" ? message : undefined,
+      },
+      { status: 500 },
+    );
+  }
 }

@@ -36,17 +36,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         ) : null}
       </section>
 
-      <div className="w-full overflow-hidden border border-[#66FCF1]/25 bg-[#0B0C10]">
-        <Image
-          src={post.imageUrl}
-          alt={post.title}
-          width={0}
-          height={0}
-          unoptimized
-          className="h-auto w-full contrast-125 opacity-95"
-          sizes="100vw"
-        />
-      </div>
+      {post.imageUrl.trim() ? (
+        <div className="w-full overflow-hidden border border-[#66FCF1]/25 bg-[#0B0C10]">
+          <Image
+            src={post.imageUrl}
+            alt={post.title}
+            width={0}
+            height={0}
+            unoptimized
+            className="h-auto w-full contrast-125 opacity-95"
+            sizes="100vw"
+          />
+        </div>
+      ) : null}
 
       <section className="panel-surface rounded-none p-8">
         <p className="mb-6 text-[#C5C6C7]">{post.excerpt}</p>

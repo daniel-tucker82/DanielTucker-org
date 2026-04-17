@@ -19,7 +19,8 @@ export type BlogPostInput = {
   subtitle?: string;
   slug: string;
   excerpt: string;
-  imageUrl: string;
+  /** Empty string = no featured image */
+  imageUrl?: string;
   thumbnailUrl?: string;
   category: string;
   tags?: string[];
