@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CircuitBoard } from "lucide-react";
-import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -58,16 +58,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                   }}
                 />
               </div>
-            ) : (
-              <SignInButton mode="redirect" fallbackRedirectUrl="/admin">
-                <button
-                  type="button"
-                  className="rounded-none border border-[#66FCF1] px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] text-[#66FCF1] transition-colors hover:bg-[#66FCF1] hover:text-[#0B0C10]"
-                >
-                  Sign In
-                </button>
-              </SignInButton>
-            )}
+            ) : null}
           </div>
         </div>
       </header>
