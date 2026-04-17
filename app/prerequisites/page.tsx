@@ -6,61 +6,61 @@ export default function PrerequisitesPage() {
       number: "1",
       title: "Executive Sponsorship & Direct Access",
       blurb:
-        "I report directly to the primary decision-maker—the CEO, COO, or Founder. We do not use intermediaries.",
+        "I report directly to the primary decision-maker. We do not use intermediaries.",
       why:
         "To ensure findings aren't diluted and decisions are made in real-time.",
       requirement:
-        "A guaranteed 15-minute weekly checkpoint to align our findings with your vision and clear high-level blockers immediately.",
+        "An initial consultation on Day 1, and a guaranteed 15-minute weekly checkpoint to align my findings with your vision or clear high-level blockers, immediately.",
     },
     {
       number: "2",
-      title: "Total Environmental Transparency",
+      title: "Total Transparency",
       blurb:
-        "I need the unfiltered truth of how your company actually functions. I’m not here to read polished weekly status reports; I’m here to see the work in motion.",
+        "I require the unfiltered truth of how your company actually functions. I’m not interested in polished weekly status reports or your best investor sales pitch.",
       why:
-        "To identify the \"hidden\" bottlenecks that don't make it into the official slide decks.",
+        "Valuable improvements only come from addressing real, unfiltered problems. The faster I can uncover the real issues, the more effective the engagement will be.",
       requirement:
-        "Read-only access to your source-of-truth tools (Jira, Linear, Asana), communication hubs (Slack, Teams), and documentation (Notion, Confluence).",
+        "Read-only access to your source-of-truth tools (Jira, Linear, Asana), communication hubs (Slack, Teams), and documentation (Notion, Confluence). I am willing to sign an NDA if necessary.",
     },
     {
       number: "3",
       title: "The Internal Mandate (Cultural Alignment)",
       blurb:
-        "Before Day 1, a company-wide announcement must be made to the relevant teams.",
+        "On or before day 1, the relevant teams and people must be made aware of my presence and role, and asked to give their full cooperation.",
       why:
-        "So the team understands I am a temporary resource here to solve their bottlenecks, not an auditor looking for someone to blame.",
+        "So the team understands I am a temporary resource here to improve their quality of life, not an auditor looking for someone to blame.",
       requirement:
         "A clear internal message from leadership stating that I have your full backing to observe, interview, and identify gaps without judgment.",
     },
     {
       number: "4",
-      title: "Authority to Prototype (The Sandbox)",
+      title: "Authority to Adjust",
       blurb:
-        "By Week 4, my goal is to deliver a functional Proof of Concept, not just a PDF.",
+        "By Week 4, my goal is to have done some early-stage implementation of real processes or tools to improve productivity, but this will only work in such a short timeframe if we aren't held back by change resistance or inertia.",
       why:
-        "To prove that the recommended fix actually works in your specific environment.",
+        "To ensure the recommended fix actually works in your specific environment.",
       requirement:
-        "Access to—and permission to use—your technical sandbox or low-code environments (e.g., Power BI, Zapier, or a test Project Board) where I can build \"hacked but functional\" fixes in a safe, isolated space.",
+        "Access to operational processes and tools, including low- or no-code tools or sandbox environments where I can build \"functional\" tools in a safe space.",
     },
     {
       number: "5",
       title: "Decisive Response Velocity",
       blurb:
-        "A 4-week engagement lives or dies on the speed of information. We are trading bureaucracy for velocity.",
+        "A 4-week engagement lives or dies on the speed of information. Response times measured in hours, rather than seconds or minutes, will severely limit the value I can deliver.",
       why:
-        "Stalling for three days on a simple login or a \"Why do we do it this way?\" question kills the momentum of a short-term pilot.",
+        "Stalling for three days on a simple login or a \"Why do we do it this way?\" question kills the momentum of a short-term pilot. We both want real value, delivered quickly. I will also do my best to avoid being too disruptive to your actual operations.",
       requirement:
-        "A commitment that questions regarding logins, process history, or strategic objectives are addressed within 24 hours.",
+        "A commitment that the organisation will endeavour to respond to questions or requests for information/access rapidly. A point of contact who I can contact to \"encourage action\" if I run into roadblocks.",
     },
     {
       number: "6",
       title: "The Integrity Pact (The Ugly Truth)",
       blurb:
-        "I provide the objective reality of your operations. This often involves highlighting \"misguided decisions\" or uncomfortable process gaps.",
+        "I provide the objective reality of your operations. This may involves shining a light on some uncomfortable truths.",
       why:
-        "If the findings are sugar-coated to protect egos, the ROI of the engagement drops to zero.",
+        "If the findings are sugar-coated to the point of diluting the message, the ROI of the engagement drops dramatically.",
       requirement:
-        "An agreement that we prioritize business objectives over organizational politics. I provide the \"ugly truth,\" and we focus entirely on the solution.",
+        "An agreement that we prioritize business objectives over organizational politics. I provide the \"ugly truth,\" and we focus entirely on the solution. Having said that, I can still be respectful and professional, and know how to deliver bad news in a palletable way.",
     },
   ];
 
@@ -78,13 +78,8 @@ export default function PrerequisitesPage() {
             Ground Running.
           </h1>
 
-          <div className="relative mt-10 grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+          <div className="relative mt-10 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-8">
-              <p className="text-[#C5C6C7] text-lg md:text-xl leading-relaxed">
-                This page acts as your &quot;Rules of Engagement.&quot; It moves you from being
-                a &quot;visitor&quot; to an integrated specialist by removing the friction that
-                usually kills 4-week projects.
-              </p>
               <p className="mt-6 text-[#C5C6C7] text-lg md:text-xl leading-relaxed">
                 4 weeks is a tight window to move from chaos to clarity. To ensure we
                 bypass standard administrative lag and focus entirely on delivery, the

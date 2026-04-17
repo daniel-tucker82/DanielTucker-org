@@ -1,6 +1,6 @@
 "use client";
 
-import Quill from "quill";
+import type Quill from "quill";
 import { useEffect, useRef } from "react";
 
 type QuillEditorProps = {
@@ -10,27 +10,45 @@ type QuillEditorProps = {
 
 export function QuillEditor({ value, onChange }: QuillEditorProps) {
   const rootRef = useRef<HTMLDivElement>(null);
+  // Quill touches `document` at module-init time, so we must only load it
+  // in the browser (inside `useEffect`).
   const quillRef = useRef<Quill | null>(null);
 
   useEffect(() => {
     if (!rootRef.current || quillRef.current) return;
-    const quill = new Quill(rootRef.current, {
-      theme: "snow",
-      modules: {
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ["bold", "italic", "underline", "strike"],
-          [{ list: "ordered" }, { list: "bullet" }],
-          ["blockquote", "code-block"],
-          ["link", "image"],
-          [{ align: [] }, { color: [] }, { background: [] }],
-          ["clean"],
-        ],
-      },
-    });
-    quill.clipboard.dangerouslyPasteHTML(value || "<p></p>");
-    quill.on("text-change", () => onChange(quill.root.innerHTML));
-    quillRef.current = quill;
+
+    let cancelled = false;
+    (async () => {
+      const mod = (await import("quill")) as typeof import("quill");
+      const QuillCtor = (mod.default ?? mod) as unknown as new (
+        container: Element,
+        options: unknown,
+      ) => Quill;
+      if (cancelled || !rootRef.current) return;
+
+      const quill = new QuillCtor(rootRef.current, {
+        theme: "snow",
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, false] }],
+            ["bold", "italic", "underline", "strike"],
+            [{ list: "ordered" }, { list: "bullet" }],
+            ["blockquote", "code-block"],
+            ["link", "image"],
+            [{ align: [] }, { color: [] }, { background: [] }],
+            ["clean"],
+          ],
+        },
+      } as unknown);
+
+      quill.clipboard.dangerouslyPasteHTML(value || "<p></p>");
+      quill.on("text-change", () => onChange(quill.root.innerHTML));
+      quillRef.current = quill;
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [onChange, value]);
 
   useEffect(() => {
