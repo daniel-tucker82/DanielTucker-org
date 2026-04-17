@@ -39,15 +39,6 @@ export default function ApproachPage() {
 
   return (
     <div className="relative">
-      {/* Hide the default <details> marker so the cards match the reference design */}
-      <style>{`
-        details summary::-webkit-details-marker {
-          display: none;
-        }
-        details summary {
-          list-style: none;
-        }
-      `}</style>
 
       {/* Blueprint overlay */}
       <div
@@ -76,27 +67,26 @@ export default function ApproachPage() {
 
       <section className="max-w-[1920px] mx-auto px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-          {sections.map((section, index) => (
-            <details
+          {sections.map((section) => (
+            <article
               key={section.heading}
-              open={index === 0}
-              className={`bg-[#171d25] border border-white/5 p-12 flex flex-col justify-between min-h-[400px] hover:bg-[#1f1f24] transition-colors group rounded-none ${
+              className={`bg-[#171d25] border border-white/5 p-12 flex flex-col min-h-[400px] hover:bg-[#1f1f24] transition-colors group rounded-none ${
                 section.spanTwoOnLg ? "lg:col-span-2" : ""
               }`}
             >
-              <summary className="flex flex-col cursor-pointer select-none">
+              <div className="flex flex-col">
                 <span className="text-[#66FCF1] mb-12 block">{section.icon}</span>
                 <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">
                   {section.heading}
                 </h3>
-              </summary>
+              </div>
 
-              <div className="mt-6 border-t border-[#66FCF1]/20 pt-6">
+              <div className="mt-4 border-t border-[#66FCF1]/20 pt-6">
                 <p className="text-[#C5C6C7] leading-relaxed text-lg">
                   {section.body}
                 </p>
               </div>
-            </details>
+            </article>
           ))}
         </div>
       </section>

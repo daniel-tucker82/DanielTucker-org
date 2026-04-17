@@ -23,16 +23,16 @@ export default function ProfilePage() {
               </h1>
             </div>
 
-            <div className="col-span-12 lg:col-span-4 relative">
+            <div className="col-span-12 lg:col-span-4 relative z-10">
               <div className="absolute -top-4 -left-4 w-full h-full border border-[#66FCF1]/20" />
-              <div className="relative aspect-[4/5] bg-[#1F2833] border border-[#66FCF1]/30 overflow-hidden">
+              <div className="relative aspect-[4/5] border border-[#66FCF1]/30 overflow-hidden bg-transparent">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZkaaauSlXp4dtB4p__xbn6SirHvxIAb2P4qeBl2j9ro0c9MHSTb9I5ggvfoChT8MyhgW9UKXG9HCAtvqJd0Hle4Kxo2HCstMZracfSZNRP4xcAp_LcXb9GLS4v4sUFzEZwJBkuNIqfSKAOnidq79H3I1x8mL9ltuw5Fpwh7OyLqYCdRfkK4c5RWpC344pe3oKwPBl_9KNjH6Uw5NVXddDP0dqn9B4-SiaY9JuIL4zTrNUrK88lE8MGYNzFyt0gq4OG3hM8AunW3Q"
+                  src="/Profile%20Image%201a.jpg"
                   alt="Daniel Tucker"
                   fill
                   priority
                   unoptimized
-                  className="object-cover grayscale brightness-90 contrast-125"
+                  className="object-cover"
                 />
               </div>
             </div>
