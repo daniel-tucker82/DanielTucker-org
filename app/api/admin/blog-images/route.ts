@@ -2,6 +2,7 @@ import { put } from "@vercel/blob";
 import sharp from "sharp";
 import { NextRequest, NextResponse } from "next/server";
 import { isCurrentUserApprovedAdmin } from "@/lib/admin-auth";
+import { getBlogBlobAccess } from "@/lib/blog-blob-access";
 
 /** Sharp requires Node; avoid any accidental Edge bundle. */
 export const runtime = "nodejs";
@@ -54,8 +55,9 @@ export async function POST(req: NextRequest) {
       .webp({ quality: 82 })
       .toBuffer();
 
+    const access = getBlogBlobAccess();
     const putOpts = {
-      access: "public" as const,
+      access,
       contentType: "image/webp",
       addRandomSuffix: false,
       token: blobToken,
@@ -65,27 +67,31 @@ export async function POST(req: NextRequest) {
 
     const thumbBlob = await put(`blog/${stamp}-${baseName}-thumb.webp`, thumbBuffer, putOpts);
 
+    const imageUrl =
+      access === "private"
+        ? `/api/blog/blob?p=${encodeURIComponent(largeBlob.pathname)}`
+        : largeBlob.url;
+    const thumbnailUrl =
+      access === "private"
+        ? `/api/blog/blob?p=${encodeURIComponent(thumbBlob.pathname)}`
+        : thumbBlob.url;
+
     return NextResponse.json({
-      imageUrl: largeBlob.url,
-      thumbnailUrl: thumbBlob.url,
+      imageUrl,
+      thumbnailUrl,
     });
   } catch (err) {
     console.error("blog-images upload failed", err);
     const message = err instanceof Error ? err.message : "Unknown error";
-    const lower = message.toLowerCase();
-    const detail =
-      lower.includes("token")
-        ? "Blob token rejected or invalid for this store."
-        : lower.includes("store")
-          ? "Blob store not found or not accessible."
-          : lower.includes("sharp")
-            ? "Image processing failed in Sharp."
-            : message;
     return NextResponse.json(
       {
         error:
           "Could not process or upload the image. Try a JPEG or PNG under a few MB. If this persists, check Vercel function logs.",
-        detail,
+        detail: message,
+        hint:
+          getBlogBlobAccess() === "public"
+            ? "If your Vercel Blob store is Private, set BLOG_BLOB_ACCESS=private for Production (must match the store) and redeploy."
+            : "If your Vercel Blob store is Public, remove BLOG_BLOB_ACCESS or set BLOG_BLOB_ACCESS=public and redeploy.",
       },
       { status: 500 },
     );

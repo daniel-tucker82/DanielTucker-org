@@ -204,6 +204,7 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
       thumbnailUrl?: string;
       error?: string;
       detail?: string;
+      hint?: string;
     };
     if (!response.ok) {
       const hint =
@@ -211,7 +212,10 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
         (response.status === 503
           ? "Image upload failed: Vercel Blob is not configured for this environment. Add BLOB_READ_WRITE_TOKEN to .env.local (e.g. vercel env pull) and restart dev, then try again."
           : "Image upload failed.");
-      setError(payload.detail ? `${hint} (${payload.detail})` : hint);
+      const parts = [hint];
+      if (payload.detail) parts.push(`(${payload.detail})`);
+      if (payload.hint) parts.push(payload.hint);
+      setError(parts.join(" "));
       // Keep blob preview + file input so a failed upload (e.g. missing token in dev) does not look like "remove" was clicked.
       setUploadingImage(false);
       return;
