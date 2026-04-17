@@ -1,10 +1,52 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
   const [helpText, setHelpText] = useState("");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          company,
+          email,
+          message: helpText,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setName("");
+      setCompany("");
+      setEmail("");
+      setHelpText("");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Check your connection and try again.");
+    }
+  }
 
   return (
     <div className="space-y-14">
@@ -47,59 +89,106 @@ export default function ContactPage() {
           </h2>
         </div>
 
-        <form className="grid gap-5 px-6 py-7 sm:grid-cols-2 sm:px-8 sm:py-8">
-          <label className="space-y-2 text-sm">
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
-              Name
-            </span>
-            <input
-              type="text"
-              className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
-            />
-          </label>
-          <label className="space-y-2 text-sm">
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
-              Company
-            </span>
-            <input
-              type="text"
-              className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
-            />
-          </label>
-          <label className="space-y-2 text-sm sm:col-span-2">
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
-              Email
-            </span>
-            <input
-              type="email"
-              className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
-            />
-          </label>
-          <label className="space-y-2 text-sm sm:col-span-2">
-            <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
-              Describe how I might be able to help
-            </span>
-            <textarea
-              maxLength={5000}
-              rows={8}
-              value={helpText}
-              onChange={(event) => setHelpText(event.target.value)}
-              placeholder="Share your current challenges, goals, and what support would be most valuable."
-              className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
-            />
-            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#C5C6C7]/65">
-              {helpText.length} / 5000
+        {status === "success" ? (
+          <div className="px-6 py-10 sm:px-8">
+            <p className="text-[#C5C6C7] text-lg mb-4">Thanks — your message was sent.</p>
+            <p className="text-[#C5C6C7]/80 text-sm mb-6">
+              I will get back to you as soon as I can.
             </p>
-          </label>
-          <div className="sm:col-span-2 pt-1">
             <button
-              type="submit"
-              className="rounded-none border border-[#66FCF1] bg-[#0B0C10] px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-[#66FCF1] transition-colors hover:bg-[#66FCF1] hover:text-[#0B0C10]"
+              type="button"
+              onClick={() => setStatus("idle")}
+              className="rounded-none border border-[#66FCF1]/60 bg-[#0B0C10] px-5 py-2.5 font-mono text-xs uppercase tracking-[0.2em] text-[#66FCF1] transition-colors hover:border-[#66FCF1] hover:bg-[#66FCF1]/10"
             >
-              Contact Daniel
+              Send another message
             </button>
           </div>
-        </form>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="grid gap-5 px-6 py-7 sm:grid-cols-2 sm:px-8 sm:py-8"
+          >
+            {status === "error" && errorMessage ? (
+              <div
+                className="sm:col-span-2 rounded-none border border-red-500/50 bg-red-950/30 px-4 py-3 text-sm text-red-200"
+                role="alert"
+              >
+                {errorMessage}
+              </div>
+            ) : null}
+            <label className="space-y-2 text-sm">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
+                Name
+              </span>
+              <input
+                type="text"
+                name="name"
+                required
+                autoComplete="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                maxLength={200}
+                className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
+              />
+            </label>
+            <label className="space-y-2 text-sm">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
+                Company
+              </span>
+              <input
+                type="text"
+                name="company"
+                autoComplete="organization"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                maxLength={200}
+                className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
+              />
+            </label>
+            <label className="space-y-2 text-sm sm:col-span-2">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
+                Email
+              </span>
+              <input
+                type="email"
+                name="email"
+                required
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={320}
+                className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
+              />
+            </label>
+            <label className="space-y-2 text-sm sm:col-span-2">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#66FCF1]">
+                Describe how I might be able to help
+              </span>
+              <textarea
+                name="message"
+                required
+                maxLength={5000}
+                rows={8}
+                value={helpText}
+                onChange={(event) => setHelpText(event.target.value)}
+                placeholder="Share your current challenges, goals, and what support would be most valuable."
+                className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2.5 text-[#C5C6C7] outline-none transition-colors placeholder:text-[#C5C6C7]/45 focus:border-[#66FCF1] focus:bg-[#0F1117]"
+              />
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#C5C6C7]/65">
+                {helpText.length} / 5000
+              </p>
+            </label>
+            <div className="sm:col-span-2 pt-1">
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="rounded-none border border-[#66FCF1] bg-[#0B0C10] px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-[#66FCF1] transition-colors hover:bg-[#66FCF1] hover:text-[#0B0C10] disabled:pointer-events-none disabled:opacity-50"
+              >
+                {status === "sending" ? "Sending…" : "Contact Daniel"}
+              </button>
+            </div>
+          </form>
+        )}
       </section>
     </div>
   );
