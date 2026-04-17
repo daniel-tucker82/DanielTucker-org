@@ -1,5 +1,7 @@
+import { get, put } from "@vercel/blob";
 import { promises as fs } from "fs";
 import path from "path";
+import { getBlogBlobAccess } from "@/lib/blog-blob-access";
 import { BlogPost, BlogPostInput } from "@/types/blog";
 
 // Vercel serverless filesystem is read-only except /tmp.
@@ -8,20 +10,13 @@ const dataDir =
     ? path.join("/tmp", "danieltucker-data")
     : path.join(process.cwd(), "data");
 const blogFile = path.join(dataDir, "blog-posts.json");
+const blogBlobPath = process.env.BLOG_POSTS_BLOB_PATH?.trim() || "blog/blog-posts.json";
 
-async function ensureBlogFile() {
-  await fs.mkdir(dataDir, { recursive: true });
-  try {
-    await fs.access(blogFile);
-  } catch {
-    await fs.writeFile(blogFile, "[]", "utf8");
-  }
+function getBlobToken() {
+  return process.env.BLOB_READ_WRITE_TOKEN?.trim() || "";
 }
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
-  await ensureBlogFile();
-  const file = await fs.readFile(blogFile, "utf8");
-  const parsed = JSON.parse(file) as Array<Partial<BlogPost>>;
+function normalizePosts(parsed: Array<Partial<BlogPost>>): BlogPost[] {
   const normalized: BlogPost[] = parsed.map((post) => {
     const title = (post.title ?? "").trim();
     const slug =
@@ -55,7 +50,82 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
   return normalized.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 }
 
+async function readBlogPostsFromBlob(): Promise<BlogPost[] | null> {
+  const token = getBlobToken();
+  if (!token) {
+    return null;
+  }
+
+  try {
+    const blob = await get(blogBlobPath, {
+      access: getBlogBlobAccess(),
+      token,
+      useCache: false,
+    });
+
+    if (!blob || !blob.stream) {
+      return [];
+    }
+
+    const text = await new Response(blob.stream).text();
+    if (!text.trim()) {
+      return [];
+    }
+
+    const parsed = JSON.parse(text) as Array<Partial<BlogPost>>;
+    return normalizePosts(parsed);
+  } catch (err) {
+    const message = err instanceof Error ? err.message.toLowerCase() : "";
+    if (message.includes("404")) {
+      return [];
+    }
+    throw err;
+  }
+}
+
+async function writeBlogPostsToBlob(posts: BlogPost[]): Promise<boolean> {
+  const token = getBlobToken();
+  if (!token) {
+    return false;
+  }
+
+  await put(blogBlobPath, JSON.stringify(posts, null, 2), {
+    access: getBlogBlobAccess(),
+    token,
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+  });
+  return true;
+}
+
+async function ensureBlogFile() {
+  await fs.mkdir(dataDir, { recursive: true });
+  try {
+    await fs.access(blogFile);
+  } catch {
+    await fs.writeFile(blogFile, "[]", "utf8");
+  }
+}
+
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  const fromBlob = await readBlogPostsFromBlob();
+  if (fromBlob) {
+    return fromBlob;
+  }
+
+  await ensureBlogFile();
+  const file = await fs.readFile(blogFile, "utf8");
+  const parsed = JSON.parse(file) as Array<Partial<BlogPost>>;
+  return normalizePosts(parsed);
+}
+
 async function writeBlogPosts(posts: BlogPost[]) {
+  const wroteToBlob = await writeBlogPostsToBlob(posts);
+  if (wroteToBlob) {
+    return;
+  }
+
   await ensureBlogFile();
   await fs.writeFile(blogFile, JSON.stringify(posts, null, 2), "utf8");
 }

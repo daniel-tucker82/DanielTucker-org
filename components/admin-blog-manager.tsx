@@ -270,8 +270,26 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
               <option value="__new__">+ Create new category</option>
             </select>
           </label>
+          <label className="space-y-2">
+            <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#66FCF1]">
+              Status
+            </span>
+            <select
+              value={form.status}
+              onChange={(event) =>
+                setForm((prev) => ({
+                  ...prev,
+                  status: event.target.value as FormState["status"],
+                }))
+              }
+              className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2 text-[#C5C6C7] outline-none focus:border-[#66FCF1]"
+            >
+              <option value="DRAFT">Draft</option>
+              <option value="PUBLISHED">Published</option>
+            </select>
+          </label>
           {form.category === "__new__" ? (
-            <label className="space-y-2">
+            <label className="space-y-2 sm:col-span-2">
               <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#66FCF1]">
                 New Category
               </span>
@@ -283,26 +301,7 @@ export function AdminBlogManager({ initialPosts }: { initialPosts: BlogPost[] })
                 className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2 text-[#C5C6C7] outline-none focus:border-[#66FCF1]"
               />
             </label>
-          ) : (
-            <label className="space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#66FCF1]">
-                Status
-              </span>
-              <select
-                value={form.status}
-                onChange={(event) =>
-                  setForm((prev) => ({
-                    ...prev,
-                    status: event.target.value as FormState["status"],
-                  }))
-                }
-                className="w-full rounded-none border border-[#66FCF1]/45 bg-[#0B0C10] px-3 py-2 text-[#C5C6C7] outline-none focus:border-[#66FCF1]"
-              >
-                <option value="DRAFT">Draft</option>
-                <option value="PUBLISHED">Published</option>
-              </select>
-            </label>
-          )}
+          ) : null}
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
