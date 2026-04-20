@@ -27,11 +27,83 @@ const recommendations = [
   },
   {
     name: "Jason Longville",
-    title: "Change Manager",
+    title: "Change Leader",
     quote:
       "He is analytical but creative, determined but considered, pursuing best for business outcomes over local agendas... He encourages an open environment of honesty and accountability, leading by example rather than positional authority, but tackles the hard conversations when needed. I always appreciate his perspective on challenging issues, as he brings high IQ & EQ to the topic at hand. He has boundless energy and enthusiasm for making things better, and this has a positive ripple effect on the teams he works with.",
     avatarUrl:
       "https://media.licdn.com/dms/image/v2/D4E03AQED6ZAB5pOhVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670543384277?e=1778112000&v=beta&t=micHrDYG2D9iqhvH-vCUzvmpyfSkPGBEUjDIerghPlQ",
+  },
+  {
+    name: "Henry Kwong",
+    title: "Delivery Manager",
+    quote:
+      "He continuously strives to look for ways to improve ways of working (including his own), converting his strong natural sense of \"work smarter, not harder\" into concrete outcomes that are usable and highly appreciated by the teams.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C4E03AQFamWRRNNQetA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516307098282?e=1778112000&v=beta&t=Y3xqwRrerzrAlDYznBe7Ia6408eEnb50imMj3wr8O9U",
+  },
+  {
+    name: "Michael Hitchen",
+    title: "Program & IT Portfolio Leader",
+    quote:
+      "Dan is able to operate at a high portfolio level and then dive in to the macro team level to assist when needed. He identifies issues and proposes win-win solutions to resolve them, then manages those solutions through delivery on the small and large scale. Dan has a genuine thirst for knowledge and passion for getting to the heart of an issue.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C5603AQF4uMpphnGRLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1610344545816?e=1778112000&v=beta&t=odP8pVVibZoxCfZDjXDtv9QfeX7kVDPrbGFZ-OzjUMk",
+  },
+  {
+    name: "Duncan O'Brien",
+    title: "Delivery and Project Manager",
+    quote:
+      "He is a natural leader and problem solver, and his dedication to process development and continuous improvement has left a lasting impression. I highly recommend Daniel to anyone seeking a leader who combines strategic vision, technical expertise, and a genuine commitment to team success.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C4D03AQErkCM4gGke7g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517617896077?e=1778112000&v=beta&t=IoXujdlO4s4whjvIrgyMLKyy9gOh-yFfXZgX0gFLaBM",
+  },
+  {
+    name: "Viviana Capote",
+    title: "Software Engineer",
+    quote:
+      "Daniel Tucker is by far one of the best project manager's I have had the pleasure to work with. He is energetic, pro-active, and takes the time to understand the needs of the team and works with them to set expectations and manage the project accordingly.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C5603AQHRNGWjp06GpQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1603000341803?e=1778112000&v=beta&t=uaEQkej-rEcMVd2BPNxYaGRkMrkLPq5spktaQo6zseg",
+  },
+  {
+    name: "Shani de Leeuw",
+    title: "Project Engineer",
+    quote:
+      "When I think of Daniel the phrase \"gets things done\" comes to mind.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C5603AQFv434o_MewIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517524620485?e=1778112000&v=beta&t=3SKMzVrzuTVUhAC4xXFNQjav138i0lNvzVGEr11scbw",
+  },
+  {
+    name: "Matthew Roberts",
+    title: "Head of Engineering Operations",
+    quote:
+      "Dan has a natural flare for improving business practices, process and overall performance, as well as the ability to deliver complex projects, bids and business growth.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/D5603AQF251x6fkszng/profile-displayphoto-shrink_800_800/B56ZRaU9euG8Ac-/0/1736682233287?e=1778112000&v=beta&t=sj-djuiQBWUqlaWGKUu_6V1nsNgc3zdWC8ncbNUcos0",
+  },
+  {
+    name: "Meagan Hungerford",
+    title: "Engineering & Design Specialist",
+    quote:
+      "Time spent engaged with Dan was always informative, reflective and working with him on problems or talking through ideas ultimately helped shape the professional path that I would later follow.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/D5603AQG9FB-8ZJCRPg/profile-displayphoto-crop_800_800/B56ZrZg2csI0AI-/0/1764585860321?e=1778112000&v=beta&t=UDfptxMQphZlPzabHAa8PsBRdNkZZvJSOaVHHCAhKvY",
+  },
+  {
+    name: "Mike Rigby",
+    title: "Engineering Executive",
+    quote:
+      "Dan has a knack for identifying opportunities to introduce innovation into the workplace and simplifying historically complex activities... Dan takes the initiative to introduce new technologies and smarter ways of working in order to stream line processes, improve reporting, allow for better data interrogation and to reduce program costs through solutions that make it easier for project managers and engineers to focus on delivering quality solutions and outcomes.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/D5603AQH8WVCQeDYmQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696811142072?e=1778112000&v=beta&t=N6u2FE2Ns0IdGpazzEVUsIIuIwK1Mnel9-TdA7SZJ-k",
+  },
+  {
+    name: "Aaron Sirimanotham",
+    title: "Digital Projects Manager",
+    quote:
+      "Above all Daniel always strives for continuous improvement through innovation which sets him apart from others.",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C4E03AQHmUOzuPtcEsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517534925911?e=1778112000&v=beta&t=9AvRIHeyjGXl70LWcS3L7QacaHbpjEXhZ2ddV1OpuGM",
   },
 ];
 

@@ -78,18 +78,17 @@ export default async function Home() {
                 Success-Based Pilot
               </p>
               <h2 className="mt-5 text-5xl font-black tracking-tight text-white sm:text-6xl">
-                Success-Based Pilot: Zero Upfront Cost. Pay what the results are worth.
+                You decide what the results are worth, and pay that.
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-[#C5C6C7]">
-                The engagement model is intentionally high-trust: value is proven in
-                your operating rhythm first, then priced by impact. It is a confidence
-                model, not a discount.
+                The engagement model is intentionally high-trust: allow me to prove my value first, then 
+                you decide what it's worth. It is a confidence model, not a discount.
               </p>
               <button
                 type="button"
                 className="mt-8 inline-flex items-center gap-2 border border-[#66FCF1] bg-[#66FCF1] px-10 py-5 font-mono text-xs uppercase tracking-[0.2em] text-[#0B0C10] transition-colors hover:bg-transparent hover:text-[#66FCF1] rounded-none"
               >
-                Initiate Pilot
+                Apply now
                 <ArrowUpRight className="h-4 w-4" />
               </button>
             </div>
@@ -98,11 +97,10 @@ export default async function Home() {
                 <span className="mt-1 h-2.5 w-2.5 bg-[#66FCF1]" />
                 <div>
                   <h5 className="font-mono text-xs uppercase tracking-[0.2em] text-white">
-                    Open Infrastructure
+                    Green-field solutions
                   </h5>
                   <p className="mt-2 text-sm leading-relaxed text-[#C5C6C7]">
-                    No proprietary lock-ins. Systems are built so your team owns and
-                    controls the operating model.
+                    No "one size fits all" solutions. I tailor my approach and solutions to your specific needs.
                   </p>
                 </div>
               </div>
@@ -110,11 +108,10 @@ export default async function Home() {
                 <span className="mt-1 h-2.5 w-2.5 bg-[#66FCF1]" />
                 <div>
                   <h5 className="font-mono text-xs uppercase tracking-[0.2em] text-white">
-                    Privacy Obsession
+                    Discretion
                   </h5>
                   <p className="mt-2 text-sm leading-relaxed text-[#C5C6C7]">
-                    Strategy documentation and internal data handling are treated with
-                    strict confidentiality protocols.
+                    Information gathered is confidential. I will happily sign an NDA if required.
                   </p>
                 </div>
               </div>
@@ -122,11 +119,10 @@ export default async function Home() {
                 <span className="mt-1 h-2.5 w-2.5 bg-[#66FCF1]" />
                 <div>
                   <h5 className="font-mono text-xs uppercase tracking-[0.2em] text-white">
-                    High Precision
+                    Trust
                   </h5>
                   <p className="mt-2 text-sm leading-relaxed text-[#C5C6C7]">
-                    Recommendations are grounded in operational evidence, not generic
-                    playbooks.
+                    I trust that you, as the customer, will act in good faith and choose not to pay nothing "because you can".
                   </p>
                 </div>
               </div>

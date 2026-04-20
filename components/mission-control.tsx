@@ -52,7 +52,7 @@ const weekDetails: Record<string, WeekDetail[]> = {
   recovery: [
     {
       inputs:
-        "Current project plan, budget variance, timeline slips, stakeholder risk signals, and delivery constraints.",
+        "Current project plan and overview, risk registers, project reporting history, stakeholder interviews, and delivery constraints.",
       activities:
         "Run a recovery diagnostic, identify failure points, map dependencies, and establish a stabilisation baseline.",
       outcomes:
@@ -168,7 +168,7 @@ export function MissionControl() {
           Select Focus Area
         </h2>
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#66FCF1]/85">
-          What problem are you trying to solve?
+          What problem can I help you solve?
         </p>
       </div>
       <div className="grid gap-0 border border-[#66FCF1]/15 md:grid-cols-3">

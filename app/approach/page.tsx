@@ -1,4 +1,4 @@
-import { HardHat, ShieldAlert, Users, Zap, Building2 } from "lucide-react";
+import { HardHat, ShieldAlert, Users, Zap, Building2, EarIcon, DoorOpenIcon, BrainIcon, BookMinusIcon } from "lucide-react";
 
 type Section = {
   heading: string;
@@ -11,28 +11,42 @@ export default function ApproachPage() {
   const sections: Section[] = [
     {
       heading: "People First",
-      body: "Operational systems only work when people can actually run them. I design for adoption first, then optimize for scale. If the team cannot trust the process on Monday morning, it is not ready.",
+      body: "For the time being, the success company still depends on its people. \
+      I always seek to remember that people want respect and dignity at work. \
+      Start with those, and most people will work with you in good faith.",
       icon: <Users className="h-10 w-10" />,
     },
     {
-      heading: "No Fluff",
-      body: "No performative frameworks, no slideware theater, and no process for process sake. Every intervention must have a measurable operational purpose tied to decision speed, delivery quality, or execution reliability.",
-      icon: <ShieldAlert className="h-10 w-10" />,
+      heading: "Seek first to understand",
+      body: "A career of diverse and challenging roles has taught me how to \
+      get to the heart of issues. The questions aren't \
+      ground-breaking, but I can sense when I understand enough \
+      about a problem to start addressing its solution.",
+      icon: <EarIcon className="h-10 w-10" />,
     },
     {
-      heading: "Reality Over Theory",
-      body: "Elegant architecture means little if it breaks under daily pressure. I prioritize practical solutions that survive real constraints, messy handoffs, and imperfect data environments.",
-      icon: <Building2 className="h-10 w-10" />,
+      heading: "One- or two-way doors",
+      body: "Popularized by Steven Bartlett and Amazon, decisions that are low \
+      risk and reversible (two-way doors) should be made quickly without over-analyzing. \
+      High-risk, irreversible decisions should be made with care and consideration.",
+      icon: <DoorOpenIcon className="h-10 w-10" />,
     },
     {
-      heading: "Rapid Validation",
-      body: "We test quickly in live conditions, gather evidence, and iterate with intention. The goal is to reduce uncertainty early, avoid expensive rework, and move from assumptions to proof.",
-      icon: <Zap className="h-10 w-10" />,
+      heading: "You win, or you learn",
+      body: "It can be hard to trust our staff to work independently when every decision \
+      feels huge. Handing over responsibility either improves productivity now, or teaches \
+      through experience, improving productivity later.",
+      icon: <BrainIcon className="h-10 w-10" />,
     },
     {
-      heading: "Built to Last",
-      body: "The end state is operational independence. Teams should leave with clear ownership, repeatable routines, and systems that continue delivering value long after the engagement ends.",
-      icon: <HardHat className="h-10 w-10" />,
+      heading: "Ditch the Dogma",
+      body: "Out-of-the-box management methodologies can provide useful tools \
+      for delivering Projects, but projects don't fail because the project manager didn't \
+      follow Agile, PRINCE2, Six Sigma, Kanban or CCPM methodolgies to the letter. Every organisation \
+      is different, so their needs differ too. Rather than rigidly sticking to any one \
+      methodology, you should take from all of them, using things that are best suited to your \
+      needs, and leaving behind anything that is unnecessary or counter-productive.",
+      icon: <BookMinusIcon className="h-10 w-10" />,
       spanTwoOnLg: true,
     },
   ];
@@ -60,7 +74,7 @@ export default function ApproachPage() {
           </div>
 
           <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-tight mb-10">
-            Pragmatism Over Purity.
+            Pragmatic Innovation
           </h1>
         </div>
       </section>
