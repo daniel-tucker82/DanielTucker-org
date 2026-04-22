@@ -1,4 +1,4 @@
-import { HardHat, ShieldAlert, Users, Zap, Building2, EarIcon, DoorOpenIcon, BrainIcon, BookMinusIcon } from "lucide-react";
+import { HardHat, ShieldAlert, Users, Zap, Building2, EarIcon, DoorOpenIcon, BrainIcon, BookMinusIcon, CogIcon, HandshakeIcon, Clock10Icon } from "lucide-react";
 
 type Section = {
   heading: string;
@@ -20,8 +20,8 @@ export default function ApproachPage() {
       heading: "Seek first to understand",
       body: "A career of diverse and challenging roles has taught me how to \
       get to the heart of issues. The questions aren't \
-      ground-breaking, but I can sense when I understand enough \
-      about a problem to start addressing its solution.",
+      ground-breaking, but I have gotten very good at knowing when I've found the \
+      root cause of a problem, or if more digging is required.",
       icon: <EarIcon className="h-10 w-10" />,
     },
     {
@@ -48,6 +48,25 @@ export default function ApproachPage() {
       needs, and leaving behind anything that is unnecessary or counter-productive.",
       icon: <BookMinusIcon className="h-10 w-10" />,
       spanTwoOnLg: true,
+    },
+    {
+      heading: "Win-win",
+      body: "Changes that benefit one stakeholder but make life more difficult for another, are \
+      not sustainable. It is worth the effort to find innovative solutions that benefit all \
+      stakeholders and make work-life genuinely better for everyone involved.",
+      icon: <HandshakeIcon className="h-10 w-10" />,
+    },
+    {
+      heading: "If it's worth doing twice, it's worth never doing again.",
+      body: "One-off tasks that are not repeatable can be done manually, but tasks that are likely \
+      to be repeated, should be automated as much as possible.",
+      icon: <CogIcon className="h-10 w-10" />,
+    },
+    {
+      heading: "Long-term solutions over short-term fixes.",
+      body: "While short-term value may be achieved through quick fixes, these can lead to bigger \
+      issues in the long term. Improvements should be robust and sustainable to ensure long-term value.",
+      icon: <Clock10Icon className="h-10 w-10" />,
     },
   ];
 

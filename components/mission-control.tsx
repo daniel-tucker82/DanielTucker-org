@@ -16,30 +16,36 @@ const panels: Panel[] = [
     id: "recovery",
     title: "Project Recovery",
     subtitle:
-      "You have a high-stakes project that has gone off the rails. It is over budget, behind schedule, or stalled, and you need an objective and actionable roadmap to get it back on track.",
+      "You have a high-stakes project that isn't going to plan. It is over budget, \
+      behind schedule, or stalled, and you need an objective and actionable \
+      roadmap to get it back on track.",
     icon: AlertTriangle,
   },
   {
     id: "alignment",
     title: "Strategic Alignment",
     subtitle:
-      "Your leadership vision is strong, but you -as a leader - are spread too thin. The vision is not translating into clean delivery, and you cannot take your eyes off operations without drift.",
+      "Your vision is strong, but you - as a leader - are spread too thin. The \
+      vision is not translating into clean delivery, meaning you can't take your \
+      eyes off operations long enough to do your job.",
     icon: Radar,
   },
   {
     id: "velocity",
     title: "Operational Velocity",
     subtitle:
-      "Your teams are talented, but your operational tempo feels capped. You are working hard, yet no matter how hard you push, you cannot actually get your team to move faster.",
+      "Your teams are talented, but your operational tempo feels capped. You are \
+      working hard, yet no matter how hard you push, you cannot actually get your \
+      team to move faster. You need a clear plan to increase velocity.",
     icon: Gauge,
   },
 ];
 
 const missionMap = [
-  "Diagnosis",
-  "Observation",
-  "Prototyping",
-  "Roadmap",
+  "Define Problem",
+  "Identify Root Causes",
+  "Implement quick wins",
+  "Validate improvements and build roadmap",
 ];
 
 type WeekDetail = {
@@ -52,103 +58,151 @@ const weekDetails: Record<string, WeekDetail[]> = {
   recovery: [
     {
       inputs:
-        "Current project plan and overview, risk registers, project reporting history, stakeholder interviews, and delivery constraints.",
+        "Current project plan and overview, risk registers, project reporting history, \
+        access to stakeholders, and delivery constraints.",
       activities:
-        "Run a recovery diagnostic, identify failure points, map dependencies, and establish a stabilisation baseline.",
+        "Review project plans, reports and other documentation, interview internal \
+        project stakeholders, build understanding of project's intended outcomes and \
+        current context.",
       outcomes:
-        "Shared recovery truth, prioritised risk register, and a realistic week-by-week rescue sequence.",
+        "I clearly understand the project, its stakeholders, intended outcomes and the \
+        current difficulties it is facing.",
     },
     {
       inputs:
-        "Delivery observations, team handoff data, meeting cadence, and real-time execution bottlenecks.",
+        "Understanding project context, meeting cadence, project reports, access to \
+        project team.",
       activities:
-        "Observe project flow directly, isolate decision lag and queue buildup, and validate root-cause assumptions.",
+        "Observe project in execution, from attending routine and one-off meetings, \
+        to observing and interviewing project team members and 'spot checking' packets \
+        of work as they progress through your organisation's delivery processes.",
       outcomes:
-        "Clear picture of where momentum is lost and where intervention produces fastest schedule regain.",
+        "I understand the root cause of project issues, and have mapped these in a clear \
+        'current reality tree' diagram, annotated with points where injecting changes \
+        can lead to a desired future reality. Injections prioritised based on impact \
+        and ease of implementation.",
     },
     {
       inputs:
-        "Approved intervention hypotheses, available tooling, team capacity, and sponsor constraints.",
+        "Current and future reality trees and prioritised injections from week 2.",
       activities:
-        "Prototype recovery workflows, tighten communication loops, and test rapid governance changes in flight.",
+        "With leader's approval, implement the best value-to-effort injections from week \
+        2, ensuring changes are implemented sustainably and effectively.",
       outcomes:
-        "Working recovery mechanisms with early performance gains and reduced firefighting overhead.",
+        "Back-brief on implemented changes and expected outcomes.",
     },
     {
       inputs:
-        "Prototype performance data, remaining risks, leadership appetite, and scale requirements.",
+        "Prioritised list of injections from week 2, implmemented changes from week 3.",
       activities:
-        "Convert tested interventions into a full roadmap with owners, milestones, and escalation triggers.",
+        "Validate implememnted changes from week 3 to confirm that new current reality \
+        aligns with the desired future reality where applicable, adjust the current \
+        reality tree as required. Implment additional injections as required and develop \
+        a roadmap for implmementing any incomplete injedctions moving forward.",
       outcomes:
-        "Defensible recovery roadmap that leadership can execute with confidence after the pilot window.",
+        "Validated current and future reality trees, validated improvement from initial \
+        injections, roadmap for implementing remaining injections.",
     },
   ],
   alignment: [
     {
       inputs:
-        "Leadership intent, strategic objectives, org chart realities, and operating rhythm pain points.",
+        "Consultation with leadership, access to any strategic documentation, interviews \
+        with staff as required.",
       activities:
-        "Map strategy-to-operations disconnects and identify where leader attention is compensating for system gaps.",
+        "Understand straegic vision and blockers to achieving it, identify disconnects \
+        between vision and execution, and identify where leader attention is compensating \
+        for system gaps.",
       outcomes:
-        "Alignment baseline showing exactly why strategic intent is not landing in daily execution.",
+        "I understand the issues causing misalignment between vision and execution and have \
+        mapped observed issues to root causes in a causal diagram which is accepted by senior \
+        leadership.",
     },
     {
       inputs:
-        "Observed planning forums, team rituals, role clarity gaps, and cross-functional friction patterns.",
+        "Causal diagram from week 1, access to meetings and interviews with staff as required.",
       activities:
-        "Shadow execution pathways, review decision rights, and surface where accountability diffuses.",
+        "Confirm through observation or data analysis, the causal diagram from week 1, validating root \
+        causes of issues and identifying any additional contributing factors to add to the \
+        diagram. Identification of improvements which can be injected into the causal diagram \
+        to shift current reality towards desired future reality. Prioritisation of injections \
+        based on impact and ease of implementation.",
       outcomes:
-        "Operational truth model of leadership drag points and fragile process handoffs.",
+        "Accurate current reality tree and prioritised list of improvements, future reality \
+        tree, leader endorsement to proceed to early implementation of quick wins.",
     },
     {
       inputs:
-        "Target-state leadership model, pilot teams, and candidate process interventions.",
+        "Current and future reality trees and prioritised injections from week 2.",
       activities:
-        "Prototype lean operating cadences, simplify reporting paths, and test ownership boundary resets.",
-      outcomes:
-        "Early strategic alignment loops that reduce executive babysitting and improve operating autonomy.",
+      "With leader's approval, implement the best value-to-effort injections from week \
+      2, ensuring changes are implemented sustainably and effectively.",
+    outcomes:
+      "Back-brief on implemented changes and expected outcomes.",
     },
     {
       inputs:
-        "Pilot outcomes, leadership feedback, and prioritised scale opportunities.",
+        "Prioritised list of injections from week 2, implmemented changes from week 3.",
       activities:
-        "Produce an implementation roadmap for codifying alignment behaviors across teams.",
+        "Validate implememnted changes from week 3 to confirm that new current reality \
+        aligns with the desired future reality where applicable, adjust the current \
+        reality tree as required. Implment additional injections as required and develop \
+        a roadmap for implmementing any incomplete injedctions moving forward.",
       outcomes:
-        "Practical plan to embed strategy into operations without increasing management overhead.",
+        "Validated current and future reality trees, validated improvement from initial \
+        injections, roadmap for implementing remaining injections.",
     },
   ],
   velocity: [
     {
       inputs:
-        "Current throughput metrics, cycle-time data, blocker inventory, and team workload signals.",
+        "Consultation with leaders, interviews with staff as required, list of active \
+        projects or work, access to documentation or intelligence which defines ways of \
+        working, access to work management system",
       activities:
-        "Diagnose velocity caps, quantify process drag, and identify where effort does not convert to output.",
+        "Initial consultation with leadership, interview staff at all levels of management \
+        to understand problems observed (and reason for engaging me in the first place), \
+        observe operations in execution to develop my own understanding of issues. Back-brief \
+        leaders on my understanding of their issues and get endorsement for my plan for week 2.",
       outcomes:
-        "Baseline map of limiting constraints that cap tempo despite strong team effort.",
+        "I understand the issues identified by leaders and have mapped them in an initial \
+        causal diagram (current reality tree) that has been validated by senior leaders.",
     },
     {
       inputs:
-        "Real-time workflow observation, queue depth patterns, and communication latency evidence.",
+        "Current reality tree from week 1, access to work management systems, access to operational \
+        meetings, agreement to interview staff at all levels of management as required.",
       activities:
-        "Observe execution bottlenecks in context and validate high-friction work pathways.",
+        "Confirm the accuracy of the current reality tree developed in week 1 through direct \
+        observation or data analysis adjust as required in order to finalize a complete current \
+        reality tree. Identify improvements which can be injected into the current reality to \
+        shift to the desired future reality and prioritise these improvements based on impact \
+        and ease of implementation.",
       outcomes:
-        "Verified list of bottlenecks ranked by velocity impact and ease of intervention.",
+        "Current and future reality trees endorsed by leaders as accurate and valid, \
+        prioritised list of improvements to inject into the current reality tree to cause \
+        a shift towards the desired future reality.",
     },
     {
       inputs:
-        "Candidate acceleration levers, team feedback, and safe-to-test process changes.",
+        "Current and future reality trees and prioritised injections from week 2.",
       activities:
-        "Prototype faster execution loops, reduce manual hops, and test flow-control adjustments.",
-      outcomes:
-        "Demonstrated velocity lifts with lower rework and fewer coordination stalls.",
+      "With leader's approval, implement the best value-to-effort injections from week \
+      2, ensuring changes are implemented sustainably and effectively.",
+    outcomes:
+      "Back-brief on implemented changes and expected outcomes.",
     },
     {
       inputs:
-        "Prototype performance results, future demand assumptions, and leadership priorities.",
+        "Prioritised list of injections from week 2, implmemented changes from week 3.",
       activities:
-        "Design the operational roadmap for sustained high-tempo execution and guardrails.",
+        "Validate implememnted changes from week 3 to confirm that new current reality \
+        aligns with the desired future reality where applicable, adjust the current \
+        reality tree as required. Implment additional injections as required and develop \
+        a roadmap for implmementing any incomplete injedctions moving forward.",
       outcomes:
-        "Scalable velocity roadmap with clear owners, KPI tracking, and continuous optimization loops.",
+        "Validated current and future reality trees, validated improvement from initial \
+        injections, roadmap for implementing remaining injections.",
     },
   ],
 };
