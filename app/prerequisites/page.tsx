@@ -125,11 +125,10 @@ export default function PrerequisitesPage() {
             <div className="md:col-span-4 flex justify-end">
               <div className="w-40 h-40 border border-[#66FCF1]/25 bg-[#0B0C10] p-2">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPA-35-7yRodq_eZvQciB71QndeCoq9PmBmtTom_etqCZmTtIl5xxqSdJkebz6pA3Zwd299Y49Jskhs5muHPJrLrKZ8soHI_UwNci1rEd15BLPl_Nb1IRZGSASLf3NPmKuSeG_wMcGm2mK24Y-bdpd30ePrqolVx2Z-9krZM51AEx6gfmPAl_YIF4HEAtoE4lldrojwVrP2Oj586wY2cZJuA-YS_kCbdON5NWeQc29ioijoQEE6u3JqCjrqfU429fp9_7vKnS1HhU"
+                  src="/Prereq Header.png"
                   alt="Technical blueprint icon"
                   width={320}
                   height={320}
-                  unoptimized
                   className="w-full h-full object-cover filter grayscale opacity-60 contrast-110"
                 />
               </div>

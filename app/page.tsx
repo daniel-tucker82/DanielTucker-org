@@ -14,11 +14,11 @@ export default async function Home() {
     <div className="space-y-0">
       <section className="relative overflow-hidden border border-[#66FCF1]/20 bg-[#121317] px-8 py-14 sm:px-12 sm:py-18">
         <Image
-          src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1800&auto=format&fit=crop"
+          src="/Homepage Hero.avif"
           alt="Brutalist architectural geometry"
           fill
           priority
-          unoptimized
+          sizes="100vw"
           className="object-cover grayscale contrast-125 opacity-28"
         />
         <div className="blueprint-grid absolute inset-0 opacity-30" />

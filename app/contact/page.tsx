@@ -70,11 +70,10 @@ export default function ContactPage() {
           <div className="col-span-12 lg:col-span-4 flex justify-end">
             <div className="w-32 h-32 border border-[#66FCF1]/25 bg-[#0B0C10] p-2">
               <Image
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=512&q=80"
+                src="/Blog Header.avif"
                 alt="Technical blueprint icon"
                 width={256}
                 height={256}
-                unoptimized
                 className="w-full h-full object-cover grayscale opacity-60 contrast-125"
               />
             </div>

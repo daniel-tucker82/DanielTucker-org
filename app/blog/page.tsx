@@ -21,23 +21,21 @@ export default async function BlogPage() {
               </p>
             </div>
             <h1 className="text-5xl font-black leading-tight tracking-tighter text-white sm:text-6xl">
-              Operational Briefings
+              Blog
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-[#C5C6C7]">
-              Lessons from project recovery, strategic alignment, and confidence
-              execution systems.
+              Lessons I've learned, things I've done, approaches I take and other insights I feel inclined to share.
             </p>
           </div>
 
           <div className="col-span-12 lg:col-span-4 flex justify-end">
             <div className="w-32 h-32 border border-[#66FCF1]/25 bg-[#0B0C10] p-2">
               <Image
-                src="https://images.unsplash.com/photo-1557683311-973673baf926?auto=format&fit=crop&w=512&q=80"
+                src="/Blog Header.avif"
                 alt="Technical blueprint icon"
                 width={256}
                 height={256}
-                unoptimized
-                className="w-full h-full object-cover filter grayscale opacity-60"
+                className="w-full h-full object-cover grayscale opacity-60 contrast-125"
               />
             </div>
           </div>
