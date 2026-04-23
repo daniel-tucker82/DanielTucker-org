@@ -118,7 +118,7 @@ export default function PrerequisitesPage() {
               <p className="mt-6 text-[#C5C6C7] text-lg md:text-xl leading-relaxed">
                 4 weeks is a tight window to move from chaos to clarity. To ensure we
                 bypass standard administrative lag and focus entirely on delivery, the
-                following five pillars are non-negotiable.
+                following must be agreed.
               </p>
             </div>
 

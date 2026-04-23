@@ -117,11 +117,11 @@ export function RecommendationsCarousel() {
     if (autoAdvancePaused) {
       return;
     }
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setIndex((prev) => (prev >= max ? 0 : prev + 1));
     }, SLIDE_ADVANCE_MS);
-    return () => clearInterval(timer);
-  }, [max, SLIDE_ADVANCE_MS, autoAdvancePaused]);
+    return () => clearTimeout(timer);
+  }, [index, max, autoAdvancePaused]);
 
   const active = useMemo(() => recommendations[index], [index]);
 

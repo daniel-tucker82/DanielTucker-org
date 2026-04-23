@@ -75,14 +75,17 @@ export default async function Home() {
             <div className="absolute right-0 top-0 h-64 w-64 bg-[#66FCF1]/8 blur-[110px]" />
             <div className="relative z-10">
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#66FCF1]">
-                Success-Based Pilot
+                First-week free
               </p>
               <h2 className="mt-5 text-5xl font-black tracking-tight text-white sm:text-6xl">
-                You decide what the results are worth, and pay that.
+                Pay nothing for the first week.
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-[#C5C6C7]">
-                The engagement model is intentionally high-trust: allow me to prove my value first, then 
-                you decide what it's worth. It is a confidence model, not a discount.
+                The first week is on me 
+                <br></br><br></br>
+                I'll assess your challenges, identify what's holding you back, and present a clear plan to fix it.
+                <br></br><br></br>
+                If you're not confident in the direction, you walk away. No cost, no obligation.
               </p>
               <button
                 type="button"
