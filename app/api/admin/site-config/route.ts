@@ -16,23 +16,33 @@ function isValidConfig(config: Partial<SiteConfig>): config is SiteConfig {
 }
 
 export async function GET() {
-  const isAdmin = await isCurrentUserApprovedAdmin();
-  if (!isAdmin) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  try {
+    const isAdmin = await isCurrentUserApprovedAdmin();
+    if (!isAdmin) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+    }
+    const config = await getSiteConfig();
+    return NextResponse.json({ config });
+  } catch (error) {
+    console.error("Failed to read site config", error);
+    return NextResponse.json({ error: "Failed to load site config" }, { status: 500 });
   }
-  const config = await getSiteConfig();
-  return NextResponse.json({ config });
 }
 
 export async function PUT(req: NextRequest) {
-  const isAdmin = await isCurrentUserApprovedAdmin();
-  if (!isAdmin) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  try {
+    const isAdmin = await isCurrentUserApprovedAdmin();
+    if (!isAdmin) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+    }
+    const payload = (await req.json()) as Partial<SiteConfig>;
+    if (!isValidConfig(payload)) {
+      return NextResponse.json({ error: "Invalid config payload" }, { status: 400 });
+    }
+    const config = await updateSiteConfig(payload);
+    return NextResponse.json({ config });
+  } catch (error) {
+    console.error("Failed to update site config", error);
+    return NextResponse.json({ error: "Failed to save site config" }, { status: 500 });
   }
-  const payload = (await req.json()) as Partial<SiteConfig>;
-  if (!isValidConfig(payload)) {
-    return NextResponse.json({ error: "Invalid config payload" }, { status: 400 });
-  }
-  const config = await updateSiteConfig(payload);
-  return NextResponse.json({ config });
 }
