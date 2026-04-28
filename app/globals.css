@@ -33,3 +33,15 @@ body {
   border: 1px solid rgba(102, 252, 241, 0.32);
   background: color-mix(in srgb, var(--carbon) 92%, black);
 }
+
+/* Published blog body: Quill's .ql-editor expects a scroll container; use static layout here. */
+.blog-post-html.ql-editor {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  padding: 0;
+}
+
+.ql-snow .blog-post-html.ql-editor a {
+  color: #66fcf1;
+}

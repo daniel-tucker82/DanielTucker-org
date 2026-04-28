@@ -51,11 +51,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       ) : null}
 
       <section className="panel-surface rounded-none p-8">
-        <p className="mb-6 text-[#C5C6C7]">{post.excerpt}</p>
-        <div
-          className="text-[#C5C6C7] [&_a]:text-[#66FCF1] [&_h2]:mt-6 [&_h2]:text-2xl [&_h2]:text-white [&_h3]:mt-5 [&_h3]:text-white [&_li]:ml-5 [&_p]:mb-4"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
+        <div className="ql-snow text-[#C5C6C7]">
+          <div
+            className="ql-editor blog-post-html [&_a]:text-[#66FCF1] [&_blockquote]:border-[#66FCF1]/40 [&_h1]:mt-8 [&_h1]:text-white [&_h2]:mt-6 [&_h2]:text-white [&_h3]:mt-5 [&_h3]:text-white [&_h4]:mt-4 [&_h4]:text-white"
+            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+          />
+        </div>
       </section>
     </article>
   );

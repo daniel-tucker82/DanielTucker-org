@@ -1,5 +1,22 @@
 [
   {
+    "id": "52e1fa0e-e022-4dbe-87c4-e38d829d5d71",
+    "title": "Test things",
+    "subtitle": "A test blog post to test formatting of text",
+    "slug": "test-things",
+    "excerpt": "THis shouldn't show up on the blog's page, only the preview at /blog",
+    "imageUrl": "",
+    "thumbnailUrl": "",
+    "category": "TEST",
+    "tags": [
+      "test"
+    ],
+    "status": "PUBLISHED",
+    "contentHtml": "<h1>Introduction</h1><p>Here's an introduction</p><p><br></p><h1>Chapter 1</h1><p>Here's some text</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Numbered liist 1</li><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Numbered list 2</li><li data-list=\"ordered\" class=\"ql-indent-1\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Numbered list 2.a</li><li data-list=\"ordered\" class=\"ql-indent-1\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Numbered list 2.b</li><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Numbered list 3</li></ol><p>Some more text</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Bulleted list 1</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Bulleted ist 2</li><li data-list=\"bullet\" class=\"ql-indent-1\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Bulleted list 2.1</li><li data-list=\"bullet\" class=\"ql-indent-1\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Bulleted list 2.2</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Bulleted list 3</li></ol><p>No line spacing between text and bullets</p><p><br></p>",
+    "createdAt": "2026-04-28T04:44:01.898Z",
+    "updatedAt": "2026-04-28T04:44:01.898Z"
+  },
+  {
     "id": "7cd85ac4-9446-4aa2-a36e-cd430ea87bc9",
     "title": "Video Games and Vision",
     "subtitle": "An analogy",
