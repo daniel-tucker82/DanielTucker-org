@@ -90,7 +90,7 @@ export default function ProfilePage() {
               <div className="absolute -top-4 -left-4 w-full h-full border border-[#66FCF1]/20" />
               <div className="relative aspect-[4/5] border border-[#66FCF1]/30 overflow-hidden bg-transparent">
                 <Image
-                  src="/Profile%20Image%201a.jpg"
+                  src="/Profile%20Image%202a.jpg"
                   alt="Daniel Tucker"
                   fill
                   priority

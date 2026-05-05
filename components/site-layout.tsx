@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CircuitBoard } from "lucide-react";
+import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 
 const navLinks = [
@@ -20,13 +20,21 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-[#66FCF1]/35 bg-[#0B0C10]/95 backdrop-blur">
-        <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
+      <header className="sticky top-0 z-50 border-b border-[#66FCF1]/35 bg-[#1F2126]/95 backdrop-blur">
+        <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
           <Link
             href="/"
             className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em] text-[#66FCF1]"
           >
-            <CircuitBoard className="h-4 w-4" />
+            <Image
+              src="/Aspyre%20Logo.png"
+              alt="Aspyre logo"
+              width={32}
+              height={32}
+              priority
+              unoptimized
+              className="h-8 w-8 object-contain"
+            />
             danieltucker.org
           </Link>
           <div className="flex items-center gap-3">

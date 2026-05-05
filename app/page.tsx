@@ -96,6 +96,19 @@ export default async function Home() {
               </button>
             </div>
             <div className="relative z-10 space-y-6 border border-[#66FCF1]/15 bg-[#181d24] p-7">
+              <div className="mb-2 flex items-center gap-2 border-b border-[#66FCF1]/20 pb-4">
+                <Image
+                  src="/Aspyre%20Logo.png"
+                  alt="Aspyre logo mark"
+                  width={20}
+                  height={20}
+                  unoptimized
+                  className="h-5 w-5 object-contain"
+                />
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#66FCF1]">
+                  The Aspyre standard
+                </span>
+              </div>
               <div className="flex items-start gap-4">
                 <span className="mt-1 h-2.5 w-2.5 bg-[#66FCF1]" />
                 <div>
@@ -125,7 +138,7 @@ export default async function Home() {
                     Trust
                   </h5>
                   <p className="mt-2 text-sm leading-relaxed text-[#C5C6C7]">
-                    I trust that you, as the customer, will act in good faith and choose not to pay nothing "because you can".
+                    I trust that you, as the customer, will act in good faith and expect to continue our engagement beyond the first week (i.e. you are not intending to exploit my offer to gain one week of free consulting).
                   </p>
                 </div>
               </div>
