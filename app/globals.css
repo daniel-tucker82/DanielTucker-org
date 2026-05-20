@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap");
 @import "tailwindcss";
 @import "quill/dist/quill.snow.css";
 
@@ -14,12 +16,181 @@
   --color-foreground: var(--silver);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-space-mono);
+
+  /* Stitch landing tokens */
+  --font-stitch-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-stitch-body: "Geist", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --max-width-container-max: 1440px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 20px;
+  --spacing-gutter: 24px;
+  --spacing-unit: 8px;
+
+  --color-outline: #849491;
+  --color-outline-variant: #3b4a48;
+  --color-on-secondary-container: #b6b8c1;
+  --color-surface-variant: #33353a;
+  --color-on-primary: #003733;
+  --color-secondary-container: #464951;
+  --color-on-surface-variant: #bacac7;
+  --color-tertiary-container: #82f6ea;
+  --color-error-container: #93000a;
+  --color-on-tertiary-fixed: #00201d;
+  --color-surface-tint: #54fdf0;
+  --color-on-tertiary: #003733;
+  --color-tertiary: #ffffff;
+  --color-surface-bright: #37393e;
+  --color-primary: #ffffff;
+  --color-tertiary-fixed: #82f6ea;
+  --color-on-tertiary-container: #007169;
+  --color-on-secondary: #2d3037;
+  --color-primary-fixed-dim: #54fdf0;
+  --color-surface-dim: #111318;
+  --color-on-tertiary-fixed-variant: #00504a;
+  --color-on-primary-fixed: #00201e;
+  --color-secondary-fixed-dim: #c4c6cf;
+  --color-error: #ffb4ab;
+  --color-on-background: #e2e2e9;
+  --color-on-surface: #e2e2e9;
+  --color-surface-container-highest: #33353a;
+  --color-surface-container-low: #191c20;
+  --color-inverse-on-surface: #2e3036;
+  --color-on-primary-container: #00716a;
+  --color-inverse-surface: #e2e2e9;
+  --color-surface-container-lowest: #0c0e13;
+  --color-surface-container-high: #282a2f;
+  --color-primary-container: #54fdf0;
+  --color-on-secondary-fixed-variant: #44474e;
+  --color-on-error-container: #ffdad6;
+  --color-on-error: #690005;
+  --color-secondary-fixed: #e0e2eb;
+  --color-on-secondary-fixed: #191c22;
+  --color-secondary: #c4c6cf;
+  --color-surface-container: #1e2025;
+  --color-surface: #111318;
+  --color-primary-fixed: #54fdf0;
+  --color-inverse-primary: #006a64;
+  --color-on-primary-fixed-variant: #00504b;
+  --color-stitch-canvas: #1f2126;
+  --color-tertiary-fixed-dim: #64d9ce;
 }
 
 body {
   background: var(--obsidian);
   color: var(--silver);
   font-family: var(--font-inter), sans-serif;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px 10px rgba(84, 253, 240, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 25px rgba(84, 253, 240, 0.6);
+}
+
+.bg-gradient-kinetic {
+  background: radial-gradient(circle at 50% 50%, rgba(84, 253, 240, 0.08) 0%, transparent 70%);
+}
+
+.scanline {
+  background: linear-gradient(to right, transparent, #54fdf0, transparent);
+  height: 1px;
+  width: 100%;
+  opacity: 0.3;
+}
+
+@keyframes vortex {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.1;
+  }
+}
+
+.vortex-layer {
+  animation: vortex 20s linear infinite;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent,
+    #54fdf0,
+    transparent,
+    #54fdf0,
+    transparent
+  );
+  filter: blur(100px);
+}
+
+@keyframes pulse-cyan {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 0px rgba(84, 253, 240, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px 10px rgba(84, 253, 240, 0.6);
+  }
+}
+
+.pulse-cta {
+  animation: pulse-cyan 3s ease-in-out infinite;
+}
+
+.button-scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-scanline::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(84, 253, 240, 0.4), transparent);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111318;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #33353a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #54fdf0;
 }
 
 .blueprint-grid {
