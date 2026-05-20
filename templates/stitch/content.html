@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Content Page Template - Aspyre Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-glow {
+            box-shadow: 0 0 20px rgba(38, 221, 205, 0.15);
+        }
+        .roadmap-line {
+            background: linear-gradient(to bottom, transparent, #26ddcd, transparent);
+        }
+        body {
+            background-color: #1f2126;
+            color: #e2e2e2;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#849491",
+                    "on-primary-container": "#006b63",
+                    "tertiary": "#d5fffe",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed": "#93f2f2",
+                    "outline-variant": "#3b4a47",
+                    "surface-tint": "#26ddcd",
+                    "tertiary-fixed-dim": "#76d6d5",
+                    "surface-container-high": "#282a2b",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "primary-fixed": "#55fae9",
+                    "on-secondary": "#2e3036",
+                    "on-tertiary-container": "#006b6b",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary": "#003737",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-dim": "#121414",
+                    "on-secondary-container": "#b7b8be",
+                    "primary-fixed-dim": "#26ddcd",
+                    "secondary-container": "#47494e",
+                    "on-secondary-fixed-variant": "#45474c",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-primary": "#003732",
+                    "primary": "#d8fff8",
+                    "on-background": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#191c20",
+                    "on-surface-variant": "#bacac6",
+                    "surface-bright": "#37393a",
+                    "on-primary-fixed-variant": "#005049",
+                    "surface-container": "#1e2020",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#121414",
+                    "surface-container-highest": "#333535",
+                    "secondary": "#c5c6cd",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#002020",
+                    "secondary-fixed-dim": "#c5c6cd",
+                    "primary-container": "#4af2e1",
+                    "surface": "#121414",
+                    "tertiary-container": "#8beae9",
+                    "inverse-primary": "#006a62",
+                    "on-surface": "#e2e2e2",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "base-unit": "4px",
+                    "max-width": "1440px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-20">
+<div class="font-display-lg text-primary-fixed tracking-tight">ConsultancyPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Team</a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary-fixed-dim to-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all">
+                Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center overflow-hidden">
+<!-- Animated Gradient Background -->
+<div class="absolute inset-0 bg-[#1f2126] z-0"></div>
+<div class="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-primary-fixed/10 blur-[120px] rounded-full"></div>
+<div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-tertiary-fixed/5 blur-[100px] rounded-full"></div>
+<div class="relative z-10 px-gutter max-w-max-width mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed/10 border border-primary-fixed/20 text-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">shield_with_heart</span>
+                        STRATEGIC INFRASTRUCTURE
+                    </div>
+<h1 class="font-display-lg text-display-lg text-white leading-tight">
+                        Digital <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed to-tertiary-container">Infrastructure</span> Audit
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Deconstruct and optimize your enterprise's digital backbone. We provide a rigorous, data-driven assessment of your cloud architecture, security protocols, and scalability vectors.
+                    </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary-fixed text-on-primary-fixed rounded-lg font-bold hover:shadow-[0_0_20px_rgba(38,221,205,0.3)] transition-all">
+                            Request Audit
+                        </button>
+<button class="px-8 py-4 border border-outline-variant text-white rounded-lg font-bold hover:bg-surface-variant transition-all">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="glass-card rounded-xl overflow-hidden aspect-video relative group teal-glow">
+<img alt="Server room infrastructure" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic and pristine server room filled with glowing racks of high-end hardware. The atmosphere is cool and sterile, dominated by deep blacks and vibrant teal neon light strips that run along the floor and ceiling. This digital infrastructure environment is captured with a shallow depth of field, highlighting the precision of the hardware in a high-tech dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_PPBr608NhIvZq-orylhWL_Mv2SV_ZygIxkApBB0d2rx_U5fECYwDoEH5htxkHpQoZj4wa4YekOv1jnPXqzthLXi17N9LQgK_aCNfKq3jCDXHfN1FY65bb0nyE_bprddO5lWRjlMbLwUke6VWzuBXJpSS57oc4Gqxk9hMflI0qtmLGEeeQ-E-ff7Kay2zZ63s3HNLE6D0xvYNiqXRjidSeWI88A7iF8z5xAT8kBFzftt4F94XEy6vk0ykJp1CPiGXfpateU4QZ6U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1f2126] to-transparent opacity-60"></div>
+</div>
+<!-- Abstract UI element overlay -->
+<div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-lg hidden lg:block border-primary-fixed/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<div class="text-[10px] font-label-sm text-on-surface-variant">EFFICIENCY RATING</div>
+<div class="font-headline-md text-headline-md text-primary-fixed">98.4%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Verticals Bento -->
+<section class="py-24 px-gutter max-w-max-width mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-md text-headline-md text-white mb-4">Core Competencies</h2>
+<div class="w-20 h-1 bg-primary-fixed"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Card -->
+<div class="md:col-span-8 glass-card p-10 rounded-2xl flex flex-col justify-between min-h-[400px] border-l-2 border-l-primary-fixed">
+<div>
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-6" data-weight="fill">security</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Architecture Resilience</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                            We stress-test your existing systems against catastrophic failure modes, ensuring that high availability isn't just a promise, but a fundamental property of your technical stack.
+                        </p>
+</div>
+<div class="flex items-center gap-12 mt-8">
+<div>
+<div class="font-display-lg text-display-lg text-primary-fixed">12ms</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">AVG LATENCY REDUCTION</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-primary-fixed">40%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">COST OPTIMIZATION</div>
+</div>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="md:col-span-4 glass-card p-10 rounded-2xl border-t-2 border-t-tertiary-fixed">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl mb-6">cloud_sync</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Cloud Native Shift</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Migrating legacy monoliths into serverless, containerized ecosystems that scale with demand without manual intervention.
+                    </p>
+</div>
+<!-- Small Card 1 -->
+<div class="md:col-span-4 glass-card p-10 rounded-2xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">database</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<h3 class="font-body-lg font-bold text-white mb-2">Data Governance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensuring compliance and integrity across global clusters.</p>
+</div>
+<!-- Small Card 2 -->
+<div class="md:col-span-4 glass-card p-10 rounded-2xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">monitoring</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<h3 class="font-body-lg font-bold text-white mb-2">Telemetry &amp; Observability</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time insight into every node and transaction.</p>
+</div>
+<!-- Small Card 3 -->
+<div class="md:col-span-4 glass-card p-10 rounded-2xl hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">api</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<h3 class="font-body-lg font-bold text-white mb-2">API Modernization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Unified interfaces for seamless third-party integration.</p>
+</div>
+</div>
+</section>
+<!-- Methodology Roadmap -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="px-gutter max-w-max-width mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-display-lg text-display-lg text-white mb-6">Methodology Roadmap</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                        A structured six-week sprint designed to transform your infrastructure from a bottleneck into a competitive advantage.
+                    </p>
+</div>
+<div class="relative">
+<!-- Vertical Line (Central) -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px roadmap-line hidden md:block -translate-x-1/2 opacity-30"></div>
+<div class="space-y-24 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 group">
+<div class="md:w-[45%] text-right order-2 md:order-1">
+<h3 class="font-headline-md text-headline-md text-white mb-3">Discovery &amp; Ingestion</h3>
+<p class="text-on-surface-variant font-body-md">Comprehensive scanning of all network assets, cloud configurations, and identity management policies.</p>
+</div>
+<div class="relative z-10 w-12 h-12 rounded-full bg-[#1f2126] border-2 border-primary-fixed flex items-center justify-center order-1 md:order-2 group-hover:scale-125 transition-transform duration-500 teal-glow">
+<span class="text-primary-fixed font-label-sm">01</span>
+</div>
+<div class="md:w-[45%] order-3"></div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 group">
+<div class="md:w-[45%] order-2 md:order-1"></div>
+<div class="relative z-10 w-12 h-12 rounded-full bg-[#1f2126] border-2 border-tertiary-fixed flex items-center justify-center order-1 md:order-2 group-hover:scale-125 transition-transform duration-500 teal-glow">
+<span class="text-tertiary-fixed font-label-sm">02</span>
+</div>
+<div class="md:w-[45%] text-left order-3">
+<h3 class="font-headline-md text-headline-md text-white mb-3">Risk Identification</h3>
+<p class="text-on-surface-variant font-body-md">Applying algorithmic threat models to identify security vulnerabilities and potential performance bottlenecks.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 group">
+<div class="md:w-[45%] text-right order-2 md:order-1">
+<h3 class="font-headline-md text-headline-md text-white mb-3">Optimization Blueprints</h3>
+<p class="text-on-surface-variant font-body-md">Delivery of detailed engineering plans for remediation, re-architecting, and technological scaling.</p>
+</div>
+<div class="relative z-10 w-12 h-12 rounded-full bg-[#1f2126] border-2 border-primary-fixed flex items-center justify-center order-1 md:order-2 group-hover:scale-125 transition-transform duration-500 teal-glow">
+<span class="text-primary-fixed font-label-sm">03</span>
+</div>
+<div class="md:w-[45%] order-3"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24 px-gutter max-w-max-width mx-auto">
+<div class="relative overflow-hidden rounded-3xl p-12 md:p-20 border border-outline-variant/30 text-center">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed/5 to-transparent z-0"></div>
+<div class="relative z-10 max-w-3xl mx-auto space-y-8">
+<h2 class="font-display-lg text-display-lg text-white">Ready to solidify your foundations?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Our consultants are ready to conduct a preliminary review of your infrastructure goals. No commitment required—just clarity.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-10 py-5 bg-primary-fixed text-on-primary-fixed rounded-xl font-bold hover:scale-105 transition-transform text-lg">
+                            Schedule Technical Session
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-display-lg text-primary-fixed">ConsultancyPro</div>
+<div class="text-on-surface-variant font-body-md opacity-80">© 2024 ConsultancyPro. All rights reserved.</div>
+</div>
+<div class="flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-on-surface font-body-md transition-opacity hover:underline decoration-primary-fixed" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md transition-opacity hover:underline decoration-primary-fixed" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md transition-opacity hover:underline decoration-primary-fixed" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface font-body-md transition-opacity hover:underline decoration-primary-fixed" href="#">Accessibility</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary-fixed hover:border-primary-fixed cursor-pointer transition-all">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary-fixed hover:border-primary-fixed cursor-pointer transition-all">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Parallax effect for the hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.group-hover\\:scale-105');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.05}px) scale(${1 + scrolled * 0.0001})`;
+            }
+            
+            const nav = document.querySelector('nav');
+            if (scrolled > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-16');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.add('h-20');
+                nav.classList.remove('h-16');
+            }
+        });
+
+        // Intersection Observer for roadmap items
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.space-y-24 > div').forEach(item => {
+            item.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(item);
+        });
+    </script>
+</body></html>

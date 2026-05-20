@@ -1,0 +1,33 @@
+I get so excited about this stuff, so it's going to be tough to keep this short:
+
+ 
+
+Some time back I set up an exercise for some new staff members at a company I used to work for, to demonstrate how we can use the Theory of Constraints to improve throughput in our teams.
+
+ 
+
+The exercise involved a series of basic manual tasks for a team of three people. I devised a simple scoring system for the total throughput so we could compare results. After they completed the first round of the exercise the team identified their constraint and discussed how they could adjust their process. When satisfied they ran the exercise again, applying their changes.
+
+ 
+
+The results really surprised me… on the second attempt their total throughput DECREASED , down to only 68% of what it had been in round one.
+
+ 
+
+They had over-corrected, shifted too much work away from the constraint and created a bottleneck elsewhere in their process. So they went back to the drawing board, dialing back on some of their changes. In round three their throughput increased to 165% of what it had been in the first round.
+
+ 
+
+In round four they made yet more corrections, but this time I added a complication by making one of their teammates take a 20 second break (meant to represent someone taking a day of sick leave). Despite this handicap, their value output increased again, to 239% of what it had been in the first round.
+
+ 
+
+The exercise provided a lesson that I had never intended it to: The path to "better" is not necessarily a straight line.*
+
+ 
+
+I wonder; how often we might give up on a change because our initial results aren't what we had expected? It can be challenging to stay the course, particularly if faced with change resistance from people who will jump at the chance to say "I told you it wouldn't work".
+
+__________
+
+* It turns out that it wasn't the only unexpected lesson from the exercise... but that's a story for another day.

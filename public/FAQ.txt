@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ Template - ConsultancyPro</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#849491",
+                      "on-primary-container": "#006b63",
+                      "tertiary": "#d5fffe",
+                      "surface-container-lowest": "#0c0f0f",
+                      "surface-variant": "#333535",
+                      "tertiary-fixed": "#93f2f2",
+                      "outline-variant": "#3b4a47",
+                      "surface-tint": "#26ddcd",
+                      "tertiary-fixed-dim": "#76d6d5",
+                      "surface-container-high": "#282a2b",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#004f4f",
+                      "primary-fixed": "#55fae9",
+                      "on-secondary": "#2e3036",
+                      "on-tertiary-container": "#006b6b",
+                      "inverse-on-surface": "#2f3131",
+                      "on-tertiary": "#003737",
+                      "surface-container-low": "#1a1c1c",
+                      "surface-dim": "#121414",
+                      "on-secondary-container": "#b7b8be",
+                      "primary-fixed-dim": "#26ddcd",
+                      "secondary-container": "#47494e",
+                      "on-secondary-fixed-variant": "#45474c",
+                      "secondary-fixed": "#e2e2e9",
+                      "on-primary": "#003732",
+                      "primary": "#d8fff8",
+                      "on-background": "#e2e2e2",
+                      "inverse-surface": "#e2e2e2",
+                      "on-secondary-fixed": "#191c20",
+                      "on-surface-variant": "#bacac6",
+                      "surface-bright": "#37393a",
+                      "on-primary-fixed-variant": "#005049",
+                      "surface-container": "#1e2020",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed": "#00201d",
+                      "background": "#121414",
+                      "surface-container-highest": "#333535",
+                      "secondary": "#c5c6cd",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed": "#002020",
+                      "secondary-fixed-dim": "#c5c6cd",
+                      "primary-container": "#4af2e1",
+                      "surface": "#121414",
+                      "tertiary-container": "#8beae9",
+                      "inverse-primary": "#006a62",
+                      "on-surface": "#e2e2e2",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "base-unit": "4px",
+                      "max-width": "1440px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Geist"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Geist"],
+                      "label-sm": ["JetBrains Mono"],
+                      "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: rgb(31, 33, 38); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #26ddcd 0%, #006b63 100%);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-open .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-open .chevron-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-20">
+<div class="font-display-lg text-primary-fixed tracking-tight">ConsultancyPro</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2.5 rounded-full font-body-md text-body-md hover:bg-primary-fixed-dim transition-all">Consultation</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Header -->
+<section class="relative h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0 teal-gradient opacity-20"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed/10 via-transparent to-transparent"></div>
+<div class="relative px-gutter max-w-max-width mx-auto w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 mb-6 rounded-full bg-primary-fixed/10 text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest border border-primary-fixed/20">Knowledge Hub</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">FAQ Template</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Access professional insights on strategic vision, data architecture, and consulting methodology. We translate complex questions into clear operational directives.</p>
+<div class="relative group">
+<input class="w-full bg-surface-container-high/50 border border-outline-variant/50 rounded-xl px-12 py-4 focus:ring-2 focus:ring-primary-fixed focus:border-transparent outline-none transition-all placeholder:text-on-surface-variant/50" placeholder="Search for answers..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary-fixed">search</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Knowledge Base Bento Grid / FAQ Section -->
+<section class="py-24 px-gutter max-w-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Category Sidebar -->
+<aside class="lg:col-span-3 space-y-2">
+<h3 class="font-label-sm text-label-sm text-outline-variant mb-6 uppercase tracking-wider">Categories</h3>
+<button class="w-full text-left px-4 py-3 rounded-lg bg-primary-fixed/10 text-primary-fixed font-body-md border border-primary-fixed/20 flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+                        Strategic Vision
+                    </button>
+<button class="w-full text-left px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md flex items-center gap-3">
+<span class="material-symbols-outlined">dataset</span>
+                        Data Architecture
+                    </button>
+<button class="w-full text-left px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md flex items-center gap-3">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+                        Operational Scale
+                    </button>
+<button class="w-full text-left px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors font-body-md flex items-center gap-3">
+<span class="material-symbols-outlined">security</span>
+                        Risk Management
+                    </button>
+</aside>
+<!-- FAQ Accordion Content -->
+<div class="lg:col-span-9 space-y-6">
+<div class="glass-card rounded-2xl p-8">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-primary-fixed pl-6">Strategic Vision</h2>
+<!-- Accordion Items -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="border-b border-outline-variant/30 pb-4 accordion-group">
+<button class="w-full flex justify-between items-center py-4 text-left group accordion-toggle" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">How does Aspyre define "Strategic Vision" for legacy enterprises?</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="py-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        Our methodology focuses on the "Legacy-to-Modernity" bridge. We evaluate current technical debt and align it with long-term market objectives, ensuring that every consulting engagement delivers immediate ROI while setting a 5-year growth trajectory.
+                                    </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="border-b border-outline-variant/30 pb-4 accordion-group">
+<button class="w-full flex justify-between items-center py-4 text-left group accordion-toggle" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">What is the typical lifecycle of a strategy engagement?</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="py-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        A typical engagement spans 12-16 weeks, beginning with a Discovery Phase, followed by deep-dive Stakeholder Mapping, and concluding with a comprehensive Implementation Roadmap with defined KPIs for the first 12 months post-launch.
+                                    </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="border-b border-outline-variant/30 pb-4 accordion-group">
+<button class="w-full flex justify-between items-center py-4 text-left group accordion-toggle" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-fixed transition-colors">How do you manage cross-departmental alignment during transitions?</span>
+<span class="material-symbols-outlined chevron-icon transition-transform text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="py-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        Alignment is achieved through our proprietary "Unity Framework," which utilizes collaborative dashboards and weekly syncs between CTO, CFO, and COO offices to ensure financial, technical, and operational goals remain synchronous.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Highlight Card -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card rounded-2xl p-8 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Data Architecture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore how we handle high-velocity data pipelines and secure cloud infrastructure.</p>
+</div>
+<button class="mt-8 text-primary-fixed font-label-sm text-label-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">
+                                View Section <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="relative rounded-2xl overflow-hidden group min-h-[240px]">
+<img alt="Abstract digital architecture" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A highly detailed 3D abstract visualization of complex data structures and nodes glowing in vibrant teal and neon aquamarine. The composition is set against a deep obsidian background with soft atmospheric fog and lens flares that create a futuristic, high-tech mood. The visual style is sleek and professional, mirroring a sophisticated dark-mode SaaS dashboard with glassmorphism elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmrwZHwt1f2tSs-5J-435Di6_X6dOdm_s10rfbLxXzj3eqqZB0n6RDjmoAUwo11oqKyifRUEAGASib3s6-1OGm6VG-15X_eo_kI6TAm8v9nCdTrVB2d7OqbTYvX_JUqm4YsFcbVkN97Hpk0V6th02XUleZ_yQ16BhyhsS9LDHCskyI2zwbsdyJZ3VmLZlx1FfO5dcUHDfJ6qUaWK2vtprD7obDdMYfR8zloTMaamJUGgBjnKRxHPQcP6Hh2GnNr8pxYO2IvXfpr9c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-8 flex flex-col justify-end">
+<h4 class="font-headline-md text-headline-md text-white">White Papers</h4>
+<p class="text-white/70 font-body-md text-body-md">Deep dives into consulting metrics.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-surface-container-low border-t border-outline-variant/20">
+<div class="px-gutter max-w-max-width mx-auto text-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Still have questions?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Our advisory team is ready to provide bespoke answers tailored to your specific organizational challenges.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="teal-gradient text-on-primary-fixed px-10 py-4 rounded-full font-headline-md text-headline-md hover:shadow-[0_0_20px_rgba(38,221,205,0.4)] transition-all">Schedule Call</button>
+<button class="border border-primary-fixed text-primary-fixed px-10 py-4 rounded-full font-headline-md text-headline-md hover:bg-primary-fixed/5 transition-all">Email Support</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="font-display-lg text-primary-fixed">ConsultancyPro</div>
+<div class="flex flex-wrap justify-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline decoration-primary-fixed" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline decoration-primary-fixed" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline decoration-primary-fixed" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-opacity hover:underline decoration-primary-fixed" href="#">Accessibility</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant opacity-80">© 2024 ConsultancyPro. All rights reserved.</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(element) {
+            const group = element.closest('.accordion-group');
+            const isOpen = group.classList.contains('accordion-open');
+            
+            // Close all others
+            document.querySelectorAll('.accordion-group').forEach(item => {
+                item.classList.remove('accordion-open');
+            });
+
+            if (!isOpen) {
+                group.classList.add('accordion-open');
+            }
+        }
+
+        // Add subtle hover tracking effect to glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

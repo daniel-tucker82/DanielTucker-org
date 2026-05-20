@@ -1,0 +1,23 @@
+Years ago, when I was still a relatively junior project manager, I was part of a team working on a bid for work – somewhere in the order of $20 million. The bid was for a highly complex technical system which incorporated both hardware and software components. This complexity made things quite difficult for us, and at about the mid-way point an experienced leader was brought in to consult with us.
+
+
+
+This senior leader (Peter) was semi-retired; he had worked previously as the general manager for the business, and now occasionally came back to help with particularly gnarly bids and projects. I still remember that we sat down with him in a meeting room, and over the course of the next hour he asked a series of questions.
+
+At the end of the session, I couldn’t help but wonder why it was that we needed his help at all. Not one of the questions that he asked seemed particularly advanced, or unintuitive. They were all simple questions that I remember thinking that I would have known to ask.
+
+
+
+But I didn’t ask them, and neither did anyone else on the bid team.
+
+
+
+Years later when working as a Delivery Manager and applying bottleneck thinking from the Theory of Constraints, I encountered a similar phenomenon: I am lucky enough to have been mentored by Clarke Ching. Clarke is a world leader in applying the Theory of Constraints to software development and leadership, and he occasionally delivers webinars on these topics. I’ve attended a few of these webinars and I’m struck by just how “simple” he makes it all sound. Upon reflection I realize that achieving this is only possible through Clarke’s comprehensive knowledge, backed up by extensive experience.
+
+
+
+So, while something easy could most of the time also be considered simple, something that is simple may not necessarily be easy. Ideas can feel simple either because they ARE inherently simple, or because someone with real expertise has removed everything non-essential and left behind only what is important to convey them clearly.
+
+
+
+In my work, I often ask “simple” questions, and occasionally it makes me second-guess whether I can really justify calling myself an expert, or a professional. In those moments I try to remember the example set by Peter and Clarke. I remind myself that the “right” questions often seem very simple, but the real challenge is in knowing which ones expose what everyone else in the room is missing.

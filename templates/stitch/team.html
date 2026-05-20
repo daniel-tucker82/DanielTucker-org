@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Team Template | ConsultancyPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#849491",
+                    "on-primary-container": "#006b63",
+                    "tertiary": "#d5fffe",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed": "#93f2f2",
+                    "outline-variant": "#3b4a47",
+                    "surface-tint": "#26ddcd",
+                    "tertiary-fixed-dim": "#76d6d5",
+                    "surface-container-high": "#282a2b",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "primary-fixed": "#55fae9",
+                    "on-secondary": "#2e3036",
+                    "on-tertiary-container": "#006b6b",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary": "#003737",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-dim": "#121414",
+                    "on-secondary-container": "#b7b8be",
+                    "primary-fixed-dim": "#26ddcd",
+                    "secondary-container": "#47494e",
+                    "on-secondary-fixed-variant": "#45474c",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-primary": "#003732",
+                    "primary": "#d8fff8",
+                    "on-background": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#191c20",
+                    "on-surface-variant": "#bacac6",
+                    "surface-bright": "#37393a",
+                    "on-primary-fixed-variant": "#005049",
+                    "surface-container": "#1e2020",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#121414",
+                    "surface-container-highest": "#333535",
+                    "secondary": "#c5c6cd",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#002020",
+                    "secondary-fixed-dim": "#c5c6cd",
+                    "primary-container": "#4af2e1",
+                    "surface": "#121414",
+                    "tertiary-container": "#8beae9",
+                    "inverse-primary": "#006a62",
+                    "on-surface": "#e2e2e2",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "base-unit": "4px",
+                    "max-width": "1440px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: rgb(31, 33, 38);
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(40, 42, 43, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-glow {
+            box-shadow: 0 0 20px rgba(38, 221, 205, 0.15);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-20">
+<div class="font-display-lg text-primary-fixed tracking-tight">ConsultancyPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 font-body-md text-body-md" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all">Consultation</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Header -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#003732] via-[#005049] to-surface-container-lowest">
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #55fae9 0%, transparent 40%);"></div>
+<div class="relative z-10 text-center px-gutter">
+<span class="font-label-sm text-primary-fixed uppercase tracking-widest mb-4 block">Meet the Architects of Success</span>
+<h1 class="font-display-lg text-white mb-6 max-w-4xl mx-auto">Our Team Template</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Bridging the gap between visionary strategy and technical excellence. Aspyre Consulting brings together the brightest minds in digital transformation.</p>
+</div>
+</section>
+<!-- Profile Carousel Section -->
+<section class="py-24 max-w-max-width mx-auto px-gutter overflow-hidden">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-md text-white">The Leadership Core</h2>
+<p class="text-on-surface-variant mt-2">Elite consultants driving cross-industry innovation.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant hover:bg-surface-container-high transition-colors" id="prevBtn">
+<span class="material-symbols-outlined align-middle">chevron_left</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant hover:bg-surface-container-high transition-colors" id="nextBtn">
+<span class="material-symbols-outlined align-middle">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory" id="carousel">
+<!-- Member 1 -->
+<div class="min-w-[320px] snap-start group cursor-pointer" onclick="updateHighlight(0)">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 border border-outline-variant/30 teal-glow transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional corporate headshot of a female executive with a confident expression, set against a dark, minimalist background with subtle teal lighting accents. She is wearing a sharp, tailored black blazer, and the overall aesthetic is high-contrast, polished, and sophisticated, matching a modern dark-mode SaaS UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU8OI141o9WsFSWqcQ3EuBgIkR_8XXRnAYlwFrj4WukK8cNMrHoIq4jSbTFOyzJpX-pvwQkKQGb0EQOSGTiKABkI5js0IBocVTOCYS7AZq1Bp7pfnMFFuZGR0bp06OMsTxURPo5_TFOs_FPpFCiAwPr401sUe2kvYJb8LN3MQRW3tMyAZ5Bjr4FKusphGgIIFZ33uK9IrqwyzdMlVZZGnNCNLYui3Nu7EePhW4HLPDiZqSqg5JXsuWuFkRv7R-hrJlzy6y9G4_Yrk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-md text-white text-lg">Dr. Elena Vance</h3>
+<p class="text-primary-fixed font-label-sm">Chief Strategic Officer</p>
+</div>
+<!-- Member 2 -->
+<div class="min-w-[320px] snap-start group cursor-pointer" onclick="updateHighlight(1)">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 border border-outline-variant/30 transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional male consultant in his early 40s wearing a modern charcoal suit and no tie, looking directly at the camera with a calm, intellectual demeanor. The environment is a dimly lit, high-end studio with cool teal rim lighting that highlights his profile. The visual style is premium, clean, and architecturally structured." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDagJ_rXKNeUEHLAK1dBCyppHKLcCSpqjGfwyXrJpm9WLwPKGRD9LrMtBuCI8I70q8oOWEPBKHEqmun9cYPktfVf2j-_kr3yIrCcClW1CIpvvZw810naP4bkD92UHsPxjueMRzrQF53ivPwXEkFESX6CNgdXCQoLhXu7G0igd-_d3_rLwHmqJAWORVY9BjIssTtjwBM3jzD-_-QbHrLf3gy_XquSuaGFI4z2ur6Uji2eV_YVWo9jZteIDPIpxupFO56epSSHf4JCtY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-md text-white text-lg">Marcus Sterling</h3>
+<p class="text-primary-fixed font-label-sm">Head of Data Architecture</p>
+</div>
+<!-- Member 3 -->
+<div class="min-w-[320px] snap-start group cursor-pointer" onclick="updateHighlight(2)">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 border border-outline-variant/30 transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A portrait of a senior female technology leader with a warm but authoritative presence. She is positioned in a blurred high-tech workspace with soft glowing screens and teal glass elements in the background. Her attire is a contemporary knit top in deep forest green. The image exudes wisdom, innovation, and futuristic leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSfjCqEhha643JzcjV3h8T0A_yazMdreFmWmZI1FkBvQlA9WczmwwK6kqW7lHSQBWSmCcpUXvqNA7mvZ7xQGaPuEq2-RSTvhzuWLQ3viKWOapXbvEAjXBFxvGxfNPsLqHNiS9kXmzDzTs2uQ6XsBSBp9Foa074S25-dsMWAA4ZsweR6r2s72kgOkhkrcCRdoPgeY1KTQTct_KbbOwIVAyCU4ndAS5tkM1r-PAg8Ai6SJiK26vvWj-a-76uYFDIDU-qH2ADvVB6WLA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-md text-white text-lg">Sarah Jenkins</h3>
+<p class="text-primary-fixed font-label-sm">Principal Transformation Lead</p>
+</div>
+<!-- Member 4 -->
+<div class="min-w-[320px] snap-start group cursor-pointer" onclick="updateHighlight(3)">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 border border-outline-variant/30 transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A sharp, cinematic portrait of a male specialist in his late 20s with glasses, representing the cutting edge of tech consulting. The background features abstract teal light trails on a deep black canvas. He wears a minimalist dark tech-wear jacket. The mood is energetic, focused, and suggests a deep expertise in emerging technologies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzVvu7P4ja17etQ8wZ12pvExlkFxJ_HgAAXtLr-voN-m8t54U80KxVxyACU6wdciQWePeZFLhATlcv1r4wzCe-nFQ-mZ680_tfUcA7kRFoowcqRah6FRRDUdCrBcFjDjoW0-kPya77nos4Bl0sXFeIyrhPFsU7dmghoCAtjBmeY5Fj5KjUYH-1DQn_CA-SyVB4fplN1sGfzrNdrRRj7HDweTQdCQhW5MnkcBQkJaybdPHxGDDsGsN8k386xu4LB48H1FUa2KLf1Mo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-md text-white text-lg">Julian Kross</h3>
+<p class="text-primary-fixed font-label-sm">Senior Cloud Architect</p>
+</div>
+<!-- Member 5 -->
+<div class="min-w-[320px] snap-start group cursor-pointer" onclick="updateHighlight(4)">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 border border-outline-variant/30 transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An executive portrait of a tall male professional standing in a glass-walled office at night. The city lights outside are blurred into soft teal and white bokeh. He is dressed in a navy blue bespoke suit. The composition is expansive and powerful, conveying a sense of scale and global influence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSCpuJjf-A_Swi0KS-5zQdeDc_tf24v4_0DruG8FDFZavV3nnW7UpjGMoW06juXRoan5IHWULfqZXyzfOtxTGGKCAISL9OJ9Nld-b4Tnq-CbjozTU1P-tNOETLwSCwyoPm_1dUtPmWBPGbUavq5ue-HVP8TiegkqSseR1CavbguWnFmMO4O7ueVTJeAxT74MGBspAkBg8GlnIHnZi51T8-iZCEDHXsBBd0xGO1auKf4GgkBUAibM3z66eask5PlLdQQ2n5PBM7kc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-md text-white text-lg">Thomas Wright</h3>
+<p class="text-primary-fixed font-label-sm">Managing Director</p>
+</div>
+</div>
+</section>
+<!-- Highlight Section (Bento Grid) -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-max-width mx-auto px-gutter relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Bio Highlight -->
+<div class="lg:col-span-7 glass-card p-10 rounded-2xl flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-px w-12 bg-primary-fixed"></div>
+<span class="font-label-sm text-primary-fixed tracking-widest uppercase">Member Spotlight</span>
+</div>
+<h2 class="font-display-lg text-white mb-6" id="highlightName">Dr. Elena Vance</h2>
+<p class="font-body-lg text-on-surface-variant mb-10 leading-relaxed" id="highlightBio">
+                            With over 15 years in digital governance, Dr. Vance has spearheaded transformation initiatives for Fortune 100 firms. Her approach combines rigorous data analytics with human-centric organizational design to deliver sustainable, long-term growth in volatile markets.
+                        </p>
+<div class="grid grid-cols-3 gap-8">
+<div>
+<div class="font-display-lg text-primary-fixed text-4xl mb-1" id="stat1">150+</div>
+<div class="font-label-sm text-on-surface-variant">Projects Led</div>
+</div>
+<div>
+<div class="font-display-lg text-primary-fixed text-4xl mb-1" id="stat2">12bn</div>
+<div class="font-label-sm text-on-surface-variant">Value Created</div>
+</div>
+<div>
+<div class="font-display-lg text-primary-fixed text-4xl mb-1" id="stat3">18</div>
+<div class="font-label-sm text-on-surface-variant">Global Awards</div>
+</div>
+</div>
+</div>
+<!-- Metric Cards Stack -->
+<div class="lg:col-span-5 grid grid-cols-1 gap-8">
+<div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-primary-fixed/50 transition-colors">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary-fixed text-4xl opacity-20 group-hover:opacity-100 transition-opacity">insights</span>
+</div>
+<h4 class="font-headline-md text-white mb-2">Strategy Expertise</h4>
+<p class="text-on-surface-variant">Specializing in high-stakes market entry and risk mitigation strategies for emerging tech sectors.</p>
+<div class="mt-4 flex gap-2">
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-xs font-bold">M&amp;A</span>
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-xs font-bold">Risk Management</span>
+</div>
+</div>
+<div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-primary-fixed/50 transition-colors">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary-fixed text-4xl opacity-20 group-hover:opacity-100 transition-opacity">language</span>
+</div>
+<h4 class="font-headline-md text-white mb-2">Global Network</h4>
+<p class="text-on-surface-variant">Maintaining a robust network of industry leaders across EMEA and APAC regions for seamless integration.</p>
+<div class="mt-4 flex gap-2">
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-xs font-bold">EMEA</span>
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-xs font-bold">APAC</span>
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-xs font-bold">Public Policy</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Atmospheric BG Element -->
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary-fixed/5 to-transparent pointer-events-none"></div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 max-w-max-width mx-auto px-gutter text-center">
+<div class="inline-block p-1 px-4 rounded-full border border-primary-fixed/30 text-primary-fixed font-label-sm mb-8">Ready to collaborate?</div>
+<h2 class="font-display-lg text-white mb-12">Let's build the future together.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(38,221,205,0.3)] transition-all">Book a Strategy Session</button>
+<button class="border border-primary-fixed text-primary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-fixed/5 transition-all">View All Capabilities</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="font-display-lg text-primary-fixed">ConsultancyPro</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Accessibility</a>
+</div>
+<div class="text-on-surface font-body-md text-body-md opacity-80">© 2024 ConsultancyPro. All rights reserved.</div>
+</div>
+</footer>
+<script>
+        const members = [
+            {
+                name: "Dr. Elena Vance",
+                bio: "With over 15 years in digital governance, Dr. Vance has spearheaded transformation initiatives for Fortune 100 firms. Her approach combines rigorous data analytics with human-centric organizational design to deliver sustainable, long-term growth in volatile markets.",
+                stats: ["150+", "12bn", "18"]
+            },
+            {
+                name: "Marcus Sterling",
+                bio: "Marcus is the visionary behind our data-first methodology. Having architected infrastructure for global fintech leaders, he specializes in making complex data accessible and actionable for C-suite decision-makers.",
+                stats: ["450k", "99.9%", "12"]
+            },
+            {
+                name: "Sarah Jenkins",
+                bio: "Sarah bridges the gap between technical possibility and business reality. With a background in behavioral economics, she ensures that every transformation is adopted and championed by the workforce.",
+                stats: ["30+", "100%", "25"]
+            },
+            {
+                name: "Julian Kross",
+                bio: "Julian is at the forefront of cloud native technologies. He advises our clients on hyperscale architecture and cybersecurity, ensuring that growth is always matched by industrial-grade protection.",
+                stats: ["200+", "0", "9"]
+            },
+            {
+                name: "Thomas Wright",
+                bio: "Thomas leads Aspyre's global vision. With experience across four continents, he understands the nuances of international trade and the power of localized strategy within a global framework.",
+                stats: ["4", "500+", "22"]
+            }
+        ];
+
+        function updateHighlight(index) {
+            const member = members[index];
+            const nameEl = document.getElementById('highlightName');
+            const bioEl = document.getElementById('highlightBio');
+            const stat1 = document.getElementById('stat1');
+            const stat2 = document.getElementById('stat2');
+            const stat3 = document.getElementById('stat3');
+
+            // Add fade out
+            [nameEl, bioEl, stat1, stat2, stat3].forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                el.style.transition = 'all 0.3s ease-in-out';
+            });
+
+            setTimeout(() => {
+                nameEl.innerText = member.name;
+                bioEl.innerText = member.bio;
+                stat1.innerText = member.stats[0];
+                stat2.innerText = member.stats[1];
+                stat3.innerText = member.stats[2];
+
+                // Fade back in
+                [nameEl, bioEl, stat1, stat2, stat3].forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        }
+
+        const carousel = document.getElementById('carousel');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 350, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -350, behavior: 'smooth' });
+        });
+
+        // Add some hover interaction to the cards
+        document.querySelectorAll('.snap-start').forEach((card, idx) => {
+            card.addEventListener('mouseenter', () => {
+                // Potential mini-interaction here
+            });
+        });
+    </script>
+</body></html>

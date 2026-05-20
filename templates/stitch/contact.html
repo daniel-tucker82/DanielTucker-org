@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Template - ConsultancyPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#849491",
+                    "on-primary-container": "#006b63",
+                    "tertiary": "#d5fffe",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed": "#93f2f2",
+                    "outline-variant": "#3b4a47",
+                    "surface-tint": "#26ddcd",
+                    "tertiary-fixed-dim": "#76d6d5",
+                    "surface-container-high": "#282a2b",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "primary-fixed": "#55fae9",
+                    "on-secondary": "#2e3036",
+                    "on-tertiary-container": "#006b6b",
+                    "inverse-on-surface": "#2f3131",
+                    "on-tertiary": "#003737",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-dim": "#121414",
+                    "on-secondary-container": "#b7b8be",
+                    "primary-fixed-dim": "#26ddcd",
+                    "secondary-container": "#47494e",
+                    "on-secondary-fixed-variant": "#45474c",
+                    "secondary-fixed": "#e2e2e9",
+                    "on-primary": "#003732",
+                    "primary": "#d8fff8",
+                    "on-background": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#191c20",
+                    "on-surface-variant": "#bacac6",
+                    "surface-bright": "#37393a",
+                    "on-primary-fixed-variant": "#005049",
+                    "surface-container": "#1e2020",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#121414",
+                    "surface-container-highest": "#333535",
+                    "secondary": "#c5c6cd",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#002020",
+                    "secondary-fixed-dim": "#c5c6cd",
+                    "primary-container": "#4af2e1",
+                    "surface": "#121414",
+                    "tertiary-container": "#8beae9",
+                    "inverse-primary": "#006a62",
+                    "on-surface": "#e2e2e2",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "base-unit": "4px",
+                    "max-width": "1440px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Geist"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: rgb(31, 33, 38);
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(40, 42, 43, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-glow {
+            box-shadow: 0 0 20px rgba(38, 221, 205, 0.15);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-surface {
+            background: rgba(30, 32, 32, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-gradient-bg {
+            background: linear-gradient(135deg, #006b63 0%, #26ddcd 100%);
+        }
+        .teal-glow:focus {
+            box-shadow: 0 0 15px rgba(38, 221, 205, 0.3);
+        }
+        .mesh-gradient {
+            background-image:
+                radial-gradient(at 0% 0%, rgba(38, 221, 205, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 107, 99, 0.1) 0px, transparent 50%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-20">
+<div class="font-display-lg text-primary-fixed tracking-tight">ConsultancyPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all">Consultation</button>
+</div>
+</nav>
+<main class="pt-20 mesh-gradient min-h-screen">
+<!-- Hero Section -->
+<header class="relative py-24 px-gutter max-w-max-width mx-auto text-center">
+<div class="absolute inset-0 -z-10 opacity-20 overflow-hidden">
+<div class="absolute -top-24 -left-24 w-96 h-96 teal-gradient-bg rounded-full blur-[120px]"></div>
+<div class="absolute top-12 -right-24 w-64 h-64 bg-primary-container rounded-full blur-[100px]"></div>
+</div>
+<div class="inline-block mb-6 px-4 py-1 rounded-full border border-primary-fixed/30 bg-primary-fixed/5">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest">Contact</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 max-w-3xl mx-auto leading-tight">
+                Start the <span class="text-primary-fixed">conversation</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Tell me about your current challenges and goals — I will get back to you as soon as I can.
+            </p>
+</header>
+<section class="px-gutter max-w-max-width mx-auto pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-7 glass-surface rounded-xl p-8 md:p-12">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Send an Inquiry</h2>
+<!-- STITCH_CONTACT_FORM -->
+</div>
+<div class="lg:col-span-5 glass-surface rounded-xl p-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Get in touch</h3>
+<div class="space-y-4 text-on-surface-variant font-body-md text-body-md">
+<p>Based in Australia. Remote and on-site engagements available.</p>
+<p>Send the form and I will respond by email.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="font-display-lg text-primary-fixed">ConsultancyPro</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Accessibility</a>
+</div>
+<div class="text-on-surface font-body-md text-body-md opacity-80">© 2024 ConsultancyPro. All rights reserved.</div>
+</div>
+</footer>
+<script>
+        const members = [
+            {
+                name: "Dr. Elena Vance",
+                bio: "With over 15 years in digital governance, Dr. Vance has spearheaded transformation initiatives for Fortune 100 firms. Her approach combines rigorous data analytics with human-centric organizational design to deliver sustainable, long-term growth in volatile markets.",
+                stats: ["150+", "12bn", "18"]
+            },
+            {
+                name: "Marcus Sterling",
+                bio: "Marcus is the visionary behind our data-first methodology. Having architected infrastructure for global fintech leaders, he specializes in making complex data accessible and actionable for C-suite decision-makers.",
+                stats: ["450k", "99.9%", "12"]
+            },
+            {
+                name: "Sarah Jenkins",
+                bio: "Sarah bridges the gap between technical possibility and business reality. With a background in behavioral economics, she ensures that every transformation is adopted and championed by the workforce.",
+                stats: ["30+", "100%", "25"]
+            },
+            {
+                name: "Julian Kross",
+                bio: "Julian is at the forefront of cloud native technologies. He advises our clients on hyperscale architecture and cybersecurity, ensuring that growth is always matched by industrial-grade protection.",
+                stats: ["200+", "0", "9"]
+            },
+            {
+                name: "Thomas Wright",
+                bio: "Thomas leads Aspyre's global vision. With experience across four continents, he understands the nuances of international trade and the power of localized strategy within a global framework.",
+                stats: ["4", "500+", "22"]
+            }
+        ];
+
+        function updateHighlight(index) {
+            const member = members[index];
+            const nameEl = document.getElementById('highlightName');
+            const bioEl = document.getElementById('highlightBio');
+            const stat1 = document.getElementById('stat1');
+            const stat2 = document.getElementById('stat2');
+            const stat3 = document.getElementById('stat3');
+
+            // Add fade out
+            [nameEl, bioEl, stat1, stat2, stat3].forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+                el.style.transition = 'all 0.3s ease-in-out';
+            });
+
+            setTimeout(() => {
+                nameEl.innerText = member.name;
+                bioEl.innerText = member.bio;
+                stat1.innerText = member.stats[0];
+                stat2.innerText = member.stats[1];
+                stat3.innerText = member.stats[2];
+
+                // Fade back in
+                [nameEl, bioEl, stat1, stat2, stat3].forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        }
+
+        const carousel = document.getElementById('carousel');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 350, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -350, behavior: 'smooth' });
+        });
+
+        // Add some hover interaction to the cards
+        document.querySelectorAll('.snap-start').forEach((card, idx) => {
+            card.addEventListener('mouseenter', () => {
+                // Potential mini-interaction here
+            });
+        });
+    </script>
+</body></html>

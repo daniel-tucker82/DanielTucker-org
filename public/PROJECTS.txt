@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects &amp; Testimonials Template | ConsultancyPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "outline": "#849491",
+                "on-primary-container": "#006b63",
+                "tertiary": "#d5fffe",
+                "surface-container-lowest": "#0c0f0f",
+                "surface-variant": "#333535",
+                "tertiary-fixed": "#93f2f2",
+                "outline-variant": "#3b4a47",
+                "surface-tint": "#26ddcd",
+                "tertiary-fixed-dim": "#76d6d5",
+                "surface-container-high": "#282a2b",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed-variant": "#004f4f",
+                "primary-fixed": "#55fae9",
+                "on-secondary": "#2e3036",
+                "on-tertiary-container": "#006b6b",
+                "inverse-on-surface": "#2f3131",
+                "on-tertiary": "#003737",
+                "surface-container-low": "#1a1c1c",
+                "surface-dim": "#121414",
+                "on-secondary-container": "#b7b8be",
+                "primary-fixed-dim": "#26ddcd",
+                "secondary-container": "#47494e",
+                "on-secondary-fixed-variant": "#45474c",
+                "secondary-fixed": "#e2e2e9",
+                "on-primary": "#003732",
+                "primary": "#d8fff8",
+                "on-background": "#e2e2e2",
+                "inverse-surface": "#e2e2e2",
+                "on-secondary-fixed": "#191c20",
+                "on-surface-variant": "#bacac6",
+                "surface-bright": "#37393a",
+                "on-primary-fixed-variant": "#005049",
+                "surface-container": "#1e2020",
+                "on-error-container": "#ffdad6",
+                "on-primary-fixed": "#00201d",
+                "background": "#121414",
+                "surface-container-highest": "#333535",
+                "secondary": "#c5c6cd",
+                "on-error": "#690005",
+                "on-tertiary-fixed": "#002020",
+                "secondary-fixed-dim": "#c5c6cd",
+                "primary-container": "#4af2e1",
+                "surface": "#121414",
+                "tertiary-container": "#8beae9",
+                "inverse-primary": "#006a62",
+                "on-surface": "#e2e2e2",
+                "error-container": "#93000a"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "base-unit": "4px",
+                "max-width": "1440px",
+                "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Geist"],
+                "body-lg": ["Inter"],
+                "headline-md": ["Geist"],
+                "label-sm": ["JetBrains Mono"],
+                "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: rgb(31, 33, 38);
+            color: #e2e2e2;
+        }
+        .glass-card {
+            background: rgba(40, 42, 43, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-gradient-bg {
+            background: linear-gradient(135deg, #005049 0%, #26ddcd 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #55fae9, #d5fffe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3b4a47;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-20 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-full">
+<span class="font-display-lg text-primary-fixed tracking-tight text-[28px]">ConsultancyPro</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-semibold hover:scale-105 transition-transform">
+                Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden">
+<div class="absolute inset-0 teal-gradient-bg opacity-20"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed/5 via-transparent to-transparent"></div>
+<div class="relative px-gutter max-w-max-width mx-auto w-full">
+<div class="max-w-3xl">
+<span class="font-label-sm text-label-sm text-primary-fixed mb-4 block uppercase tracking-widest">Global Portfolio</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6">Proving Value Through <span class="text-gradient">Measurable Precision</span>.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We don't just consult; we architect outcomes. Explore our journey of transforming complex challenges into streamlined operational success.</p>
+</div>
+</div>
+</section>
+<!-- Projects Bento Grid & Modal Context -->
+<section class="px-gutter max-w-max-width mx-auto -mt-24 pb-24 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Project Card 1: Large Feature -->
+<div class="group md:col-span-8 glass-card rounded-xl p-8 cursor-pointer hover:border-primary-fixed/50 transition-all duration-500 overflow-hidden relative" onclick="openModal('project-1')">
+<div class="flex flex-col md:flex-row gap-8 items-center h-full">
+<div class="w-full md:w-1/2">
+<img class="rounded-lg shadow-2xl group-hover:scale-105 transition-transform duration-700 w-full object-cover h-64 border border-outline-variant/30" data-alt="A clean, high-tech command center interface showing real-time financial data visualizations. The aesthetic is ultra-modern with a dark mode background and vibrant teal neon accents illuminating complex graphs. The lighting is low-key but sharp, creating a professional and focused atmosphere for high-stakes decision making." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg_jYFybFVzoCA7aeQWEiM1_Hd6JDazCYeuaL0-i72LzN-1zNKndffzRNTxqPmwUW6oWn7E44pvwSchzhJ59X0DIDfkAOyO1Ivjk_V-9yoe26mGGUnYkHYt9SFx79JI_hrxtCYXDUqIz1aZv3enqeP6rOPdsCQo6NRK-EaK7nPvjAayDnMP_0SLe-JBIdlciO-ohqSMO_8Kzi1SmqkWMHar8ETdfTJ4TvSE7YNhzkGpvuij1AYi-XlP71M-4br-Of0qU_ijFOoVTM"/>
+</div>
+<div class="w-full md:w-1/2">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-[12px] font-bold">FINTECH</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">2023 RE-ENGINEERING</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-white">Quantum Ledger Overhaul</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-3">Optimizing high-frequency transaction processing for a Tier-1 investment bank, reducing latency by 45% through micro-service containerization.</p>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="text-primary-fixed font-bold text-2xl">+45%</div>
+<div class="text-[12px] uppercase text-outline">Efficiency Gain</div>
+</div>
+<div>
+<div class="text-primary-fixed font-bold text-2xl">$12.4M</div>
+<div class="text-[12px] uppercase text-outline">Revenue Optimized</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2: Small Feature -->
+<div class="group md:col-span-4 glass-card rounded-xl p-8 cursor-pointer hover:border-primary-fixed/50 transition-all duration-500 flex flex-col justify-between" onclick="openModal('project-2')">
+<div>
+<div class="mb-6 overflow-hidden rounded-lg">
+<img class="group-hover:scale-110 transition-transform duration-700 w-full h-40 object-cover" data-alt="A futuristic laboratory setting where digital data streams are integrated into physical hardware components. Soft aquamarine lighting glows from under sleek translucent surfaces, highlighting the precision and innovation of a modern industrial hardware development project. The composition is clean, airy, and evokes a sense of high-end research and development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqx_SaA0CUH0olZu_1MYZDZzA-r6IkCcnXlvlz8da3y8BKBcPHneqp_pWcKVmdXBWA7cievkWQh7901LBI6tIplYQRddeXkIlktI6hMIH9U--aZ6B7DXbatKpDrIuQBL2loQyL9fa5SP7C7wgup6CePr5SzL598tKmC7DytLya14lhTi4EtzMRdHkxPTnmXlAFJVLyn2iqw1ftsigK38NtxXN9IAq59CwwfuFZP-7ICmGoOF7G1k2wlifV4K13xnLK-3sCdHkdxj8"/>
+</div>
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-[12px] font-bold mb-4 inline-block">SaaS</span>
+<h3 class="font-headline-md text-headline-md mb-2 text-white">CloudScale Infrastructure</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Migrating 4 petabytes of data for a global retailer with zero downtime.</p>
+</div>
+<div class="mt-6 flex justify-between items-end">
+<div class="text-primary-fixed font-bold text-xl">99.99%</div>
+<div class="material-symbols-outlined text-outline group-hover:text-primary-fixed transition-colors">arrow_forward_ios</div>
+</div>
+</div>
+<!-- Project Card 3: Medium Feature -->
+<div class="group md:col-span-5 glass-card rounded-xl p-8 cursor-pointer hover:border-primary-fixed/50 transition-all duration-500 flex flex-col" onclick="openModal('project-3')">
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-6">
+<div class="material-symbols-outlined text-primary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</div>
+<span class="bg-primary-fixed/10 text-primary-fixed px-3 py-1 rounded-full text-[12px] font-bold">LOGISTICS</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-white">SupplyChain AI</h3>
+<p class="text-on-surface-variant mb-6">Implementing predictive analytics for a multi-national logistics firm, anticipating shortages 14 days in advance.</p>
+</div>
+<div class="flex items-center gap-4 border-t border-outline-variant/30 pt-6">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-primary-fixed/30">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a tech executive in a modern, dark-themed office. The lighting is dramatic but flattering, with cool teal rim lighting that matches a futuristic corporate aesthetic. The executive looks confident and forward-thinking, embodying the persona of a visionary leader in a high-tech consultancy environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApUcZcwUj20RGlPoYUDSIzqpcmxvzVGzVJyoKr6IrjZkSXdJCZ0WTu0CsatVa3coztArylgJmAONOwX1BJAP3POv4sVjLCTucN2eSVK6niz_jaYy5Pn8c6TFLNQ1x8sPSCViHZ-BUzz1d8OgjHlINAylBdeFaKpzT2EKklkz_SIqGd290bXZDt3ntPY4BE5JoP9rZ5ez9d-uHAPP_FTPg1Z0HUE9aW3SgRX8ZBsJxGzBRWFx-jHmZabnesDShX3MK_9U0EpAUEMa0"/>
+</div>
+<div>
+<p class="text-white text-sm font-bold">Marcus Chen</p>
+<p class="text-on-surface-variant text-[12px]">CTO, Global Logistics Group</p>
+</div>
+</div>
+</div>
+<!-- Testimonials Highlight -->
+<div class="md:col-span-7 glass-card rounded-xl p-8 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-fixed/10 rounded-full blur-[100px]"></div>
+<div class="material-symbols-outlined text-primary-fixed text-6xl mb-6 opacity-40">format_quote</div>
+<blockquote class="font-headline-md text-headline-md text-white italic mb-8 relative z-10">
+                        "ConsultancyPro didn't just give us a roadmap; they built the engine. Our operational efficiency reached levels we thought were years away."
+                    </blockquote>
+<div class="flex items-center gap-6">
+<div class="h-[2px] w-12 bg-primary-fixed"></div>
+<span class="text-on-surface-variant font-body-md">Sarah Jenkins, Director of Operations at FlowState</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Grid -->
+<section class="py-24 bg-surface-container-lowest/50">
+<div class="px-gutter max-w-max-width mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4">Voice of the <span class="text-gradient">Partners</span></h2>
+<p class="text-on-surface-variant max-w-xl">Don't take our word for it. Hear from the leaders who have scaled their operations with our strategic intervention.</p>
+</div>
+<div class="flex gap-4 mb-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-card p-8 rounded-xl relative">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"Their ability to dissect complex legacy systems and propose a modernized, scalable architecture was impressive. The revenue optimization was immediate."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">David Miller</h4>
+<p class="text-[12px] text-on-surface-variant">VP of Tech, FinFlow</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card p-8 rounded-xl border-t-2 border-t-primary-fixed">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"The ROI was realized within the first quarter. Their team integrated seamlessly with ours, acting less like consultants and more like an extension of our core team."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">Elena Rodriguez</h4>
+<p class="text-[12px] text-on-surface-variant">CEO, RetailGenie</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card p-8 rounded-xl">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"Precise, professional, and powerful results. We've seen a 30% reduction in operational overhead since implementation."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">Dr. Amit Shah</h4>
+<p class="text-[12px] text-on-surface-variant">Head of R&amp;D, BioTech Solutions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Project Detail Modal -->
+<div class="fixed inset-0 z-[100] hidden" id="project-modal">
+<div class="absolute inset-0 bg-background/80 backdrop-blur-md" onclick="closeModal()"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[870px] glass-card rounded-2xl overflow-hidden flex flex-col border border-primary-fixed/30 shadow-2xl">
+<div class="flex justify-between items-center p-6 border-b border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-white" id="modal-title">Project Details</h2>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high flex items-center justify-center transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-grow overflow-y-auto p-8 custom-scrollbar">
+<div class="space-y-8" id="modal-content">
+<!-- Dynamic Content Injected Here -->
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<section class="py-24 bg-surface-container-lowest/50">
+<div class="px-gutter max-w-max-width mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4">Voice of the <span class="text-gradient">Partners</span></h2>
+<p class="text-on-surface-variant max-w-xl">Don't take our word for it. Hear from the leaders who have scaled their operations with our strategic intervention.</p>
+</div>
+<div class="flex gap-4 mb-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-8 rounded-xl relative">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"Their ability to dissect complex legacy systems and propose a modernized, scalable architecture was impressive. The revenue optimization was immediate."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">David Miller</h4>
+<p class="text-[12px] text-on-surface-variant">VP of Tech, FinFlow</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl border-t-2 border-t-primary-fixed">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"The ROI was realized within the first quarter. Their team integrated seamlessly with ours, acting less like consultants and more like an extension of our core team."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">Elena Rodriguez</h4>
+<p class="text-[12px] text-on-surface-variant">CEO, RetailGenie</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl">
+<div class="flex gap-1 text-primary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-8 italic">"Precise, professional, and powerful results. We've seen a 30% reduction in operational overhead since implementation."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant"></div>
+<div>
+<h4 class="text-white font-bold text-sm">Dr. Amit Shah</h4>
+<p class="text-[12px] text-on-surface-variant">Head of R&amp;D, BioTech Solutions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/20 shadow-none">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<span class="font-display-lg text-primary-fixed text-2xl">ConsultancyPro</span>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Accessibility</a>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md opacity-80">© 2024 ConsultancyPro. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        const projectData = {
+            'project-1': {
+                title: 'Quantum Ledger Overhaul',
+                tag: 'FINTECH',
+                stats: { efficiency: '+45%', revenue: '$12.4M', period: '6 Months' },
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+                body: `
+                    <p class="text-on-surface-variant text-lg">Our mandate was to overhaul a critical legacy settlement engine for a major investment bank. The system was struggling with the increasing volume of crypto-asset settlements and high-frequency traditional trades.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                        <div class="bg-surface-container-high p-4 rounded-lg border border-outline-variant/50">
+                            <span class="text-primary-fixed font-bold block text-2xl">3.2B</span>
+                            <span class="text-[12px] uppercase">Daily Transactions</span>
+                        </div>
+                        <div class="bg-surface-container-high p-4 rounded-lg border border-outline-variant/50">
+                            <span class="text-primary-fixed font-bold block text-2xl">0ms</span>
+                            <span class="text-[12px] uppercase">Downtime Migration</span>
+                        </div>
+                        <div class="bg-surface-container-high p-4 rounded-lg border border-outline-variant/50">
+                            <span class="text-primary-fixed font-bold block text-2xl">-60%</span>
+                            <span class="text-[12px] uppercase">Infrastructure Cost</span>
+                        </div>
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-4">The Solution</h4>
+                    <p class="text-on-surface-variant">We implemented a Kafka-driven event-mesh architecture coupled with a proprietary Rust-based processing layer. This allowed for horizontal scaling that was previously impossible, providing the client with a future-proofed platform ready for the next decade of financial innovation.</p>
+                `
+            },
+            'project-2': {
+                title: 'CloudScale Infrastructure',
+                tag: 'SaaS',
+                stats: { efficiency: '99.99%', revenue: '$8.2M', period: '12 Months' },
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop',
+                body: `
+                    <p class="text-on-surface-variant text-lg">A global retailer needed to migrate their entire e-commerce infrastructure to a hybrid-cloud environment to handle peak holiday traffic that was causing multi-million dollar losses annually due to outages.</p>
+                    <h4 class="text-white font-bold text-xl mt-8 mb-4">Strategic Impact</h4>
+                    <p class="text-on-surface-variant">By implementing an automated multi-region failover strategy and containerizing their monolithic applications, we achieved zero downtime during the Black Friday peak, resulting in a record-breaking sales weekend for the client.</p>
+                `
+            },
+            'project-3': {
+                title: 'SupplyChain AI Implementation',
+                tag: 'LOGISTICS',
+                stats: { efficiency: '+30%', revenue: '$22M', period: '14 Months' },
+                image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2340&auto=format&fit=crop',
+                body: `
+                    <p class="text-on-surface-variant text-lg">Inefficiencies in global supply chains are often rooted in reactive decision-making. Our AI implementation shifted the paradigm from reactive to predictive.</p>
+                    <ul class="space-y-4 my-8">
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+                            <span class="text-on-surface">Demand forecasting with 94% accuracy.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+                            <span class="text-on-surface">Dynamic route optimization reducing fuel costs by 18%.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+                            <span class="text-on-surface">Automated inventory rebalancing across 42 global warehouses.</span>
+                        </li>
+                    </ul>
+                `
+            }
+        };
+
+        function openModal(id) {
+            const data = projectData[id];
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+
+            title.innerText = data.title;
+            content.innerHTML = `
+                <img src="${data.image}" class="w-full h-64 object-cover rounded-xl border border-outline-variant/30 shadow-lg">
+                <div class="flex gap-4">
+                    <span class="bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full font-bold text-sm">${data.tag}</span>
+                    <span class="text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-sm">calendar_today</span> ${data.stats.period}</span>
+                </div>
+                <div>${data.body}</div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.teal-gradient-bg');
+            if(hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+</body></html>

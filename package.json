@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "blog:migrate-blob": "node scripts/migrate-blog-to-blob.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.2.1",

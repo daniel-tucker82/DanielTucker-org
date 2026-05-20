@@ -1,5 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart3,
+  ChevronDown,
+  Layers,
+  Microscope,
+  Quote,
+  RefreshCw,
+  RefreshCwOff,
+  Route,
+  Target,
+  TriangleAlert,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 
 const legacyFooterLinks = [
   { href: "/approach", label: "Approach" },
@@ -65,13 +80,14 @@ export function StitchLanding() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 opacity-50">
+        <div className="absolute bottom-10 left-1/2 z-[3] flex -translate-x-1/2 flex-col items-center gap-2 opacity-50">
           <span className="font-stitch-body text-[10px] font-semibold uppercase tracking-widest text-primary-container/60">
             Initiate scroll
           </span>
-          <span className="material-symbols-outlined animate-bounce text-4xl text-primary-container">
-            expand_more
-          </span>
+          <ChevronDown
+            className="h-9 w-9 animate-bounce text-primary-container"
+            aria-hidden
+          />
         </div>
       </section>
 
@@ -96,13 +112,13 @@ export function StitchLanding() {
             </div>
             <div className="mt-12 grid grid-cols-1 gap-4">
               <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
-                <span className="material-symbols-outlined text-error">warning</span>
+                <TriangleAlert className="h-6 w-6 shrink-0 text-error" aria-hidden />
                 <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
                   ERROR_FATIGUE: Velocity dropping below sustainable levels.
                 </span>
               </div>
               <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
-                <span className="material-symbols-outlined text-error">sync_problem</span>
+                <RefreshCwOff className="h-6 w-6 shrink-0 text-error" aria-hidden />
                 <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
                   WIP_OVERLOAD: 40+ concurrent tasks per engineer.
                 </span>
@@ -146,31 +162,34 @@ export function StitchLanding() {
             Engineering the <span className="text-primary-container">Shift</span>.
           </h2>
           <div className="grid gap-gutter md:grid-cols-3">
-            {[
-              {
-                icon: "architecture",
-                title: "Structural Clarity",
-                body: "We strip away the noise. Using Value Stream Mapping to identify exactly where your delivery engine is leaking power.",
-              },
-              {
-                icon: "bolt",
-                title: "Kinetic Flow",
-                body: "Implementation of WIP limits and pull-based systems to ensure work moves at maximum velocity from backlog to production.",
-              },
-              {
-                icon: "insights",
-                title: "Data Autonomy",
-                body: "Shift from gut-feel management to precision metrics. We install live throughput dashboards for real-time steering.",
-              },
-            ].map((card) => (
+            {(
+              [
+                {
+                  Icon: Layers,
+                  title: "Structural Clarity",
+                  body: "We strip away the noise. Using Value Stream Mapping to identify exactly where your delivery engine is leaking power.",
+                },
+                {
+                  Icon: Zap,
+                  title: "Kinetic Flow",
+                  body: "Implementation of WIP limits and pull-based systems to ensure work moves at maximum velocity from backlog to production.",
+                },
+                {
+                  Icon: BarChart3,
+                  title: "Data Autonomy",
+                  body: "Shift from gut-feel management to precision metrics. We install live throughput dashboards for real-time steering.",
+                },
+              ] satisfies { Icon: LucideIcon; title: string; body: string }[]
+            ).map((card) => (
               <div
                 key={card.title}
                 className="group border-t border-primary/20 bg-surface-container-low p-8 transition-all hover:bg-surface-container-high"
               >
                 <div className="mb-6">
-                  <span className="material-symbols-outlined text-4xl text-primary-container transition-transform group-hover:scale-110">
-                    {card.icon}
-                  </span>
+                  <card.Icon
+                    className="h-10 w-10 text-primary-container transition-transform group-hover:scale-110"
+                    aria-hidden
+                  />
                 </div>
                 <h3 className="mb-4 font-stitch-display text-[32px] font-medium leading-[120%]">{card.title}</h3>
                 <p className="font-stitch-body text-base font-normal leading-[160%] text-on-surface-variant">
@@ -201,32 +220,34 @@ export function StitchLanding() {
           </div>
           <div className="relative grid grid-cols-1 gap-4 md:grid-cols-4">
             <div className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 hidden h-px -translate-y-1/2 bg-outline-variant/30 md:block" />
-            {[
-              {
-                week: "WEEK 01",
-                title: "The Diagnostic",
-                body: "Deep-dive audit of current tooling, culture, and flow bottlenecks.",
-                icon: "biotech",
-              },
-              {
-                week: "WEEK 02",
-                title: "Bottleneck ID",
-                body: "Isolating the friction points. Visualizing the waste in your current system.",
-                icon: "target",
-              },
-              {
-                week: "WEEK 03",
-                title: "The Pivot",
-                body: "Implementation of new rituals, WIP limits, and structural changes.",
-                icon: "published_with_changes",
-              },
-              {
-                week: "WEEK 04",
-                title: "The Roadmap",
-                body: "Handover of the sustained velocity blueprint and live monitoring.",
-                icon: "route",
-              },
-            ].map((w) => (
+            {(
+              [
+                {
+                  week: "WEEK 01",
+                  title: "The Diagnostic",
+                  body: "Deep-dive audit of current tooling, culture, and flow bottlenecks.",
+                  Icon: Microscope,
+                },
+                {
+                  week: "WEEK 02",
+                  title: "Bottleneck ID",
+                  body: "Isolating the friction points. Visualizing the waste in your current system.",
+                  Icon: Target,
+                },
+                {
+                  week: "WEEK 03",
+                  title: "The Pivot",
+                  body: "Implementation of new rituals, WIP limits, and structural changes.",
+                  Icon: RefreshCw,
+                },
+                {
+                  week: "WEEK 04",
+                  title: "The Roadmap",
+                  body: "Handover of the sustained velocity blueprint and live monitoring.",
+                  Icon: Route,
+                },
+              ] satisfies { week: string; title: string; body: string; Icon: LucideIcon }[]
+            ).map((w) => (
               <div
                 key={w.week}
                 className="group relative z-10 border border-outline-variant/30 bg-surface p-8 transition-all hover:border-primary-container/50"
@@ -237,7 +258,7 @@ export function StitchLanding() {
                 <h4 className="mb-2 font-stitch-display text-2xl font-medium uppercase">{w.title}</h4>
                 <p className="font-stitch-body text-sm leading-[160%] text-on-surface-variant">{w.body}</p>
                 <div className="mt-8 flex justify-center opacity-20 transition-opacity group-hover:opacity-100">
-                  <span className="material-symbols-outlined text-4xl text-primary-container">{w.icon}</span>
+                  <w.Icon className="h-10 w-10 text-primary-container" aria-hidden />
                 </div>
               </div>
             ))}
@@ -260,7 +281,7 @@ export function StitchLanding() {
                   </div>
                   <div className="flex items-end gap-4">
                     <span className="font-stitch-display text-[64px] leading-none text-white opacity-40">2/mo</span>
-                    <span className="material-symbols-outlined pb-2 text-primary-container">trending_flat</span>
+                    <ArrowRight className="mb-2 h-8 w-8 shrink-0 text-primary-container" aria-hidden />
                     <span className="text-glow-cyan font-stitch-display text-[64px] leading-none text-primary-container">
                       2/wk
                     </span>
@@ -272,7 +293,7 @@ export function StitchLanding() {
                   </div>
                   <div className="flex items-end gap-4">
                     <span className="font-stitch-display text-[64px] leading-none text-white opacity-40">24d</span>
-                    <span className="material-symbols-outlined pb-2 text-primary-container">trending_flat</span>
+                    <ArrowRight className="mb-2 h-8 w-8 shrink-0 text-primary-container" aria-hidden />
                     <span className="text-glow-cyan font-stitch-display text-[64px] leading-none text-primary-container">
                       4.2d
                     </span>
@@ -283,7 +304,7 @@ export function StitchLanding() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-full bg-primary-container/5 blur-3xl" />
               <div className="relative border border-outline-variant/30 bg-surface-container-low p-12">
-                <span className="material-symbols-outlined mb-8 text-6xl text-primary-container">format_quote</span>
+                <Quote className="mb-8 h-14 w-14 text-primary-container opacity-40" aria-hidden />
                 <p className="mb-8 font-stitch-display text-[28px] italic text-white">
                   &quot;Aspyre didn&apos;t just give us a report; they re-wired how our engineering team thinks about
                   value. Our throughput tripled in a single quarter.&quot;

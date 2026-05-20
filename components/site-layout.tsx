@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { isStitchLayoutPath } from "@/lib/stitch-layout-paths";
 
 type NavChild = { href: string; label: string };
 
@@ -17,27 +18,26 @@ const primaryNav: NavItem[] = [
   {
     label: "Services",
     children: [
-      { href: "#", label: "4-week intensive program" },
-      { href: "#", label: "Optimizing Productivity" },
-      { href: "#", label: "Aligning operations to strategy" },
-      { href: "#", label: "Project recovery" },
+      { href: "/services/4-week-intensive-program", label: "4-week intensive program" },
+      { href: "/services/optimizing-productivity", label: "Optimizing Productivity" },
+      { href: "/services/aligning-operations-to-strategy", label: "Aligning operations to strategy" },
+      { href: "/services/project-recovery", label: "Project recovery" },
     ],
   },
   {
     label: "About",
     children: [
-      { href: "#", label: "Our story" },
-      { href: "#", label: "Our Team" },
-      { href: "#", label: "Our approach" },
-      { href: "#", label: "FAQ" },
+      { href: "/about/our-story", label: "Our story" },
+      { href: "/about/our-team", label: "Our Team" },
+      { href: "/about/our-approach", label: "Our approach" },
+      { href: "/about/faq", label: "FAQ" },
     ],
   },
   {
     label: "Customers",
     children: [
-      { href: "#", label: "Who we work with" },
-      { href: "#", label: "Our results" },
-      { href: "#", label: "Testimonials" },
+      { href: "/customers/who-we-work-with", label: "Who we work with" },
+      { href: "/customers/our-results", label: "Our results" },
     ],
   },
   { label: "Blog", href: "/blog" },
@@ -47,22 +47,37 @@ const navLinkClass =
   "font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-on-surface-variant transition-colors hover:text-primary";
 
 function NavDropdown({ item }: { item: Extract<NavItem, { children: NavChild[] }> }) {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <button
         type="button"
         className={`${navLinkClass} inline-flex items-center gap-1`}
         aria-haspopup="true"
-        aria-expanded="false"
+        aria-expanded={open}
       >
         {item.label}
         <ChevronDown
-          className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:rotate-180"
+          className={`h-3.5 w-3.5 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
           aria-hidden
         />
       </button>
       <div
-        className="pointer-events-none absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-2 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100"
+        className={`absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-2 transition-opacity duration-150 ${
+          open
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
         role="menu"
       >
         <div className="border border-primary/15 bg-surface/95 py-2 shadow-lg backdrop-blur-xl">
@@ -72,6 +87,7 @@ function NavDropdown({ item }: { item: Extract<NavItem, { children: NavChild[] }
               href={child.href}
               role="menuitem"
               className="block px-4 py-2.5 font-stitch-body text-[11px] font-medium uppercase tracking-[0.08em] text-on-surface-variant transition-colors hover:bg-primary/10 hover:text-primary"
+              onClick={() => setOpen(false)}
             >
               {child.label}
             </Link>
@@ -89,7 +105,12 @@ function MobileNavSection({
   item: Extract<NavItem, { children: NavChild[] }>;
   onNavigate: () => void;
 }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <div className="border-b border-primary/10 pb-2">
@@ -112,7 +133,10 @@ function MobileNavSection({
               key={child.label}
               href={child.href}
               className="py-2 font-stitch-body text-[11px] font-medium uppercase tracking-[0.08em] text-on-surface-variant/80 hover:text-primary"
-              onClick={onNavigate}
+              onClick={() => {
+                setOpen(false);
+                onNavigate();
+              }}
             >
               {child.label}
             </Link>
@@ -128,8 +152,13 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
   const { isSignedIn } = useUser();
   const [mobileOpen, setMobileOpen] = useState(false);
   const isHome = pathname === "/";
+  const isFullBleed = isHome || isStitchLayoutPath(pathname);
 
   const closeMobile = () => setMobileOpen(false);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <div className="min-h-screen bg-stitch-canvas font-stitch-body text-on-surface">
@@ -177,7 +206,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               href="/contact"
               className="hidden bg-primary px-4 py-2 font-stitch-body text-[12px] font-bold uppercase leading-none tracking-[0.1em] text-on-primary transition-all hover:scale-95 hover:bg-primary-container sm:inline-block"
             >
-              Contact us
+              Contact Us
             </Link>
             {isSignedIn ? (
               <div className="border border-primary-container/40 p-1">
@@ -198,9 +227,11 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               onClick={() => setMobileOpen((o) => !o)}
             >
               <span className="sr-only">Menu</span>
-              <span className="material-symbols-outlined text-2xl">
-                {mobileOpen ? "close" : "menu"}
-              </span>
+              {mobileOpen ? (
+                <X className="h-6 w-6" aria-hidden />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden />
+              )}
             </button>
           </div>
         </div>
@@ -234,7 +265,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 className="mt-4 bg-primary px-4 py-3 text-center font-stitch-body text-[12px] font-bold uppercase tracking-[0.1em] text-on-primary"
                 onClick={closeMobile}
               >
-                Contact us
+                Contact Us
               </Link>
             </div>
           </nav>
@@ -243,7 +274,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
       <main
         className={
-          isHome
+          isFullBleed
             ? "w-full flex-1 pt-0"
             : "mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6"
         }
@@ -251,7 +282,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      {!isHome ? (
+      {!isFullBleed ? (
         <footer className="border-t border-[#66FCF1]/25 bg-[#1F2833]/45">
           <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-[#C5C6C7] sm:px-6">
             danieltucker.org

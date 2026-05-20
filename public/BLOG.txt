@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Template - ConsultancyPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(40, 42, 43, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .teal-gradient-bg {
+            background: radial-gradient(circle at top right, #26ddcd 0%, #003732 100%);
+        }
+        body {
+            background-color: #121414; /* Matches RGB 31, 33, 38 surface-container-lowest vibe */
+            color: #e2e2e2;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#849491",
+                        "on-primary-container": "#006b63",
+                        "tertiary": "#d5fffe",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-variant": "#333535",
+                        "tertiary-fixed": "#93f2f2",
+                        "outline-variant": "#3b4a47",
+                        "surface-tint": "#26ddcd",
+                        "tertiary-fixed-dim": "#76d6d5",
+                        "surface-container-high": "#282a2b",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#004f4f",
+                        "primary-fixed": "#55fae9",
+                        "on-secondary": "#2e3036",
+                        "on-tertiary-container": "#006b6b",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary": "#003737",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-dim": "#121414",
+                        "on-secondary-container": "#b7b8be",
+                        "primary-fixed-dim": "#26ddcd",
+                        "secondary-container": "#47494e",
+                        "on-secondary-fixed-variant": "#45474c",
+                        "secondary-fixed": "#e2e2e9",
+                        "on-primary": "#003732",
+                        "primary": "#d8fff8",
+                        "on-background": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-fixed": "#191c20",
+                        "on-surface-variant": "#bacac6",
+                        "surface-bright": "#37393a",
+                        "on-primary-fixed-variant": "#005049",
+                        "surface-container": "#1e2020",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#00201d",
+                        "background": "#121414",
+                        "surface-container-highest": "#333535",
+                        "secondary": "#c5c6cd",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#002020",
+                        "secondary-fixed-dim": "#c5c6cd",
+                        "primary-container": "#4af2e1",
+                        "surface": "#121414",
+                        "tertiary-container": "#8beae9",
+                        "inverse-primary": "#006a62",
+                        "on-surface": "#e2e2e2",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base-unit": "4px",
+                        "max-width": "1440px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed/30 selection:text-primary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-gutter max-w-max-width mx-auto h-20">
+<div class="font-display-lg text-primary-fixed tracking-tight">ConsultancyPro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Team</a>
+<a class="text-primary-fixed font-bold border-b-2 border-primary-fixed pb-1 font-body-md text-body-md" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all">
+                Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section: Featured Article -->
+<section class="relative w-full h-[716px] flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-50" data-alt="A sprawling, high-tech command center with futuristic holographic displays glowing in vibrant teal and aquamarine. The environment is a deep corporate grey, suggesting a sophisticated data-driven consulting atmosphere. Dramatic rim lighting highlights sleek surfaces and complex digital interfaces, creating a mood of focused, powerful innovation and strategic clarity within a dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNT3ftJ8uNAzZdACAZSJ6fOFfVWbazoXlQGIl9suX-KLwD-JWU2QLwW45xWaLi8I5Ey738Y4WA6bXbO5gY5O_bVJEzdM9emqg3bKmUbyDgZ3Bb2O6P0wYNFp3l52ddaS9X-qPM_S6v3_H3DMbzoXhdg67E_JSDAJrEM84n8Y-KRq0LOuyWDx3ow4xzdPQ53qHg5a65cbuHdcI_L-g_DUtjmS3bu3zacIDCIYd5yPlbd4-rg-e_yTnsrQyaR4JU1RvLbYvyyVLkEc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-gutter max-w-max-width mx-auto w-full pb-16">
+<div class="max-w-3xl">
+<span class="bg-primary-fixed/10 text-primary-fixed border border-primary-fixed/20 px-4 py-1 rounded-full font-label-sm text-label-sm mb-6 inline-block uppercase">Featured Insight</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6 leading-tight">Navigating the Quantum Shift in Enterprise Logistics</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">How next-generation computational models are redefining the efficiency of global supply chains in the post-digital era.</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed/30">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a senior consultant with a confident expression, set against a blurred, high-end office background. The lighting is crisp and modern, matching the teal-accented dark-mode theme of the platform. The subject wears a charcoal suit, blending into the minimalist and sophisticated corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABjcSQBIOWtK75w_BR1S2MQW-BgBIGi37fjRDW5cfmYgQXDsRdWiXGIyNNEf6Fr4y7av03qLI06YzRQUyyYYwE9nIoJI5n4HkBawHKD3RRhemcoDCKI2oqANCXrKpIXHqr9yAS2D0YSjwu4pDGFO2x0DqggoOoMR1yz5TcLFYCAcbtNxx8zl3zTsO00nnWkdDxCIeO6ZmPVGl6ASKMXzgsTTlGfg_OjoR-F3vWOr1m0M7Dui9gIlhkmbOpMnzZxujz8P-UxuM_Qo4"/>
+</div>
+<div>
+<p class="text-white font-bold">Dr. Alistair Thorne</p>
+<p class="text-on-surface-variant text-sm">Managing Partner, Aspyre Consulting</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights Grid Section -->
+<section class="py-24 px-gutter max-w-max-width mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-white mb-4">Thought Leadership</h2>
+<p class="text-on-surface-variant font-body-md max-w-xl">Deep dives into the strategies and technologies shaping the future of global industry.</p>
+</div>
+<!-- Category Filters -->
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-bold text-sm transition-all">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-white border border-outline-variant/30 text-sm transition-all">Strategy</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-white border border-outline-variant/30 text-sm transition-all">Tech</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-white border border-outline-variant/30 text-sm transition-all">Finance</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-white border border-outline-variant/30 text-sm transition-all">Operations</button>
+</div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Card -->
+<article class="md:col-span-8 group relative rounded-xl overflow-hidden glass-card transition-all duration-500 hover:shadow-[0_0_30px_rgba(38,221,205,0.15)]">
+<div class="h-80 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated data visualization dashboard showing glowing graphs and neural network connections in shades of electric teal and soft white. The background is a dark, matte grey with subtle glassmorphic effects and a 1px teal-tinted border glow. The image conveys high-level financial analysis and strategic intelligence for a modern consulting firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPkav-ytGFceLeXconrkenNdEFKE5fglJyCYjQdxBqciwmK37SoZPUvwIcNmpGYHXPXUPcOp5cRVpXdqhKr3XdV4Fqmy3nUKZmtTRBYOgNGHUdXS3fPb5pXi5vp69UefRTdyGt0awyWpHlxUk0Ub2thg1vjiHUvWzYYM0EuCqNyTq67gfpr_sgRUJ5cHdkTg2uU17ha-Fnv-U6jaeUwmRjlYSDnF-4M4hrJHadvRuuHUyf9eCN3DlxHrYq2k0mzC_2My7Ip_6OC3g"/>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-primary-fixed font-label-sm text-label-sm">STRATEGY</span>
+<span class="text-on-surface-variant text-sm font-label-sm">• 8 MIN READ</span>
+</div>
+<h3 class="text-white font-headline-md text-headline-md mb-4 group-hover:text-primary-fixed transition-colors">The Decoupling of Traditional Value Chains</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Analyzing how decentralization is allowing smaller agile firms to outpace established giants in the manufacturing sector.</p>
+<a class="inline-flex items-center text-primary-fixed font-bold hover:gap-2 transition-all" href="#">
+                            Read Article <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Side Small Card 1 -->
+<article class="md:col-span-4 group glass-card rounded-xl overflow-hidden flex flex-col hover:shadow-[0_0_20px_rgba(38,221,205,0.1)]">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern architectural facade of a skyscraper made of glass and steel, reflecting a deep blue and teal sky. The lighting is cinematic with high contrast, emphasizing the sharp lines and verticality. The overall style is clean, minimalist, and powerful, aligning with a professional dark-mode corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO8D4tQXjF8nX4hhMU7T2NEUQAgdsrushEdqdPZzj0juM2mna-otqtiidAnG0raYB3fdu9fXPmLeU9WlZtvg9GpBGZBdanmTkdXnHMKTbh7eniGrrmEZBNlG69IxBl4G-5OdTYsWz3DnkQTWEKR8uD0YhSwNuIAPyrJMQOO9gVWXkygLJ-G9VvwDKpKkqLBfgqI6Z7qZgLfu3mGJ_1BpreJQj07sWbg7227R70_bjXBAIZJXKwQgbz5oqHyF5aNa4SDZIY3QbOtLM"/>
+</div>
+<div class="p-6 flex-grow">
+<span class="text-primary-fixed font-label-sm text-label-sm mb-2 block">OPERATIONS</span>
+<h3 class="text-white font-headline-md text-xl mb-3 group-hover:text-primary-fixed transition-colors">Sustainability as a Growth Engine</h3>
+<p class="text-on-surface-variant text-sm line-clamp-3">Redefining CSR from a compliance cost to a competitive advantage in global markets.</p>
+</div>
+</article>
+<!-- Bottom Row Grid -->
+<article class="md:col-span-4 group glass-card rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(38,221,205,0.1)]">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed close-up of high-tech digital circuits and microchips glowing with neon teal pulses on a dark matte background. The aesthetic is futuristic and sharp, representing technological leadership and cybersecurity expertise. The mood is precise and high-energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfEWk6KBQQqUwSV1piEuSRUQ8i-0FUOvLb0hCCxYINellho42cv3qBT5FaS1JqWoGzokP2717y-PwrLtg4VGfYblOZ_yeMG2gMdvqwByOGeFBgU-w-7qRFo-D6e-4kZ_hF6FYJ8hCWLr3xrakWkj4txyEue0EeQljXMVfCVX9DYm6Lg0CbyIWtrcQ-ljm8jWSMludIyZJhH4stoQ6FE7Si4wWfGSHw-BreNr5I5E5QTIkLIDAZZhHfBovQwqEiucp7GHEDQZyjMic"/>
+</div>
+<div class="p-6">
+<span class="text-primary-fixed font-label-sm text-label-sm mb-2 block">TECH</span>
+<h3 class="text-white font-headline-md text-xl mb-3 group-hover:text-primary-fixed transition-colors">The Cybersecurity Horizon</h3>
+<p class="text-on-surface-variant text-sm">Protecting digital assets in an era of autonomous threat actors and AI-driven vulnerabilities.</p>
+</div>
+</article>
+<article class="md:col-span-4 group glass-card rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(38,221,205,0.1)]">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist stock market ticker display with teal lines rising across a dark background. Subtle light refractions and glassmorphic blurs suggest a sophisticated trading terminal. The image evokes a sense of financial mastery and precise economic forecasting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUnYck-JY6r7w9pILZkXXFr-X-wxuZJPh9IP99kKusmJOkUfyx5SiD_esKtSHQg8S0rmMz3ilUNetmez4Ix1Re2OWxrl2dD6qpfwkEqOkuu3q9vtaQ1VzqgDO_EgJTA6etJteA8nS22WqkUMP5v3H-WunF6SEGeBWZIFLiqidqQiBDt79zpXcTzNypslw5_bV1e_bIconNCFmmsGmcDc0ybzuu3PHS4MQm25gWwUAV7DPuz-DIm3y6g9_rMJn0-dQC3sqVPhuGKE8"/>
+</div>
+<div class="p-6">
+<span class="text-primary-fixed font-label-sm text-label-sm mb-2 block">FINANCE</span>
+<h3 class="text-white font-headline-md text-xl mb-3 group-hover:text-primary-fixed transition-colors">Algorithmic Governance</h3>
+<p class="text-on-surface-variant text-sm">How AI is becoming the silent partner in boardroom decision making for Fortune 500 companies.</p>
+</div>
+</article>
+<article class="md:col-span-4 group glass-card rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(38,221,205,0.1)]">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down view of a collaborative brainstorming session around a backlit glass table. Soft teal light illuminates sketches and digital devices. The atmosphere is one of high-level collaboration and creative problem-solving in a premium corporate setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMAwJXx6AFy_Oyys_4GZevqDIF82lIwjiGtc-o3lZ-IRXTiHA940n7JmUWscoAqwvfQuJsgvx-83OMP08Wc1bBBN7RY53wFfEieb-EJ5moxHo2SpsmNq0pNEXnWbLs7qeDp4jd-5-4f_k2p1EYRczIUnrHjIcdwWOagCN2cVqUrj8MkLhtU2tW8xYFZlPraFknu_0-pppvaEsEd4ZKdoVI6_MQd8ygIUOhHWI-AhjU-QZtJFqpvDclUtBqtHPAoHs071BC3hHQlEA"/>
+</div>
+<div class="p-6">
+<span class="text-primary-fixed font-label-sm text-label-sm mb-2 block">CULTURE</span>
+<h3 class="text-white font-headline-md text-xl mb-3 group-hover:text-primary-fixed transition-colors">The Hybrid Paradox</h3>
+<p class="text-on-surface-variant text-sm">Balancing workforce flexibility with the maintenance of institutional knowledge and corporate DNA.</p>
+</div>
+</article>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="bg-surface-container-high border border-outline-variant text-white px-8 py-3 rounded-full hover:bg-surface-container-highest transition-all flex items-center gap-2">
+                    Load More Insights <span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</section>
+<!-- Newsletter Integration -->
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0 teal-gradient-bg opacity-10 blur-[100px]"></div>
+<div class="max-w-4xl mx-auto px-gutter relative z-10 text-center">
+<div class="inline-flex p-3 rounded-2xl bg-primary-fixed/10 mb-8">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">mail</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-white mb-6">Stay Ahead of the Curve</h2>
+<p class="text-on-surface-variant font-body-lg mb-10">Join 15,000+ executives who receive our weekly breakdown of industry shifts and strategic opportunities.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+<input class="flex-grow bg-surface-container-low border border-outline-variant/50 rounded-lg px-6 py-4 text-white focus:outline-none focus:border-primary-fixed focus:ring-1 focus:ring-primary-fixed transition-all" placeholder="professional@company.com" type="email"/>
+<button class="bg-primary-fixed text-on-primary-fixed font-bold px-10 py-4 rounded-lg hover:brightness-110 transition-all whitespace-nowrap" type="submit">
+                        Subscribe Now
+                    </button>
+</form>
+<p class="mt-4 text-on-surface-variant text-sm">Zero spam. Only high-value strategic intelligence.</p>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-display-lg text-primary-fixed">ConsultancyPro</div>
+<p class="text-on-surface-variant text-sm opacity-80">© 2024 ConsultancyPro. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Cookies</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:underline decoration-primary-fixed transition-opacity opacity-80 hover:opacity-100 font-body-md text-body-md" href="#">Accessibility</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for smooth scroll or hover effects
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Subtle header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16');
+                nav.classList.remove('h-20');
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.add('h-20');
+                nav.classList.remove('h-16');
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body></html>
