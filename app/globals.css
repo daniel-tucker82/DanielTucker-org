@@ -187,6 +187,20 @@ body {
   animation: pulse-cyan 3s ease-in-out infinite;
 }
 
+@keyframes pulse-error {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 0px rgba(255, 180, 171, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 40px 10px rgba(255, 180, 171, 0.6);
+  }
+}
+
+.pulse-cta-error {
+  animation: pulse-error 3s ease-in-out infinite;
+}
+
 .button-scanline {
   position: relative;
   overflow: hidden;

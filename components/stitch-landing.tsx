@@ -1,17 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
+  AlertCircleIcon,
   BarChart3,
+  CalendarPlus2Icon,
   ChevronDown,
+  FileWarningIcon,
+  GanttChartIcon,
+  HashIcon,
   Layers,
   Microscope,
   Quote,
   RefreshCw,
   RefreshCwOff,
+  Repeat1Icon,
+  RepeatIcon,
   Route,
   Target,
+  TimerIcon,
   TriangleAlert,
+  UserIcon,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -58,12 +66,12 @@ export function StitchLanding() {
         </div>
         <div className="relative z-10 mx-auto max-w-6xl space-y-2 text-center">
           <p className="mb-6 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.6em] text-primary-container">
-            Architecture. Performance. Delivery.
+            Productivity. Performance. Delivery.
           </p>
           <h1 className="font-stitch-display text-[60px] font-extrabold uppercase leading-[0.9] tracking-tighter text-white md:text-[110px] md:leading-[95%] md:tracking-[-0.04em]">
-            BUILD A HIGH-THROUGHPUT <br />
+            BUILD A <br></br>HIGH-THROUGHPUT <br />
             <span className="bg-gradient-to-r from-primary via-primary-container to-primary bg-clip-text text-transparent text-glow-cyan">
-              DELIVERY ENGINE.
+              DELIVERY ENGINE
             </span>
           </h1>
           <p className="mx-auto mt-10 max-w-2xl font-stitch-body text-lg font-normal leading-[160%] text-on-surface-variant">
@@ -75,7 +83,7 @@ export function StitchLanding() {
               href="/contact"
               className="button-scanline pulse-cta group relative inline-block bg-primary-container px-12 py-6 font-stitch-display text-[12px] font-black uppercase leading-none tracking-[0.1em] text-on-primary-container transition-all hover:scale-110 active:scale-95"
             >
-              Book your free diagnostic
+              Contact Aspyre
               <span className="pointer-events-none absolute -inset-2 rounded-lg border border-primary-container/50 opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
           </div>
@@ -99,28 +107,63 @@ export function StitchLanding() {
         <div className="mx-auto grid max-w-container-max items-center gap-16 px-margin-mobile md:grid-cols-2 md:px-margin-desktop">
           <div className="space-y-6">
             <div className="font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-widest text-error">
-              System status: critical
+              Chaos and churn ≠ productivity
             </div>
             <h2 className="font-stitch-display text-4xl font-semibold uppercase leading-[105%] text-white md:text-[64px] md:leading-[110%]">
-              Drowning in the <span className="text-error">Chaos</span> of Legacy Ops.
+              Our team is <span className="text-error">always working hard</span> so we must be productive
             </h2>
             <div className="space-y-4 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
               <p>
-                Status meetings that yield no status. Work-in-Progress (WIP) that never reaches
-                &quot;Done.&quot; The persistent friction of misaligned engineering efforts.
+                If any of the following describe your work environment, then probably not:
               </p>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-4">
               <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
-                <TriangleAlert className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <TimerIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
                 <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
-                  ERROR_FATIGUE: Velocity dropping below sustainable levels.
+                 all of your development projects are &quot;down to the wire&quot;
                 </span>
               </div>
               <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
-                <RefreshCwOff className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <CalendarPlus2Icon className="h-6 w-6 shrink-0 text-error" aria-hidden />
                 <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
-                  WIP_OVERLOAD: 40+ concurrent tasks per engineer.
+                  you add excessive buffer to project schedules to compensate for delayed cross-functional hand-overs
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <UserIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  a few key staff are always in demand, with a never-ending backlog of work
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <HashIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  the top priority projects always seem to be changing
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <FileWarningIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  everything always seems urgent and your teams are burning themselves out to keep up
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <AlertCircleIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  you release product with known technical debt in order to meet a deadline
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <RepeatIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  your code regularly goes stale and has to be re-worked
+                </span>
+              </div>
+              <div className="flex items-center gap-4 border-l-2 border-error bg-error-container/5 p-4">
+                <GanttChartIcon className="h-6 w-6 shrink-0 text-error" aria-hidden />
+                <span className="font-stitch-body text-[14px] font-medium leading-[140%] text-on-error-container">
+                  your team has more active projects than you can keep track of
                 </span>
               </div>
             </div>
@@ -137,16 +180,26 @@ export function StitchLanding() {
               <div className="mb-4 flex items-center justify-between">
                 <div className="h-3 w-3 animate-pulse rounded-full bg-error" />
                 <div className="font-stitch-body text-[10px] font-semibold uppercase text-error">
-                  TERMINAL_OUTPUT_034
+                  OUR STEPS TO FIND FOCUS
                 </div>
               </div>
               <code className="block space-y-1 font-stitch-body text-xs text-error">
-                <div>{">"} ANALYZING_THROUGHPUT... [FAILED]</div>
-                <div>{">"} BOTTLENECK_DETECTED: STAKEHOLDER_REVIEWS</div>
-                <div>{">"} SYSTEM_FATAL: FLOW_EFFICIENCY {"<"} 12%</div>
-                <div>{">"} RETRYING_TRANSFORMATION...</div>
+                <div>{">"} FIND THE BOTTLENECK</div>
+                <div>{">"} OPTIMISE OPERATIONS FOR THE BOTTLENECK</div>
+                <div>{">"} CURATE AND COORDINATE WORK TO MAXIMISE FLOW</div>
+                <div>{">"} UPGRADE THE BOTTLENECK</div>
+                <div>{">"} START AGAIN</div>
               </code>
             </div>
+          </div>
+          <div className="flex justify-center pt-4 md:col-span-2 md:pt-16">
+            <Link
+              href="/contact"
+              className="group pulse-cta-error relative inline-block bg-error px-12 py-6 font-stitch-display text-[12px] font-black uppercase leading-none tracking-[0.1em] text-black transition-all hover:scale-110 active:scale-95"
+            >
+              Aspyre can help, contact us today
+              <span className="pointer-events-none absolute -inset-2 rounded-lg border border-error/50 opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           </div>
         </div>
       </section>
@@ -156,28 +209,31 @@ export function StitchLanding() {
         <div className="absolute left-1/2 top-0 h-32 w-px -translate-x-1/2 bg-gradient-to-b from-error to-primary-container" />
         <div className="mx-auto max-w-container-max px-margin-mobile text-center md:px-margin-desktop">
           <div className="mb-6 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-widest text-primary-container">
-            The pivot
+            change for the better
           </div>
           <h2 className="mb-12 font-stitch-display text-4xl font-semibold uppercase leading-[105%] md:text-[64px] md:leading-[110%]">
-            Engineering the <span className="text-primary-container">Shift</span>.
+            Maximise the return on the investment you <span className="text-primary-container">already made</span> in your team
           </h2>
           <div className="grid gap-gutter md:grid-cols-3">
             {(
               [
                 {
                   Icon: Layers,
-                  title: "Structural Clarity",
-                  body: "We strip away the noise. Using Value Stream Mapping to identify exactly where your delivery engine is leaking power.",
+                  title: "Minimal disruption",
+                  body: "No new processes and tools to learn, no complicated re-structuring, cultural shifts or staff training. Just \
+                  pinpointing your biggest bottlenecks and implementing some simple habits or behaviours to optimise flow.",
                 },
                 {
                   Icon: Zap,
-                  title: "Kinetic Flow",
-                  body: "Implementation of WIP limits and pull-based systems to ensure work moves at maximum velocity from backlog to production.",
+                  title: "Tailored solutions",
+                  body: "We don't use a \"one-size-fits-all\" approach. We tailor our solutions to meet the specific needs of your team and organisation \
+                  and we don't rely on AI to solve problems that take years of experience, knowledge and intuition to understand.",
                 },
                 {
                   Icon: BarChart3,
-                  title: "Data Autonomy",
-                  body: "Shift from gut-feel management to precision metrics. We install live throughput dashboards for real-time steering.",
+                  title: "Zero risk",
+                  body: "We are so confident in our ability to deliver \"real\" value, that we offer the first week of our engagement for free. \
+                  If, at the conclusion of that week, you don't like the direction we are heading, you can walk away with no obligation to pay.",
                 },
               ] satisfies { Icon: LucideIcon; title: string; body: string }[]
             ).map((card) => (
@@ -207,15 +263,12 @@ export function StitchLanding() {
           <div className="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
             <div className="max-w-xl text-left">
               <h2 className="mb-4 font-stitch-display text-4xl font-semibold uppercase leading-[105%] md:text-[64px] md:leading-[110%]">
-                The 4-Week Velocity Sprint.
+                4-Week Productivity Programme
               </h2>
               <p className="font-stitch-body text-lg leading-[160%] text-on-surface-variant">
-                A productized service designed to diagnose, re-tool, and launch your high-throughput engine in 28
+                In just 28 days we can identify your biggest bottlenecks, diagnose their root causes, and implement solutions to optimise flow.
                 days.
               </p>
-            </div>
-            <div className="shrink-0 border border-primary-container/20 bg-primary-container/5 px-4 py-2 font-stitch-body text-[14px] font-medium leading-[140%] text-primary-container">
-              REF_ID: V_SPRINT_2024
             </div>
           </div>
           <div className="relative grid grid-cols-1 gap-4 md:grid-cols-4">
@@ -223,41 +276,41 @@ export function StitchLanding() {
             {(
               [
                 {
-                  week: "WEEK 01",
-                  title: "The Diagnostic",
-                  body: "Deep-dive audit of current tooling, culture, and flow bottlenecks.",
+                  week: "WEEK 1",
+                  title: "Understand the current reality",
+                  body: "Interviewing staff to understand pain points and start to uncover bottlenecks and their root causes.",
                   Icon: Microscope,
                 },
                 {
-                  week: "WEEK 02",
-                  title: "Bottleneck ID",
-                  body: "Isolating the friction points. Visualizing the waste in your current system.",
+                  week: "WEEK 2",
+                  title: "Test hypotheses and build a plan",
+                  body: "Construct a complete current reality tree, and identify improvements which can be injected to shift the current reality towards the desired future reality.",
                   Icon: Target,
                 },
                 {
-                  week: "WEEK 03",
-                  title: "The Pivot",
-                  body: "Implementation of new rituals, WIP limits, and structural changes.",
+                  week: "WEEK 3",
+                  title: "Low-hanging fruit",
+                  body: "Implementation of changes which have the best value-to-effort ratio (focussing on those which can be implemented within the time available).",
                   Icon: RefreshCw,
                 },
                 {
-                  week: "WEEK 04",
-                  title: "The Roadmap",
-                  body: "Handover of the sustained velocity blueprint and live monitoring.",
+                  week: "WEEK 4",
+                  title: "Validation and Roadmap",
+                  body: "Test the efficacy of the changes implemented in week 3, and hand-over a roadmap for ongoing improvements.",
                   Icon: Route,
                 },
               ] satisfies { week: string; title: string; body: string; Icon: LucideIcon }[]
             ).map((w) => (
               <div
                 key={w.week}
-                className="group relative z-10 border border-outline-variant/30 bg-surface p-8 transition-all hover:border-primary-container/50"
+                className="group relative z-10 flex h-full flex-col border border-outline-variant/30 bg-surface p-8 transition-all hover:border-primary-container/50"
               >
                 <div className="mb-4 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-primary-container">
                   {w.week}
                 </div>
                 <h4 className="mb-2 font-stitch-display text-2xl font-medium uppercase">{w.title}</h4>
                 <p className="font-stitch-body text-sm leading-[160%] text-on-surface-variant">{w.body}</p>
-                <div className="mt-8 flex justify-center opacity-20 transition-opacity group-hover:opacity-100">
+                <div className="mt-8 flex shrink-0 justify-center opacity-20 transition-opacity group-hover:opacity-100 md:mt-auto md:pt-8">
                   <w.Icon className="h-10 w-10 text-primary-container" aria-hidden />
                 </div>
               </div>
@@ -269,55 +322,30 @@ export function StitchLanding() {
       {/* Results */}
       <section id="results" className="scroll-mt-28 bg-stitch-canvas py-32">
         <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
-          <div className="grid items-center gap-24 md:grid-cols-2">
-            <div className="space-y-12">
-              <h2 className="font-stitch-display text-4xl font-semibold uppercase leading-[105%] md:text-[64px] md:leading-[110%]">
-                Measured <span className="text-primary-container">Throughput.</span>
-              </h2>
-              <div className="space-y-8">
-                <div className="relative border border-primary-container/10 bg-surface-container p-6">
-                  <div className="mb-2 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-primary-container">
-                    Release frequency
+          <div className="relative w-full">
+            <div className="absolute -inset-4 rounded-full bg-primary-container/5 blur-3xl" />
+            <div className="relative border border-outline-variant/30 bg-surface-container-low p-12">
+              <Quote className="mb-8 h-14 w-14 text-primary-container opacity-40" aria-hidden />
+              <p className="mb-8 font-stitch-display text-[28px] italic text-white">
+                &quot;Aspyre Pty Ltd is a new company. I have had a long and successful career accelerating teams and un-blocking projects,
+                and while I could add a quote here about the work I've done, or even invent one, I believe it is best to be honest. There is no list of customers
+                lining up to add thier quotes to my page because Aspyre is brand new, but I DO know with absolute certainty that I'm great at what I do, and if 
+                you allow me to work with you, it will be your glowing recommendation that appears here on my website in short order.&quot;
+              </p>
+              <div className="flex items-center gap-4">
+                <Image
+                  src="https://media.licdn.com/dms/image/v2/D5603AQGdZlHxP7_bYw/profile-displayphoto-crop_800_800/B56Z34Jer7HEAI-/0/1777984729989?e=1781136000&v=beta&t=v__CUyVv5dq7rHBSrgnfd0MfN6Ie99nC9Nqmh37t6LI"
+                  alt="Daniel Tucker"
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 shrink-0 rounded object-cover"
+                />
+                <div>
+                  <div className="font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-primary">
+                    Daniel Tucker
                   </div>
-                  <div className="flex items-end gap-4">
-                    <span className="font-stitch-display text-[64px] leading-none text-white opacity-40">2/mo</span>
-                    <ArrowRight className="mb-2 h-8 w-8 shrink-0 text-primary-container" aria-hidden />
-                    <span className="text-glow-cyan font-stitch-display text-[64px] leading-none text-primary-container">
-                      2/wk
-                    </span>
-                  </div>
-                </div>
-                <div className="relative border border-primary-container/10 bg-surface-container p-6">
-                  <div className="mb-2 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-primary-container">
-                    Cycle time efficiency
-                  </div>
-                  <div className="flex items-end gap-4">
-                    <span className="font-stitch-display text-[64px] leading-none text-white opacity-40">24d</span>
-                    <ArrowRight className="mb-2 h-8 w-8 shrink-0 text-primary-container" aria-hidden />
-                    <span className="text-glow-cyan font-stitch-display text-[64px] leading-none text-primary-container">
-                      4.2d
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-primary-container/5 blur-3xl" />
-              <div className="relative border border-outline-variant/30 bg-surface-container-low p-12">
-                <Quote className="mb-8 h-14 w-14 text-primary-container opacity-40" aria-hidden />
-                <p className="mb-8 font-stitch-display text-[28px] italic text-white">
-                  &quot;Aspyre didn&apos;t just give us a report; they re-wired how our engineering team thinks about
-                  value. Our throughput tripled in a single quarter.&quot;
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded bg-surface-variant" />
-                  <div>
-                    <div className="font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] text-primary">
-                      CTO, Global FinTech
-                    </div>
-                    <div className="font-stitch-body text-xs text-on-surface-variant">
-                      Confidential Client Architecture
-                    </div>
+                  <div className="font-stitch-body text-xs text-on-surface-variant">
+                    Founder and Principal Consultant
                   </div>
                 </div>
               </div>
@@ -333,8 +361,9 @@ export function StitchLanding() {
             Aspyre
           </h2>
           <p className="mt-6 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
-            Aspyre helps leadership teams replace fragile, meeting-heavy delivery with measurable flow: clearer
-            ownership, tighter feedback loops, and systems that keep shipping after the engagement ends.
+            Aspyre helps small to medium technology businesses optimise their productivity without radical changes to processes, 
+            tooling or culture. We focus on identifying the bottlenecks that are preventing you from delivering value faster, 
+            and making targeted changes to unblock them.
           </p>
         </div>
       </section>
@@ -348,13 +377,13 @@ export function StitchLanding() {
             Ready to Optimize?
           </h2>
           <p className="mb-12 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
-            Take the first step towards a high-throughput engine. Schedule your technical diagnostic session today.
+            Take the first step towards a high-throughput engine. Contact us to arrange a free initial consultation today.
           </p>
           <Link
             href="/contact"
             className="inline-block bg-primary px-12 py-6 font-stitch-display text-[12px] font-bold uppercase leading-none tracking-[0.1em] text-on-primary shadow-2xl transition-all hover:-translate-y-1 hover:bg-primary-container hover:text-on-primary-container"
           >
-            Book diagnostic session
+            Book initial consultation
           </Link>
         </div>
       </section>
