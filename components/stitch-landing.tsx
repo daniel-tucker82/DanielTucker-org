@@ -110,7 +110,7 @@ export function StitchLanding() {
               Chaos and churn ≠ productivity
             </div>
             <h2 className="font-stitch-display text-4xl font-semibold uppercase leading-[105%] text-white md:text-[64px] md:leading-[110%]">
-              Our team is <span className="text-error">always working hard</span> so we must be productive
+              Your team is <span className="text-error">always working hard</span> so you must be productive
             </h2>
             <div className="space-y-4 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
               <p>
@@ -212,7 +212,7 @@ export function StitchLanding() {
             change for the better
           </div>
           <h2 className="mb-12 font-stitch-display text-4xl font-semibold uppercase leading-[105%] md:text-[64px] md:leading-[110%]">
-            Maximise the return on the investment you <span className="text-primary-container">already made</span> in your team
+            Maximise your return on the investment you <span className="text-primary-container">already made</span> in your team
           </h2>
           <div className="grid gap-gutter md:grid-cols-3">
             {(

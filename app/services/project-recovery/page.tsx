@@ -1,10 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { ProjectRecoveryPage } from "@/components/project-recovery-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "Project recovery",
-  description: "Stabilize at-risk programs and restore predictable delivery.",
-  templateId: "content",
-});
+  description:
+    "A targeted intervention to stabilise at-risk projects, restore delivery confidence, and re-establish predictable execution.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <ProjectRecoveryPage />;
+}

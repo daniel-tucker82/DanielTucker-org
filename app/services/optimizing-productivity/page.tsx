@@ -1,10 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { OptimizingProductivityPage } from "@/components/optimizing-productivity-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "Optimizing Productivity",
-  description: "Improve throughput and flow across your delivery organization.",
-  templateId: "content",
-});
+  description:
+    "A practical engagement to increase throughput, reduce operational friction, and improve delivery flow across your teams.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <OptimizingProductivityPage />;
+}

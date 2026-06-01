@@ -1,10 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { WhoWeWorkWithPage } from "@/components/who-we-work-with-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "Who we work with",
-  description: "The organizations and leaders we partner with most often.",
-  templateId: "content",
-});
+  description:
+    "Growth-stage technology businesses and delivery leaders who partner with Aspyre to improve flow, throughput, and operational productivity.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <WhoWeWorkWithPage />;
+}

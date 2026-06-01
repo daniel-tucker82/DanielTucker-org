@@ -3,11 +3,11 @@ export function applyOurTeamHero(html: string): string {
   let out = html;
 
   const pairs: [string, string][] = [
-    ["Meet the Architects of Success", "Innovation and Pragmatic Delivery Excellence"],
-    ["Our Team Template", "Daniel Tucker"],
+    ["Meet the Architects of Success", "People behind the work"],
+    ["Our Team Template", "Our Team"],
     [
       "Bridging the gap between visionary strategy and technical excellence. Aspyre Consulting brings together the brightest minds in digital transformation.",
-      "Operational systems consultant helping growth-stage businesses scale productively.",
+      "Meet the consultants behind Aspyre — select a team member to explore their background and experience.",
     ],
   ];
 

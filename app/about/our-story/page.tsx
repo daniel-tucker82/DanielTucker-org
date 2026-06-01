@@ -1,10 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { OurStoryPage } from "@/components/our-story-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "Our story",
-  description: "How Aspyre Consulting helps enterprises build high-throughput delivery engines.",
-  templateId: "content",
-});
+  description:
+    "How Aspyre Consulting was founded and why we help growth-stage technology businesses improve delivery flow and productivity.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <OurStoryPage />;
+}

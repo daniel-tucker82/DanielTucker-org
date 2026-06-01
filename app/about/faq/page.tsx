@@ -1,11 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { FaqPage } from "@/components/faq-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "FAQ",
-  description: "Frequently asked questions about working with Aspyre Consulting.",
-  templateId: "faq",
-  enableScripts: true,
-});
+  description:
+    "Frequently asked questions about working with Aspyre Consulting, our 4-week program, and engagement prerequisites.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <FaqPage />;
+}

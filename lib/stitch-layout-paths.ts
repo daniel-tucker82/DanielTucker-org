@@ -5,7 +5,7 @@ const STITCH_LAYOUT_PREFIXES = [
   "/customers/",
 ] as const;
 
-const STITCH_LAYOUT_EXACT = ["/blog", "/contact"] as const;
+const STITCH_LAYOUT_EXACT = ["/blog", "/contact", "/prerequisites"] as const;
 
 export function isStitchLayoutPath(pathname: string): boolean {
   if ((STITCH_LAYOUT_EXACT as readonly string[]).includes(pathname)) return true;

@@ -1,10 +1,12 @@
-import { buildStitchPage } from "@/lib/build-stitch-page";
+import type { Metadata } from "next";
+import { FourWeekIntensiveProgramPage } from "@/components/four-week-intensive-program-page";
 
-const stitchPage = buildStitchPage({
+export const metadata: Metadata = {
   title: "4-week intensive program",
-  description: "Aspyre Consulting — intensive operational transformation program.",
-  templateId: "content",
-});
+  description:
+    "A focused 28-day engagement to diagnose bottlenecks, implement high-leverage improvements, and deliver a validated improvement roadmap.",
+};
 
-export const metadata = stitchPage.metadata;
-export default stitchPage.Page;
+export default function Page() {
+  return <FourWeekIntensiveProgramPage />;
+}

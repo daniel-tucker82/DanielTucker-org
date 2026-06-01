@@ -20,7 +20,6 @@ const primaryNav: NavItem[] = [
     children: [
       { href: "/services/4-week-intensive-program", label: "4-week intensive program" },
       { href: "/services/optimizing-productivity", label: "Optimizing Productivity" },
-      { href: "/services/aligning-operations-to-strategy", label: "Aligning operations to strategy" },
       { href: "/services/project-recovery", label: "Project recovery" },
     ],
   },
