@@ -7,6 +7,7 @@ import {
   Layers,
   Route,
   ShieldCheck,
+  TreesIcon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -20,24 +21,24 @@ const idealFor = [
 
 const focusAreas: ReadonlyArray<{ title: string; body: string; Icon: LucideIcon }> = [
   {
-    title: "Flow diagnostics",
-    body: "Map how work actually moves from idea to delivery and identify the highest-impact bottlenecks.",
+    title: "Optimise flow",
+    body: "Identify your key operational bottlenecks and then organise your operations to ensure we can maximise throughput.",
     Icon: Route,
   },
   {
     title: "Priority discipline",
-    body: "Reduce context switching and competing initiatives so teams can finish meaningful work faster.",
+    body: "Throughput reduces when concurrency is too high. We identify the optimum number of concurrent projects and then ensure we implement practices so as to not exceed them.",
     Icon: Layers,
   },
   {
-    title: "Operational rhythm",
-    body: "Introduce lightweight cadences and decision checkpoints that improve coordination without adding bureaucracy.",
+    title: "Minimise churn",
+    body: "There are some key behaviours which increase re-work and cause churn and delays. We identify these and ensure concious decisions are made about optimal behaviours which minimise these.",
     Icon: Activity,
   },
   {
-    title: "Handover quality",
-    body: "Improve interfaces between teams so work does not stall, bounce back, or lose critical context.",
-    Icon: ArrowRightLeft,
+    title: "The forest, not the trees",
+    body: "Ensure decision making is made with long-term goals in mind, and teams are not subject to short-term pressures guiding them incrementally further from their desired future reality.",
+    Icon: TreesIcon,
   },
 ] as const;
 
@@ -169,9 +170,9 @@ export function OptimizingProductivityPage() {
               Placeholder pricing note
             </h3>
             <p className="max-w-3xl font-stitch-body text-base leading-[160%] text-on-surface-variant">
-              Pricing and engagement length are intentionally left as placeholders on this page for now.
-              They can be finalised once you decide whether this service should be offered as a fixed-term
-              package, a monthly advisory model, or a hybrid of both.
+              Engagement for producitivity optimisation can be varied in length and scope depending on your requirements. If commit to an engagement of 4 or more weeks,
+              then we will honor the '1st week free' offer made in the 4-week intensive program. <br></br><br></br>Our hourly rate is $214.47 (inclusive of GST), and we limit weekly hours
+              to 38 (we may work more than this in order to deliver the value you deserve, however we will not bill you for any work exceeding 38 hours). 
             </p>
           </div>
         </div>

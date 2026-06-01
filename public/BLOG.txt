@@ -148,7 +148,7 @@
 <img class="w-full h-full object-cover" data-alt="A professional headshot of a senior consultant with a confident expression, set against a blurred, high-end office background. The lighting is crisp and modern, matching the teal-accented dark-mode theme of the platform. The subject wears a charcoal suit, blending into the minimalist and sophisticated corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABjcSQBIOWtK75w_BR1S2MQW-BgBIGi37fjRDW5cfmYgQXDsRdWiXGIyNNEf6Fr4y7av03qLI06YzRQUyyYYwE9nIoJI5n4HkBawHKD3RRhemcoDCKI2oqANCXrKpIXHqr9yAS2D0YSjwu4pDGFO2x0DqggoOoMR1yz5TcLFYCAcbtNxx8zl3zTsO00nnWkdDxCIeO6ZmPVGl6ASKMXzgsTTlGfg_OjoR-F3vWOr1m0M7Dui9gIlhkmbOpMnzZxujz8P-UxuM_Qo4"/>
 </div>
 <div>
-<p class="text-white font-bold">Dr. Alistair Thorne</p>
+<p class="text-white font-bold">Daniel Tucker</p>
 <p class="text-on-surface-variant text-sm">Managing Partner, Aspyre Consulting</p>
 </div>
 </div>
