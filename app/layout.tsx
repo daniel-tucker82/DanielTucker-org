@@ -24,9 +24,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "danieltucker.org | Operational Systems",
+  title: {
+    default: "Aspyre Consulting",
+    template: "%s | Aspyre Consulting",
+  },
   description:
-    "Technical-brutalist consultancy website for project recovery, strategic alignment, and operational velocity.",
+    "Aspyre Consulting helps growth-stage technology businesses improve delivery flow, productivity, and operational outcomes.",
+  icons: {
+    icon: [{ url: "/Aspyre%20Logo.png", type: "image/png" }],
+    apple: [{ url: "/Aspyre%20Logo.png", type: "image/png" }],
+  },
 };
 
 export default async function RootLayout({
