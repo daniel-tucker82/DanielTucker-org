@@ -1,12 +1,15 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
+import { getClerkMiddlewareOptions } from "@/lib/clerk-domains";
 
-const isProtectedRoute = createRouteMatcher(["/admin(.*)"]);
-
-export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
-    await auth.protect();
-  }
-});
+/**
+ * Admin routes enforce auth in app/admin/page.tsx and API handlers so unauthenticated
+ * users get a same-origin redirect to /sign-in. Avoid auth.protect() here — on
+ * satellite hosts it can rewrite to a 404 before the page runs.
+ */
+export default clerkMiddleware(
+  async () => {},
+  (req) => getClerkMiddlewareOptions(req.nextUrl.hostname),
+);
 
 export const config = {
   matcher: [
