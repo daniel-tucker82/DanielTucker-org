@@ -24,19 +24,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const legacyFooterLinks = [
-  { href: "/approach", label: "Approach" },
-  { href: "/philosophy", label: "Philosophy" },
-  { href: "/prerequisites", label: "Prerequisites" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-  { href: "/application", label: "Application" },
-  { href: "/profile", label: "Profile" },
-  { href: "/sign-in", label: "Sign in" },
-  { href: "/admin", label: "Admin" },
-  { href: "/unauthorized", label: "Unauthorized" },
-] as const;
-
 export function StitchLanding() {
   return (
     <div className="overflow-x-hidden bg-stitch-canvas font-stitch-body text-on-surface">
@@ -385,26 +372,6 @@ export function StitchLanding() {
           >
             Book initial consultation
           </Link>
-        </div>
-      </section>
-
-      {/* Legacy routes + footer */}
-      <section className="border-t border-primary/20 bg-stitch-canvas px-margin-mobile py-12 md:px-margin-desktop">
-        <div className="mx-auto max-w-container-max">
-          <p className="mb-6 font-stitch-body text-[12px] font-semibold uppercase tracking-widest text-on-surface-variant">
-            Site pages (restructure in progress)
-          </p>
-          <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Legacy site navigation">
-            {legacyFooterLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-stitch-body text-[12px] font-semibold uppercase tracking-[0.1em] text-on-surface-variant underline-offset-4 transition-colors hover:text-primary hover:underline"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </section>
 

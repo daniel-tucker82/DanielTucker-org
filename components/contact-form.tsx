@@ -5,9 +5,10 @@ import { FormEvent, useState } from "react";
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-lg border border-outline-variant/30 bg-surface-container-low p-4 text-on-surface transition-all placeholder:text-on-surface-variant/50 focus:border-primary-fixed focus:outline-none teal-glow";
+  "w-full border border-outline-variant/30 bg-surface-container-low px-4 py-3 font-stitch-body text-base text-on-surface transition-colors placeholder:text-on-surface-variant/50 focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container/40";
 
-const labelClass = "font-label-sm text-label-sm uppercase text-on-surface-variant";
+const labelClass =
+  "font-stitch-body text-[12px] font-semibold uppercase tracking-[0.08em] text-on-surface-variant";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -55,14 +56,14 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="space-y-4">
-        <p className="font-body-lg text-body-lg text-on-surface">Thanks — your message was sent.</p>
-        <p className="font-body-md text-body-md text-on-surface-variant">
-          I will get back to you as soon as I can.
+        <p className="font-stitch-body text-lg text-on-surface">Thanks — your message was sent.</p>
+        <p className="font-stitch-body text-base leading-[160%] text-on-surface-variant">
+          We will get back to you as soon as we can.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="rounded-lg border border-primary-fixed/40 px-5 py-2.5 font-body-md text-body-md text-primary-fixed transition-colors hover:bg-primary-fixed/10"
+          className="border border-primary-container/40 px-5 py-2.5 font-stitch-body text-sm font-semibold uppercase tracking-wide text-primary-container transition-colors hover:bg-primary-container/10"
         >
           Send another message
         </button>
@@ -74,7 +75,7 @@ export function ContactForm() {
     <form className="space-y-6" onSubmit={handleSubmit}>
       {status === "error" && errorMessage ? (
         <div
-          className="rounded-lg border border-error/40 bg-error-container/20 px-4 py-3 font-body-md text-body-md text-on-error-container"
+          className="border border-error/40 bg-error-container/20 px-4 py-3 font-stitch-body text-base text-on-error-container"
           role="alert"
         >
           {errorMessage}
@@ -147,16 +148,14 @@ export function ContactForm() {
           className={inputClass}
           placeholder="Share your current challenges, goals, and what support would be most valuable."
         />
-        <p className="font-label-sm text-label-sm text-on-surface-variant">
-          {message.length} / 5000
-        </p>
+        <p className="font-stitch-body text-xs text-on-surface-variant">{message.length} / 5000</p>
       </div>
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-lg bg-primary-fixed py-4 text-lg font-bold text-on-primary transition-all hover:brightness-110 disabled:opacity-50 teal-gradient-bg"
+        className="w-full bg-primary px-8 py-4 font-stitch-display text-[12px] font-bold uppercase leading-none tracking-[0.1em] text-on-primary transition-all hover:bg-primary-container hover:text-on-primary-container disabled:opacity-50"
       >
-        {status === "sending" ? "Sending…" : "Contact Daniel"}
+        {status === "sending" ? "Sending…" : "Send message"}
       </button>
     </form>
   );

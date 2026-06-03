@@ -21,6 +21,7 @@ const primaryNav: NavItem[] = [
       { href: "/services/4-week-intensive-program", label: "4-week intensive program" },
       { href: "/services/optimizing-productivity", label: "Optimizing Productivity" },
       { href: "/services/project-recovery", label: "Project recovery" },
+      { href: "/services/capability-statement", label: "Capability statement" },
     ],
   },
   {

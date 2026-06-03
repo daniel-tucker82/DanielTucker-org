@@ -10,6 +10,7 @@ import {
   TreesIcon,
   type LucideIcon,
 } from "lucide-react";
+import { StitchHeroBackground, stitchPageHeroSectionClass } from "@/components/stitch-hero-background";
 
 const idealFor = [
   "Teams that are always busy but still miss delivery goals",
@@ -63,8 +64,10 @@ const engagementModel: ReadonlyArray<{ label: string; value: string; Icon: Lucid
 export function OptimizingProductivityPage() {
   return (
     <div className="overflow-x-hidden bg-stitch-canvas font-stitch-body text-on-surface">
-      <section className="relative overflow-hidden border-b border-outline-variant/10 bg-surface-dim px-margin-mobile pb-20 pt-28 md:px-margin-desktop">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-kinetic opacity-40" />
+      <section
+        className={`${stitchPageHeroSectionClass} px-margin-mobile pb-20 pt-28 md:px-margin-desktop`}
+      >
+        <StitchHeroBackground />
         <div className="relative z-10 mx-auto max-w-container-max">
           <p className="mb-6 font-stitch-body text-[12px] font-semibold uppercase leading-none tracking-[0.6em] text-primary-container">
             Services

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { StitchContactPage } from "@/components/stitch-contact-page";
+import { ContactPage } from "@/components/contact-page";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Daniel Tucker at Aspyre Consulting.",
+  description: "Get in touch with Aspyre Consulting.",
 };
 
 export default function Page() {
-  return <StitchContactPage />;
+  return <ContactPage />;
 }
