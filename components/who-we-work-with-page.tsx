@@ -47,7 +47,7 @@ const painSignals = [
 
 const notIdealFor = [
   "You are looking for a large-scale Agile or SAFe rollout as the primary deliverable",
-  "You need a permanent embedded delivery manager to run day-to-day stand-ups indefinitely",
+  "You need a permanent embedded delivery manager to run day-to-day routines indefinitely",
   "Leadership is not willing to engage with findings or remove blockers at pace",
   "You want a generic playbook applied without regard to your context",
 ] as const;

@@ -3,18 +3,25 @@ import { CheckCircle2, Target, Users, Zap } from "lucide-react";
 
 const beliefs = [
   {
-    title: "Productivity is not the same as busyness",
-    body: "Teams can work long hours and still miss deadlines. Real productivity is measured by throughput, flow, and whether the organisation is moving toward its goals.",
+    title: "Busy ≠ productive",
+    body: "Teams can work long hours and still miss deadlines. Real productivity is \
+    measured by throughput, flow, and whether the organisation is moving toward \
+    its goals.",
     Icon: Target,
   },
   {
-    title: "Small changes, outsized impact",
-    body: "You do not need a full restructure or a new methodology rollout. Often the biggest gains come from finding the right bottleneck and making targeted improvements that teams can adopt quickly.",
+    title: "Disproportionate return",
+    body: "You may not not need a full restructure or a new methodology rollout. Often \
+    the biggest gains come from finding the right bottleneck and making targeted \
+    improvements that teams can adopt quickly. Small, intelligent changes; huge impact.",
     Icon: Zap,
   },
   {
     title: "People do the work",
-    body: "Sustainable improvement respects the people on the ground. Solutions should make daily work easier, not harder — and they should be designed with the teams who will use them.",
+    body: "Sustainable improvement respects the people on the ground. Solutions should \
+    make daily work easier, not harder — and they should be designed with the teams who \
+    will use them. What if you could finish your work on time without burning out your teams, \
+    and instead having them energized and excited to take on the next challenge?",
     Icon: Users,
   },
 ] as const;
@@ -23,17 +30,24 @@ const milestones = [
   {
     period: "Founding",
     title: "Aspyre is born",
-    body: "After years leading technical programs and delivery teams — and a deliberate break to reflect, build, and recharge — Daniel Tucker founded Aspyre to help growth-stage businesses improve how work flows without unnecessary disruption.",
+    body: "After years leading technical programs and delivery teams — and a deliberate \
+    break to reflect, build, retrain (in AI tools and methodologies) and recharge — Daniel \
+    Tucker founded Aspyre to help growth-stage businesses improve how work flows without \
+    unnecessary disruption.",
   },
   {
     period: "Today",
     title: "A focused practice",
-    body: "Aspyre is a new consultancy with a clear offer: diagnose bottlenecks, implement high-leverage improvements, and leave clients with a roadmap they can run themselves. The first week of the intensive program is free so you can judge fit before committing.",
+    body: "Aspyre is a new consultancy with a clear offer: diagnose bottlenecks, implement \
+    high-leverage improvements, and leave clients with a clear roadmap to sustainable, \
+    high-throughput operations.",
   },
   {
     period: "What's next",
     title: "Growing with clients",
-    body: "We are building our track record one engagement at a time. Every client who works with Aspyre helps shape how we refine our services — and we are honest that the best proof will come from the results we deliver together.",
+    body: "We will continue to build our track record one engagement at a time. Every \
+    client who works with Aspyre helps shape how we refine our services — and we are \
+    honest that the best proof will come from the results we deliver together.",
   },
 ] as const;
 
@@ -61,7 +75,7 @@ export function OurStoryPage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl font-stitch-body text-base leading-[160%] text-on-surface-variant md:text-lg">
-            Aspyre exists to help technology businesses deliver more reliably — by improving flow,
+            Aspyre helps technology businesses deliver more productively and predictably — by improving flow,
             removing friction, and building systems that teams can sustain.
           </p>
         </div>
@@ -76,14 +90,14 @@ export function OurStoryPage() {
             <div className="mt-6 space-y-4 font-stitch-body text-base leading-[160%] text-on-surface-variant">
               <p>
                 Too many growing tech companies hit the same wall: teams are busy, priorities keep
-                shifting, and delivery still feels unpredictable. Leaders are told to adopt new
+                shifting, and delivery feels unpredictable. Leaders are told to adopt new
                 frameworks, new tools, or wholesale cultural change — but those approaches often add
                 complexity without fixing what is actually slowing work down.
               </p>
               <p>
                 Aspyre was founded on a simpler premise. Find where flow breaks in your organisation,
                 address the root causes with practical changes, and help your people get more done
-                without burning out. Daniel Tucker brings more than a decade of leadership in
+                without burning out. Our founder, Daniel Tucker brings more than a decade of leadership in
                 high-stakes environments — from the Australian Army to global software delivery — and
                 applies that experience to the operational challenges growth-stage businesses face
                 today.
@@ -95,12 +109,8 @@ export function OurStoryPage() {
               In one sentence
             </p>
             <p className="mt-4 font-stitch-display text-xl font-medium leading-[140%] text-white md:text-2xl">
-              We help small to medium technology businesses optimise productivity without radical
-              changes to processes, tooling, or culture.
-            </p>
-            <p className="mt-6 font-stitch-body text-sm leading-[160%] text-on-surface-variant">
-              That line has guided the work from day one. It is the same promise on our homepage,
-              and it is what every engagement is designed to deliver.
+              We help small to medium technology businesses sustainably optimise productivity by applying 
+              targeted, intelligent improvements that improve throughput, reduce friction and reduce burnout.
             </p>
           </div>
         </div>

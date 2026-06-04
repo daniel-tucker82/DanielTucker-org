@@ -1,9 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, type ReactNode } from "react";
 import { ChevronDown, HelpCircle, Layers, Shield, Timer, Users } from "lucide-react";
-import { faqCategories, type FaqCategory } from "@/lib/page-content/faq";
+import { faqCategories, type FaqAnswerLink, type FaqCategory } from "@/lib/page-content/faq";
+
+function renderFaqAnswer(answer: string, links?: FaqAnswerLink[]) {
+  if (!links?.length) {
+    return answer;
+  }
+
+  const parts: ReactNode[] = [];
+  let remaining = answer;
+
+  for (const link of links) {
+    const index = remaining.indexOf(link.text);
+    if (index === -1) {
+      continue;
+    }
+
+    if (index > 0) {
+      parts.push(remaining.slice(0, index));
+    }
+
+    parts.push(
+      <Link
+        key={`${link.href}-${link.text}`}
+        href={link.href}
+        className="text-primary-container underline-offset-4 hover:underline"
+      >
+        {link.text}
+      </Link>,
+    );
+
+    remaining = remaining.slice(index + link.text.length);
+  }
+
+  if (remaining) {
+    parts.push(remaining);
+  }
+
+  return parts.length > 0 ? parts : answer;
+}
 
 const categoryIcons: Record<string, typeof HelpCircle> = {
   "working-with-aspyre": HelpCircle,
@@ -16,12 +54,14 @@ function FaqAccordionItem({
   itemId,
   question,
   answer,
+  links,
   isOpen,
   onToggle,
 }: {
   itemId: string;
   question: string;
   answer: string;
+  links?: FaqAnswerLink[];
   isOpen: boolean;
   onToggle: () => void;
 }) {
@@ -57,7 +97,7 @@ function FaqAccordionItem({
         className="pb-4"
       >
         <p className="font-stitch-body text-sm leading-[160%] text-on-surface-variant md:text-base">
-          {answer}
+          {renderFaqAnswer(answer, links)}
         </p>
       </div>
     </div>
@@ -95,6 +135,7 @@ function FaqCategorySection({
               itemId={itemId}
               question={item.question}
               answer={item.answer}
+              links={item.links}
               isOpen={openItemId === itemId}
               onToggle={() => onToggleItem(itemId)}
             />

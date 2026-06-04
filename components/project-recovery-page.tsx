@@ -23,13 +23,16 @@ const recoveryPhases: ReadonlyArray<{ phase: string; title: string; body: string
   {
     phase: "PHASE 1",
     title: "Rapid triage",
-    body: "Establish a clear picture of current risk, blocker severity, and recovery constraints.",
+    body: "Establish a clear picture of project scope and objectives, current issues and \
+    blockers and other key factors impacting project requriements and delivery challenges.",
     Icon: AlertTriangle,
   },
   {
     phase: "PHASE 2",
     title: "Stabilisation plan",
-    body: "Define a practical recovery sequence, reset priorities, and align ownership across teams.",
+    body: "Define a practical recovery plan with clear priorities and strategies for \
+    addressing major project blockers. Often these are human factors, so alignment and \
+    collaboration are crucial.",
     Icon: ListChecks,
   },
   {
@@ -49,17 +52,20 @@ const recoveryPhases: ReadonlyArray<{ phase: string; title: string; body: string
 const engagementDetails: ReadonlyArray<{ label: string; value: string; Icon: LucideIcon }> = [
   {
     label: "When to use it",
-    value: "Best suited for high-risk projects where delivery confidence has materially declined.",
+    value: "Best suited for high-risk projects where delivery confidence \
+    has noticeably declined.",
     Icon: Clock3,
   },
   {
     label: "Operating mode",
-    value: "Hands-on and embedded with leadership and delivery teams to accelerate decision velocity.",
+    value: "Hands-on and embedded with leadership and delivery teams to accelerate decision \
+    velocity.",
     Icon: Target,
   },
   {
     label: "Outcome",
-    value: "A controlled recovery path with realistic milestones and stronger execution discipline.",
+    value: "A controlled recovery path with realistic milestones and stronger execution \
+    discipline.",
     Icon: CheckCircle2,
   },
 ] as const;
@@ -82,15 +88,15 @@ export function ProjectRecoveryPage() {
             </span>
           </h1>
           <p className="mt-8 max-w-2xl font-stitch-body text-lg leading-[160%] text-on-surface-variant">
-            A targeted intervention to stabilise at-risk initiatives, restore delivery confidence, and get
-            critical work moving again with realistic control.
+            A targeted intervention to stabilise at-risk projects, programs or initiatives, restore 
+            delivery confidence, and get critical work moving again with realistic control.
           </p>
           <div className="mt-10">
             <Link
               href="/contact"
               className="button-scanline pulse-cta group relative inline-block bg-primary-container px-12 py-6 font-stitch-display text-[12px] font-black uppercase leading-none tracking-[0.1em] text-on-primary-container transition-all hover:scale-110 active:scale-95"
             >
-              Request a recovery consult
+              Request a consultation
               <span className="pointer-events-none absolute -inset-2 rounded-lg border border-primary-container/50 opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
           </div>
@@ -105,12 +111,12 @@ export function ProjectRecoveryPage() {
             </h2>
             <div className="space-y-4 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
               <p>
-                Project recovery is for situations where delivery risk has moved beyond routine optimisation
-                and requires immediate, structured intervention.
+                Project recovery is for situations where project delivery issues have escalated beyond a tolerable level,
+                and require immediate intervention to realign expectations and restore confidence.
               </p>
               <p>
-                The objective is not to create the illusion of progress. It is to rapidly diagnose root causes,
-                reset execution on solid footing, and rebuild stakeholder confidence through visible outcomes.
+                The objective is to rapidly diagnose root causes, implement targeted improvements
+                that will reset execution on solid footing, and rebuild stakeholder confidence through visible outcomes.
               </p>
             </div>
           </div>
@@ -176,12 +182,12 @@ export function ProjectRecoveryPage() {
           </div>
           <div className="mt-12 border border-primary-container/20 bg-primary-container/5 p-8 md:p-10">
             <h3 className="mb-4 font-stitch-display text-xl font-semibold uppercase text-white">
-              Placeholder pricing note
+              Pricing
             </h3>
             <p className="max-w-3xl font-stitch-body text-base leading-[160%] text-on-surface-variant">
-              Pricing for project recovery is intentionally left as placeholder content for now. Final pricing
-              can be set once you decide whether to position this as a fixed-response engagement, time-boxed
-              rescue sprint, or ongoing stabilisation support.
+              Our hourly rate is $214.47 (inclusive of GST). The legth of engagements will likely vary 
+              depending on the project and the scale and complexity of recovery. Regardless of hours 
+              worked, we do not bill more than 38 hours per week, per consultant.
             </p>
           </div>
         </div>
@@ -194,10 +200,10 @@ export function ProjectRecoveryPage() {
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {[
-              "A realistic recovery plan linked to your actual constraints",
-              "Clear ownership and tighter cadence on high-risk work",
-              "Reduction in blocker age and execution uncertainty",
-              "Improved trust in delivery reporting and milestone forecasts",
+              "A realistic and pragmatic recovery plan focussed on real-world issues and without the fluff",
+              "Clarity on project scope inclusions and exclusions",
+              "Alignment between stakeholders on project objectives, expectations and priorities",
+              "Improved trust in delivery, reporting and milestone forecasts",
             ].map((item) => (
               <div
                 key={item}
@@ -218,7 +224,7 @@ export function ProjectRecoveryPage() {
             Need to stabilise a critical project?
           </h2>
           <p className="mb-10 font-stitch-body text-lg leading-[160%] text-on-surface-variant">
-            If delivery risk is rising and deadlines are under pressure, we can quickly scope a practical
+            If delivery issues are escalating and deadlines are under pressure, we can quickly scope a practical
             recovery path tailored to your project reality.
           </p>
           <Link
