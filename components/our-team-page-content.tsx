@@ -123,13 +123,13 @@ function TeamGalleryCard({
         />
       </div>
       <p
-        className={`mt-2 max-w-[7rem] truncate font-stitch-display text-[11px] font-semibold uppercase leading-tight transition-colors duration-300 md:max-w-[8rem] md:text-xs ${
+        className={`mt-2 w-28 font-stitch-display text-[11px] font-semibold uppercase leading-tight transition-colors duration-300 md:w-32 md:text-xs ${
           isSelected ? "text-white" : "text-on-surface-variant group-hover:text-white"
         }`}
       >
         {member.name}
       </p>
-      <p className="mt-0.5 max-w-[7rem] truncate font-stitch-body text-[10px] uppercase tracking-[0.08em] text-primary-container/80 md:max-w-[8rem]">
+      <p className="mt-0.5 w-28 break-words font-stitch-body text-[10px] uppercase leading-snug tracking-[0.08em] text-primary-container/80 md:w-32">
         {member.isPlaceholder ? "Preview" : member.role.split(",")[0]}
       </p>
     </button>
