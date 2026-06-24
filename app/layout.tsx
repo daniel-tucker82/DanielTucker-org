@@ -24,6 +24,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aspyreconsulting.com.au"),
   title: {
     default: "Aspyre Consulting",
     template: "%s | Aspyre Consulting",
@@ -31,8 +32,31 @@ export const metadata: Metadata = {
   description:
     "Aspyre Consulting helps growth-stage technology businesses improve delivery flow, productivity, and operational outcomes.",
   icons: {
-    icon: [{ url: "/Aspyre%20Logo.png", type: "image/png" }],
-    apple: [{ url: "/Aspyre%20Logo.png", type: "image/png" }],
+    icon: [{ url: "/Aspyre%20Logo%202.png", type: "image/png" }],
+    apple: [{ url: "/Aspyre%20Logo%202.png", type: "image/png" }],
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Aspyre Consulting",
+    title: "Aspyre Consulting",
+    description:
+      "Aspyre Consulting helps growth-stage technology businesses improve delivery flow, productivity, and operational outcomes.",
+    images: [
+      {
+        url: "/Aspyre%20Logo%202.png",
+        width: 3000,
+        height: 3000,
+        alt: "Aspyre Consulting logo",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aspyre Consulting",
+    description:
+      "Aspyre Consulting helps growth-stage technology businesses improve delivery flow, productivity, and operational outcomes.",
+    images: ["/Aspyre%20Logo%202.png"],
   },
 };
 
