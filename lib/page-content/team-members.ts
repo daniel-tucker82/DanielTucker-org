@@ -68,8 +68,8 @@ export const allTeamMembers: TeamMember[] = [
     role: "Principal Consultant",
     imageSrc: "/Anna%20Burda.JPG",
     imageAlt: "Anna Burda",
-    imageWidth: 735,
-    imageHeight: 972,
+    imageWidth: 744,
+    imageHeight: 975,
     intro:
       "For the past decade, Anna has been delivering complex, AI-led projects across Australia and New Zealand - web builds, CRM implementations, mini-SaaS products and automation - from first scoping conversation through to successful execution, across a wide range of businesses and technologies.",
     experienceIntro:
