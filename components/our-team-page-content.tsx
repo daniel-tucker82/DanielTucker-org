@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
 import { RecommendationsCarousel } from "@/components/recommendations-carousel";
+import { getRecommendationsForTeamMember } from "@/lib/page-content/recommendations";
 import { teamMembers, type TeamMember } from "@/lib/page-content/team-members";
 
 const GALLERY_SCROLL_PX = 200;
@@ -141,6 +142,7 @@ export function OurTeamPageContent() {
   const [expandedExperience, setExpandedExperience] = useState<number | null>(null);
 
   const active = teamMembers[selectedIndex];
+  const activeRecommendations = getRecommendationsForTeamMember(active.id);
 
   const scrollGallery = useCallback((direction: -1 | 1) => {
     galleryRef.current?.scrollBy({
@@ -284,7 +286,11 @@ export function OurTeamPageContent() {
               <p className="mb-5 font-stitch-body text-[12px] font-semibold uppercase tracking-widest text-primary-container">
                 Recommendations
               </p>
-              <RecommendationsCarousel />
+              <RecommendationsCarousel
+                key={active.id}
+                recommendations={activeRecommendations}
+                memberName={active.name}
+              />
             </div>
           ) : null}
         </div>
@@ -304,13 +310,13 @@ export function OurTeamPageContent() {
               href="/contact"
               className="inline-block bg-primary-container px-10 py-4 font-stitch-display text-[12px] font-bold uppercase tracking-[0.1em] text-on-primary-container transition-all hover:bg-primary-container/90"
             >
-              Contact Daniel
+              Contact us
             </Link>
             <Link
               href="/about/our-approach"
               className="inline-block border border-primary-container/50 px-10 py-4 font-stitch-display text-[12px] font-bold uppercase tracking-[0.1em] text-primary-container transition-colors hover:bg-primary-container/10"
             >
-              My approach
+              Our approach
             </Link>
           </div>
         </div>

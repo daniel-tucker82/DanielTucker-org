@@ -1,4 +1,5 @@
 export type Recommendation = {
+  staffMemberId: string;
   name: string;
   title: string;
   quote: string;
@@ -8,6 +9,7 @@ export type Recommendation = {
 
 export const recommendations: Recommendation[] = [
   {
+    staffMemberId: "daniel-tucker",
     name: "Micha Essers",
     title: "Program Manager",
     quote:
@@ -15,6 +17,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/micha-essers.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Yasaman Ferdosi",
     title: "Productivity and Delivery Leader",
     quote:
@@ -22,6 +25,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/yasaman-ferdosi.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Jason Longville",
     title: "Change Leader",
     quote:
@@ -29,6 +33,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/jason-longville.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Henry Kwong",
     title: "Delivery Manager",
     quote:
@@ -36,6 +41,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/henry-kwong.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Michael Hitchen",
     title: "Program & IT Portfolio Leader",
     quote:
@@ -43,6 +49,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/michael-hitchen.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Duncan O'Brien",
     title: "Delivery and Project Manager",
     quote:
@@ -50,6 +57,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/duncan-obrien.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Viviana Capote",
     title: "Software Engineer",
     quote:
@@ -57,12 +65,14 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/viviana-capote.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Shani de Leeuw",
     title: "Project Engineer",
     quote: "When I think of Daniel the phrase \"gets things done\" comes to mind.",
     avatarSrc: "/shani-de-leeuw.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Matthew Roberts",
     title: "Head of Engineering Operations",
     quote:
@@ -70,6 +80,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/matthew-roberts.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Meagan Hungerford",
     title: "Engineering & Design Specialist",
     quote:
@@ -77,6 +88,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/meagan-hungerford.png",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Mike Rigby",
     title: "Engineering Executive",
     quote:
@@ -84,6 +96,7 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/mike-rigby.jpg",
   },
   {
+    staffMemberId: "daniel-tucker",
     name: "Aaron Sirimanotham",
     title: "Digital Projects Manager",
     quote:
@@ -91,3 +104,9 @@ export const recommendations: Recommendation[] = [
     avatarSrc: "/aaron-sirimanotham.jpg",
   },
 ];
+
+export function getRecommendationsForTeamMember(staffMemberId: string): Recommendation[] {
+  return recommendations.filter(
+    (recommendation) => recommendation.staffMemberId === staffMemberId,
+  );
+}

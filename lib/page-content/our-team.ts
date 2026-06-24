@@ -7,7 +7,7 @@ export function applyOurTeamHero(html: string): string {
     ["Our Team Template", "Our Team"],
     [
       "Bridging the gap between visionary strategy and technical excellence. Aspyre Consulting brings together the brightest minds in digital transformation.",
-      "Meet the consultants behind Aspyre — select a team member to explore their background and experience.",
+      "Meet the consultants behind Aspyre - select a team member to explore their background and experience.",
     ],
   ];
 
@@ -24,10 +24,10 @@ export function applyOurTeamTail(html: string): string {
     .replace("Ready to collaborate?", "Interested in working together?")
     .replace(
       '<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(38,221,205,0.3)] transition-all">Book a Strategy Session</button>',
-      '<a href="/contact" class="inline-block bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(38,221,205,0.3)] transition-all">Contact Daniel</a>',
+      '<a href="/contact" class="inline-block bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(38,221,205,0.3)] transition-all">Contact us</a>',
     )
     .replace(
       '<button class="border border-primary-fixed text-primary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-fixed/5 transition-all">View All Capabilities</button>',
-      '<a href="/about/our-approach" class="inline-block border border-primary-fixed text-primary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-fixed/5 transition-all">My approach</a>',
+      '<a href="/about/our-approach" class="inline-block border border-primary-fixed text-primary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary-fixed/5 transition-all">Our approach</a>',
     );
 }

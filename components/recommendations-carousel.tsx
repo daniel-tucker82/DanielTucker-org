@@ -4,28 +4,56 @@ import Image from "next/image";
 import { Pause, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import { recommendations } from "@/lib/page-content/recommendations";
+import type { Recommendation } from "@/lib/page-content/recommendations";
 
 /** Auto-advance delay in milliseconds (must match `useEffect` deps below). */
 const SLIDE_ADVANCE_MS = 22_000;
 
-export function RecommendationsCarousel() {
+export function RecommendationsCarousel({
+  recommendations,
+  memberName,
+}: {
+  recommendations: Recommendation[];
+  memberName: string;
+}) {
   const [index, setIndex] = useState(0);
   /** When true, automatic advance is off; full page load always starts playing (false). */
   const [autoAdvancePaused, setAutoAdvancePaused] = useState(false);
   const max = recommendations.length - 1;
+  const safeIndex = Math.min(index, Math.max(max, 0));
 
   useEffect(() => {
     if (autoAdvancePaused) {
+      return;
+    }
+    if (recommendations.length <= 1) {
       return;
     }
     const timer = setTimeout(() => {
       setIndex((prev) => (prev >= max ? 0 : prev + 1));
     }, SLIDE_ADVANCE_MS);
     return () => clearTimeout(timer);
-  }, [index, max, autoAdvancePaused]);
+  }, [index, max, autoAdvancePaused, recommendations.length]);
 
-  const active = useMemo(() => recommendations[index], [index]);
+  const active = useMemo(
+    () => recommendations[safeIndex],
+    [recommendations, safeIndex],
+  );
+
+  if (!active) {
+    return (
+      <div className="border border-[#66FCF1]/25 bg-[#0B0C10] p-10">
+        <div className="border border-[#66FCF1]/35 bg-[#0B0C10]/55 p-6">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#66FCF1]">
+            Feedback
+          </p>
+          <p className="mt-3 text-2xl font-bold leading-tight text-white">
+            Recommendations for {memberName} will appear here soon.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="border border-[#66FCF1]/25 bg-[#0B0C10] px-0 py-0">
@@ -83,7 +111,7 @@ export function RecommendationsCarousel() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex gap-2">
             {recommendations.map((item, i) => {
-              const isActive = i === index;
+              const isActive = i === safeIndex;
               return (
                 <button
                   key={item.name}

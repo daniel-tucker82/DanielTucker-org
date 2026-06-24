@@ -3,7 +3,7 @@ import { OurTeamPage } from "@/components/our-team-page";
 
 export const metadata: Metadata = {
   title: "Our Team",
-  description: "Meet Daniel Tucker and learn about the experience behind Aspyre Consulting.",
+  description: "Meet the consultants behind Aspyre Consulting.",
 };
 
 export default function Page() {

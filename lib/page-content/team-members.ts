@@ -15,7 +15,7 @@ export type TeamMember = {
   intro: string;
   experienceIntro: string;
   experience: ProfileSection[];
-  /** LinkedIn-style recommendations carousel — only Daniel has content today. */
+  /** LinkedIn-style recommendations carousel for this specific team member. */
   showRecommendations?: boolean;
   isPlaceholder?: boolean;
 };
@@ -56,10 +56,36 @@ export const allTeamMembers: TeamMember[] = [
     imageWidth: 1848,
     imageHeight: 2511,
     intro:
-      "Operational systems consultant helping growth-stage businesses scale productively — without radical process overhauls or cultural rewrites.",
+      "Operational systems consultant helping growth-stage businesses scale productively - without radical process overhauls or cultural rewrites.",
     experienceIntro:
       "A career spanning defence, consulting, and technology leadership.",
     experience: profileExperienceSections,
+    showRecommendations: true,
+  },
+  {
+    id: "anna-burda",
+    name: "Anna Burda",
+    role: "Principal Consultant",
+    imageSrc: "/Anna%20Burda.JPG",
+    imageAlt: "Anna Burda",
+    imageWidth: 735,
+    imageHeight: 972,
+    intro:
+      "For the past decade, Anna has been delivering complex, AI-led projects across Australia and New Zealand - web builds, CRM implementations, mini-SaaS products and automation - from first scoping conversation through to successful execution, across a wide range of businesses and technologies.",
+    experienceIntro:
+      "Complex AI-led delivery across businesses, tools, and operating environments.",
+    experience: [
+      {
+        heading: "AI-led delivery",
+        lead: "Anna has spent the past decade delivering complex digital and automation projects across Australia and New Zealand.",
+        body: "Her work spans web builds, CRM implementations, mini-SaaS products and automation, carrying projects from the first scoping conversation through to successful execution across a wide range of businesses and technologies.",
+      },
+      {
+        heading: "Accountable execution",
+        lead: "At Luvio, the person who scopes your work is the one who stands behind the result.",
+        body: "No account-manager layer, no hand-off to a team you've never met. Anna stays close to the work from discovery through delivery so expectations, decisions, and outcomes remain connected.",
+      },
+    ],
     showRecommendations: true,
   },
   joiningSoonPlaceholder("team-placeholder-1", "Joining soon", "Consultant (placeholder)"),
